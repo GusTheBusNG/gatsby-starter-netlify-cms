@@ -1,7 +1,11 @@
 ---
 templateKey: index-page
 title: Great coffee with a conscience
+<<<<<<< HEAD
 titleTwo: I hope this works
+=======
+title2: I hope this works
+>>>>>>> 056698ba4b91d71a1716030185c2bb548dac2beb
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
@@ -69,3 +73,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
