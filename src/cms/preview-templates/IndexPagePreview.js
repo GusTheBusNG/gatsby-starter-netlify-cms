@@ -4,12 +4,13 @@ import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-
+ 
   if (data) {
     return (
       <IndexPageTemplate
         image={data.image}
         title={data.title}
+        titleTwo={data.title2}
         heading={data.heading}
         subheading={data.subheading}
         description={data.description}
