@@ -1,5 +1,6 @@
 ---
-templateKey: cu-singers-page
+templateKey: 'cu-singers-page'
+path: '/cu-singers'
 header:
   topText: Clemson Vocal Arts
   bottomText: CU Singers
