@@ -12,30 +12,27 @@ export const CUSingersPageTemplate = ({
   buttonText,
   subheadingTwo,
   auditionText
-}) => {
-  console.log(image, header, subheading, about, buttonText, subheadingTwo, auditionText);
-  return (
-    <div>
-      <h1>{header.topText}</h1>
-      <h2>{header.bottomText}</h2>
-      <div
-        className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`
-        }}
-      ></div>
-      <h3>{subheading}</h3>
-      <p>{about}</p>
-      <button>{buttonText}</button>
-      <h3>{subheadingTwo}</h3>
-      <p>Where: {auditionText.where}</p>
-      <p>When: {auditionText.when}</p>
-      <p>What: {auditionText.what}</p>
-    </div>
-  );
-}
+}) => (
+  <div>
+    <h1>{header.topText}</h1>
+    <h2>{header.bottomText}</h2>
+    <div
+      className="full-width-image margin-top-0"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`
+      }}
+    ></div>
+    <h3>{subheading}</h3>
+    <p>{about}</p>
+    <button>{buttonText}</button>
+    <h3>{subheadingTwo}</h3>
+    <p>Where: {auditionText.where}</p>
+    <p>When: {auditionText.when}</p>
+    <p>What: {auditionText.what}</p>
+  </div>
+);
 
 CUSingersPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
