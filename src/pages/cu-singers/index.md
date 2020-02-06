@@ -2,7 +2,7 @@
 templateKey: cu-singers-page
 header:
   bottomText: CU Singers
-  topText: From here you can publish
+  topText: I want to change something
 image: /img/home-jumbotron.jpg
 subheading: About CU Singers
 about: >-
