@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import './cu-singers-page.scss';
+import Footer from '../components/Footer';
 
 export const CUSingersPageTemplate = ({
   image,
@@ -31,6 +32,8 @@ export const CUSingersPageTemplate = ({
     <p>Where: {auditionText.where}</p>
     <p>When: {auditionText.when}</p>
     <p>What: {auditionText.what}</p>
+    <br></br>
+    <Footer />
   </div>
 );
 
