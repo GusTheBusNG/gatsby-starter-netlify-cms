@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header';
+import TextContent from '../components/TextContent';
 
 import './cu-singers-page.scss';
 
@@ -27,8 +28,8 @@ export const CUSingersPageTemplate = ({
 
     <div className="cu-singers__content">
       <Header topText={topText} bottomText={bottomText} />
-      <h3>{subheading}</h3>
-      <p>{about}</p>
+      <TextContent header={subheading} content={about} />
+
       <button>{buttonText}</button>
       <h3>{subheadingTwo}</h3>
       <p>Where: {auditionText.where}</p>
