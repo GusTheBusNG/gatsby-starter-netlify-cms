@@ -2,7 +2,7 @@
 templateKey: cu-singers-page
 header:
   bottomText: CU Singers
-  topText: I want to change something
+  topText: Clemson Vocal Arts
 image: /img/home-jumbotron.jpg
 subheading: About CU Singers
 about: >-

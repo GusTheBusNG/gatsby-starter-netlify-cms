@@ -2,38 +2,41 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
+import Header from '../components/Header';
+
 import './cu-singers-page.scss';
-import Footer from '../components/Footer';
 
 export const CUSingersPageTemplate = ({
   image,
-  header,
+  header: { topText, bottomText },
   subheading,
   about,
   buttonText,
   subheadingTwo,
   auditionText
 }) => (
-  <div>
-    <h1>{header.topText}</h1>
-    <h2>{header.bottomText}</h2>
+  <div className="cu-singers">
     <div
-      className="full-width-image margin-top-0"
+      className="top-image"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`
       }}
     ></div>
-    <h3>{subheading}</h3>
-    <p>{about}</p>
-    <button>{buttonText}</button>
-    <h3>{subheadingTwo}</h3>
-    <p>Where: {auditionText.where}</p>
-    <p>When: {auditionText.when}</p>
-    <p>What: {auditionText.what}</p>
+
+    <div className="cu-singers__content">
+      <Header topText={topText} bottomText={bottomText} />
+      <h3>{subheading}</h3>
+      <p>{about}</p>
+      <button>{buttonText}</button>
+      <h3>{subheadingTwo}</h3>
+      <p>Where: {auditionText.where}</p>
+      <p>When: {auditionText.when}</p>
+      <p>What: {auditionText.what}</p>
+    </div>
+    
     <br></br>
-    <Footer />
   </div>
 );
 
