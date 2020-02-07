@@ -3,7 +3,7 @@ templateKey: cu-singers-page
 header:
   bottomText: CU Singers
   topText: I want to change something
-image: /img/home-jumbotron.jpg
+image: /img/cu-singers.jpg
 subheading: About CU Singers
 about: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
