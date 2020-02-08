@@ -8,6 +8,7 @@ import Button from '../components/Button';
 import Subheading from '../components/Subheading';
 
 import './cu-singers-page.scss';
+import FloatingCard from '../components/FloatingCard';
 
 export const CUSingersPageTemplate = ({
   image,
@@ -16,7 +17,11 @@ export const CUSingersPageTemplate = ({
   about,
   buttonText,
   subheadingTwo,
-  auditionText
+  auditionText: {
+    where,
+    when,
+    what
+  }
 }) => (
   <div className="cu-singers">
     <div
@@ -35,9 +40,22 @@ export const CUSingersPageTemplate = ({
         {buttonText}
       </Button>
       <Subheading>{subheadingTwo}</Subheading>
-      <p>Where: {auditionText.where}</p>
-      <p>When: {auditionText.when}</p>
-      <p>What: {auditionText.what}</p>
+
+      <FloatingCard
+        image={image}
+        header="Where?"
+        content={where}
+      />
+      <FloatingCard
+        image={image}
+        header="When?"
+        content={when}
+      />
+      <FloatingCard
+        image={image}
+        header="What?"
+        content={what}
+      />
     </div>
     
     <br></br>
