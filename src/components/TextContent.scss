@@ -1,15 +1,7 @@
 @import '../variables.scss';
 
 .text-content {
-  padding: 1rem 0 ;
-
-  &__heading {
-    margin-bottom: 0.5rem;
-
-    font-weight: 550;
-    font-size: 18px;
-    color: $subheading-text;
-  }
+  margin-bottom: 1rem;
 
   &__content {
     font-size: 14px;

@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import Header from '../components/Header';
 import TextContent from '../components/TextContent';
 import Button from '../components/Button';
+import Subheading from '../components/Subheading';
 
 import './cu-singers-page.scss';
 
@@ -33,7 +34,7 @@ export const CUSingersPageTemplate = ({
       <Button onClick={() => console.log('hit')}>
         {buttonText}
       </Button>
-      <h3>{subheadingTwo}</h3>
+      <Subheading>{subheadingTwo}</Subheading>
       <p>Where: {auditionText.where}</p>
       <p>When: {auditionText.when}</p>
       <p>What: {auditionText.what}</p>

@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './TextContent.scss';
+import Subheading from './Subheading';
 
 export const TextContent = ({
   header,
   content
 }) => (
   <div className="text-content">
-    <h2 className="text-content__heading">{header}</h2>
-    <h1 className="text-content__content">{content}</h1>
+    <Subheading>{header}</Subheading>
+    <p className="text-content__content">{content}</p>
   </div>
 );
 
