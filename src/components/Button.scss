@@ -1,0 +1,26 @@
+@import '../variables.scss';
+
+.button {
+  width: fit-content;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  padding: 0 1rem;
+
+  border: 0.155rem solid $clemson-orange;
+  border-radius: $border-radius;
+  color: $clemson-orange;
+
+  transition: 0.2s;
+
+  &:hover:focus {
+    background-color: $clemson-orange;
+    color: $background-white;
+    border-color: $clemson-orange;
+  }
+
+  &:focus {
+    box-shadow: 0 0 3px 1px $clemson-orange;
+  }
+}

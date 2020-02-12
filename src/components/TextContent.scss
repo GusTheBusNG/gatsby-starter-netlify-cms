@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.text-content {
+  margin-bottom: 1rem;
+
+  &__content {
+    font-size: 14px;
+    color: $text-color;
+  }
+}
