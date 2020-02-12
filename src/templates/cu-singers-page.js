@@ -2,38 +2,63 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
+import Header from '../components/Header';
+import TextContent from '../components/TextContent';
+import Button from '../components/Button';
+import Subheading from '../components/Subheading';
+
 import './cu-singers-page.scss';
-import Footer from '../components/Footer';
+import FloatingCard from '../components/FloatingCard';
 
 export const CUSingersPageTemplate = ({
   image,
-  header,
+  header: { topText, bottomText },
   subheading,
   about,
   buttonText,
   subheadingTwo,
-  auditionText
+  auditionText: {
+    where,
+    when,
+    what
+  }
 }) => (
-  <div>
-    <h1>{header.topText}</h1>
-    <h2>{header.bottomText}</h2>
+  <div className="cu-singers">
     <div
-      className="full-width-image margin-top-0"
+      className="top-image"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`
       }}
     ></div>
-    <h3>{subheading}</h3>
-    <p>{about}</p>
-    <button>{buttonText}</button>
-    <h3>{subheadingTwo}</h3>
-    <p>Where: {auditionText.where}</p>
-    <p>When: {auditionText.when}</p>
-    <p>What: {auditionText.what}</p>
+
+    <div className="cu-singers__content">
+      <Header topText={topText} bottomText={bottomText} />
+      <TextContent header={subheading} content={about} />
+      <Button onClick={() => console.log('hit')}>
+        {buttonText}
+      </Button>
+      <Subheading>{subheadingTwo}</Subheading>
+
+      <FloatingCard
+        image={image}
+        header="Where?"
+        content={where}
+      />
+      <FloatingCard
+        image={image}
+        header="When?"
+        content={when}
+      />
+      <FloatingCard
+        image={image}
+        header="What?"
+        content={what}
+      />
+    </div>
+    
     <br></br>
-    <Footer />
   </div>
 );
 

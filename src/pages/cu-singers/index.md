@@ -23,4 +23,3 @@ auditionText:
   when: Lorem ipsum dolor sit
   where: Lorem ipsum dolor sit
 ---
-

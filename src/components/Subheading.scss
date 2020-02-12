@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.subheading {
+  width: 100%;
+
+  margin: 1rem 0 0.5rem 0;
+
+  font-weight: 550;
+  font-size: 18px;
+  color: $subheading-text
+}
