@@ -12,9 +12,9 @@ const CUSingersPagePreview = ({ entry, getAsset }) => {
         header={data.header}
         subheading={data.subheading}
         about={data.about}
-        buttonText={data.buttonText}
+        button={data.button}
         subheadingTwo={data.subheadingTwo}
-        auditionText={data.auditionText}
+        auditionInformation={data.auditionInformation}
       />
     )
   } else {
