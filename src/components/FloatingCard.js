@@ -5,11 +5,15 @@ import './FloatingCard.scss';
 
 export const FloatingCard = ({ image, header, content }) => (
   <div className="floating-card">
-    <img
-      alt="icon"
-      className="floating-card__image"
-      src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
-    />
+    {
+      image ? (
+        <img
+          alt="icon"
+          className="floating-card__image"
+          src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
+        />
+      ) : null
+    }
     <h3 className="floating-card__heading">{header}</h3>
     <p className="floating-card__content">{content}</p>
   </div>
