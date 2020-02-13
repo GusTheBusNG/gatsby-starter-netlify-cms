@@ -15,3 +15,43 @@ $font-family: 'Roboto';
 body {
   font-family: $font-family;
 }
+
+// Small tablets and large smartphones (landscape view)
+$screen-mobile: 576px;
+
+// Small tablets (portrait view)
+$screen-tablet: 768px;
+
+// Tablets and small desktops
+$screen-desktop: 992px;
+
+// Large tablets and desktops
+$screen-xl-desktop: 1200px;
+
+// Small devices
+@mixin mobile {
+    @media (min-width: #{$screen-mobile}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin tablet {
+    @media (min-width: #{$screen-tablet}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin desktop {
+    @media (min-width: #{$screen-desktop}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl-desktop {
+    @media (min-width: #{$screen-xl-desktop}) {
+        @content;
+    }
+ }

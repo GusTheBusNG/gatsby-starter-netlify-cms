@@ -8,6 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include desktop {
+    height: 20rem;
+  }
 }
 
 .cu-singers {
