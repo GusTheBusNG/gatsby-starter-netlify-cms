@@ -9,7 +9,11 @@
   justify-content: center;
   align-items: center;
   @include desktop {
-    height: 20rem;
+    width: 45vw;
+    height: 95vh;
+    margin: 2.5vh 2.5vw;
+    background-position: center;
+    border-radius: $border-radius;
   }
 }
 
@@ -28,5 +32,15 @@
     margin-top: -$border-radius;
     padding: 1.25rem;
     border-radius: $border-radius $border-radius 0 0;
+
+    @include desktop {
+      width: 45vw;
+      height: 95vh;
+      margin: 2.5vh 2.5vw;
+    }
+  }
+
+  @include desktop {
+    display: flex;
   }
 }
