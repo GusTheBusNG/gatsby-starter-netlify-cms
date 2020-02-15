@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import FloatingCard from '../components/FloatingCard'
+import SocialMediaLine from '../components/SocialMediaLine'
+import Header from '../components/Header';
 
 import './index-page.scss'
-import SocialMediaLine from '../components/SocialMediaLine'
 
 export const IndexPageTemplate = ({
   logo,
@@ -50,6 +51,10 @@ export const IndexPageTemplate = ({
         socialMedia={socialMedia}
       />
     </div>
+    <Header
+      topText={topText}
+      bottomText={bottomText}
+    />
   </div>
 );
 
