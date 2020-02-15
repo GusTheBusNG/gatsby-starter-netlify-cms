@@ -26,6 +26,39 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - name: "ensembles"
+    label: "Ensembles"
+    folder: "src/pages/ensembles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ensembles"}
+      - {label: Header, name: header, widget: object, fields: [
+          {label: "Top Text", name: topText, widget: string},
+          {label: "Bottom Text", name: bottomText, widget: text}
+        ]}
+      - {label: Image, name: image, widget: image}
+      - {label: Subheading, name: subheading, widget: string}
+      - {label: About, name: about, widget: string}
+      - {label: Button, name: button, widget: object, fields: [
+          {label: "Button Label", name: buttonText, widget: string},
+          {label: "Button Link", name: buttonLink, widget: string}
+        ]}
+      - {label: "Second Subheading", name: subheadingTwo, widget: string}
+      - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
+          {label: Image, name: image, widget: image},
+          {label: Heading, name: heading, widget: text},
+          {label: Text, name: text, widget: text}
+        ]}
+      - {label: "Ensemble preview on the home page", name: ensemblePreview, widget: object, field: [
+          {label: Image, name: image, widget: image},
+          {label: Heading, name: heading, widget: text},
+          {label: "Short Description", name: description, widget: text},
+          {label: Button, name: button, widget: object, fields: [
+            {label: "Button Label", name: buttonText, widget: string},
+            {label: "Button Link", name: buttonLink, widget: string}
+          ]}
+        ]}
 
   - name: "pages"
     label: "Pages"
@@ -49,7 +82,7 @@ collections:
               {label: "Top Text", name: topText, widget: string},
               {label: "Bottom Text", name: bottomText, widget: text}
             ]}
-          - {label: Ensembles, name: ensembles, fields: [
+          - {label: "Tigeroar and Take Note", name: separateEnsembles , fields: [
               {label: Image, name: image, widget: image},
               {label: Heading, name: heading, widget: string},
               {label: "Small Description", name: description, widget: string},
@@ -57,30 +90,6 @@ collections:
                 {label: "Button Label", name: label, widget: string},
                 {label: "Button Link", name: link, widget: string}
               ]}
-            ]}
-      - file: "src/pages/cu-singers/index.md"
-        label: "CU Singers"
-        name: "cu-singers"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "cu-singers-page"}
-          - {label: Header, name: header, widget: object, fields: [
-              {label: "Top Text", name: topText, widget: string},
-              {label: "Bottom Text", name: bottomText, widget: text}
-            ]}
-          - {label: Image, name: image, widget: image}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: About, name: about, widget: string}
-          - {label: Button, name: button, widget: object, fields: [
-              {label: "Button Label", name: buttonText, widget: string},
-              {label: "Button Link", name: buttonLink, widget: string}
-            ]}
-          - {label: "Button Label", name: buttonText, widget: string}
-          - {label: "Button Link", name: buttonLink, widget: string}
-          - {label: "Second Subheading", name: subheadingTwo, widget: string}
-          - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
-              {label: Image, name: image, widget: image},
-              {label: Heading, name: heading, widget: text},
-              {label: Text, name: text, widget: text}
             ]}
       - file: "src/pages/about/index.md"
         label: "About"

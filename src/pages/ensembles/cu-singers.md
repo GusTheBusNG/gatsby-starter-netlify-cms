@@ -1,5 +1,5 @@
 ---
-templateKey: cu-singers-page
+templateKey: ensembles
 header:
   bottomText: CU Singers
   topText: Clemson Vocal Arts

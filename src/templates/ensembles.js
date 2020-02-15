@@ -7,10 +7,10 @@ import TextContent from '../components/TextContent';
 import Button from '../components/Button';
 import Subheading from '../components/Subheading';
 
-import './cu-singers-page.scss';
+import './ensembles.scss';
 import FloatingCard from '../components/FloatingCard';
 
-export const CUSingersPageTemplate = ({
+export const EnsemblesTemplate = ({
   image,
   header: { topText, bottomText },
   subheading,
@@ -19,7 +19,7 @@ export const CUSingersPageTemplate = ({
   subheadingTwo,
   auditionInformation
 }) => (
-  <div className="cu-singers">
+  <div className="ensembles">
     <div
       className="top-image"
       style={{
@@ -29,7 +29,7 @@ export const CUSingersPageTemplate = ({
       }}
     ></div>
 
-    <div className="cu-singers__content">
+    <div className="ensembles__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
       <Button link={buttonLink}>
@@ -53,7 +53,7 @@ export const CUSingersPageTemplate = ({
   </div>
 );
 
-CUSingersPageTemplate.propTypes = {
+EnsemblesTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   header: PropTypes.object,
   subheading: PropTypes.string,
@@ -63,11 +63,11 @@ CUSingersPageTemplate.propTypes = {
   auditionInformation: PropTypes.array,
 }
 
-const CUSingersPage = ({ data }) => {
+const Ensembles = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <CUSingersPageTemplate
+    <EnsemblesTemplate
       image={frontmatter.image}
       header={frontmatter.header}
       subheading={frontmatter.subheading}
@@ -79,7 +79,7 @@ const CUSingersPage = ({ data }) => {
   )
 }
 
-CUSingersPage.propTypes = {
+Ensembles.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -87,11 +87,11 @@ CUSingersPage.propTypes = {
   }),
 }
 
-export default CUSingersPage
+export default Ensembles
 
 export const pageQuery = graphql`
-  query CUSingersPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "cu-singers-page" } }) {
+  query Ensembles {
+    markdownRemark(frontmatter: { templateKey: { eq: "ensembles" } }) {
       frontmatter {
         header {
           topText
