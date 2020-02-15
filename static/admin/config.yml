@@ -63,13 +63,25 @@ collections:
         name: "cu-singers"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "cu-singers-page"}
-          - {label: Header, name: header, widget: object, fields: [{label: "Top Text", name: topText, widget: string}, {label: "Bottom Text", name: bottomText, widget: text}]}
+          - {label: Header, name: header, widget: object, fields: [
+              {label: "Top Text", name: topText, widget: string},
+              {label: "Bottom Text", name: bottomText, widget: text}
+            ]}
           - {label: Image, name: image, widget: image}
           - {label: Subheading, name: subheading, widget: string}
           - {label: About, name: about, widget: string}
+          - {label: Button, name: button, widget: object, fields: [
+              {label: "Button Label", name: buttonText, widget: string},
+              {label: "Button Link", name: buttonLink, widget: string}
+            ]}
           - {label: "Button Label", name: buttonText, widget: string}
+          - {label: "Button Link", name: buttonLink, widget: string}
           - {label: "Second Subheading", name: subheadingTwo, widget: string}
-          - {label: "Audition Text", name: auditionText, widget: object, fields: [{label: When, name: when, widget: string}, {label: Where, name: where, widget: string}, {label: What, name: what, widget: string}]}
+          - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
+              {label: Image, name: image, widget: image},
+              {label: Heading, name: heading, widget: text},
+              {label: Text, name: text, widget: text}
+            ]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -86,7 +98,14 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Intro, name: intro, widget: object, fields: [
+              {label: Heading, name: heading, widget: string},
+              {label: Description, name: description, widget: text},
+              {label: Blurbs, name: blurbs, widget: list, fields: [
+                {label: Image, name: image, widget: image},
+                {label: Text, name: text, widget: text}
+              ]}
+            ]}
           - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}

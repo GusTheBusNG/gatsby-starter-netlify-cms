@@ -15,13 +15,9 @@ export const CUSingersPageTemplate = ({
   header: { topText, bottomText },
   subheading,
   about,
-  buttonText,
+  button: { buttonText, buttonLink },
   subheadingTwo,
-  auditionText: {
-    where,
-    when,
-    what
-  }
+  auditionInformation
 }) => (
   <div className="cu-singers">
     <div
@@ -36,26 +32,21 @@ export const CUSingersPageTemplate = ({
     <div className="cu-singers__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
-      <Button onClick={() => console.log('hit')}>
+      <Button link={buttonLink}>
         {buttonText}
       </Button>
       <Subheading>{subheadingTwo}</Subheading>
 
-      <FloatingCard
-        image={image}
-        header="Where?"
-        content={where}
-      />
-      <FloatingCard
-        image={image}
-        header="When?"
-        content={when}
-      />
-      <FloatingCard
-        image={image}
-        header="What?"
-        content={what}
-      />
+      {
+        auditionInformation ?
+          auditionInformation.map(({ image, heading, text }) => (
+            <FloatingCard
+              image={image}
+              header={heading}
+              content={text}
+            />
+          )) : null
+      }
     </div>
     
     <br></br>
@@ -67,9 +58,9 @@ CUSingersPageTemplate.propTypes = {
   header: PropTypes.object,
   subheading: PropTypes.string,
   about: PropTypes.string,
-  buttonText: PropTypes.string,
+  button: PropTypes.object,
   subheadingTwo: PropTypes.string,
-  auditionText: PropTypes.object,
+  auditionInformation: PropTypes.array,
 }
 
 const CUSingersPage = ({ data }) => {
@@ -81,9 +72,9 @@ const CUSingersPage = ({ data }) => {
       header={frontmatter.header}
       subheading={frontmatter.subheading}
       about={frontmatter.about}
-      buttonText={frontmatter.buttonText}
+      button={frontmatter.button}
       subheadingTwo={frontmatter.subheadingTwo}
-      auditionText={frontmatter.auditionText}
+      auditionInformation={frontmatter.auditionInformation}
     />
   )
 }
@@ -115,12 +106,21 @@ export const pageQuery = graphql`
         }
         subheading
         about
-        buttonText
+        button {
+          buttonText
+          buttonLink
+        }
         subheadingTwo
-        auditionText {
-          when
-          where
-          what
+        auditionInformation {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          text
+          heading
         }
       }
     }
