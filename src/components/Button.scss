@@ -6,21 +6,25 @@
   font-size: 14px;
   font-weight: 700;
 
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 
   border: 0.155rem solid $clemson-orange;
   border-radius: $border-radius;
   color: $clemson-orange;
+  background-color: $background-white;
 
   transition: 0.2s;
 
-  &:hover:focus {
+  &:hover {
     background-color: $clemson-orange;
     color: $background-white;
     border-color: $clemson-orange;
   }
 
   &:focus {
+    background-color: $clemson-orange;
+    color: $background-white;
+    border-color: $clemson-orange;
     box-shadow: 0 0 3px 1px $clemson-orange;
   }
 }
