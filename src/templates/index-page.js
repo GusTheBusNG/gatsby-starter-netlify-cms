@@ -7,6 +7,7 @@ import SocialMediaLine from '../components/SocialMediaLine'
 import Header from '../components/Header';
 
 import './index-page.scss'
+import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 
 export const IndexPageTemplate = ({
   logo,
@@ -55,6 +56,23 @@ export const IndexPageTemplate = ({
       topText={topText}
       bottomText={bottomText}
     />
+    <div class="ensembles">
+      {
+        ensembles && ensembles.map(({
+          button,
+          description,
+          heading,
+          image
+        }) => (
+          <FloatingCardWithBigPicture
+            button={button}
+            description={description}
+            heading={heading}
+            image={image}
+          />
+        ))
+      }
+    </div>
   </div>
 );
 
@@ -141,6 +159,21 @@ export const pageQuery = graphql`
           button {
             label
             link
+          }
+        }
+        ensembles {
+          button {
+            buttonLink
+            buttonText
+          }
+          description
+          heading
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

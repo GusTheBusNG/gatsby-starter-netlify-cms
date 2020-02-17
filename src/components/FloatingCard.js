@@ -14,7 +14,9 @@ export const FloatingCard = ({ image, header, content, children, className }) =>
     }
     <h3 className="floating-card__heading">{header}</h3>
     <p className="floating-card__content">{content}</p>
-    {children}
+    <div className="floating-card__children">
+      {children}
+    </div>
   </div>
 );
 

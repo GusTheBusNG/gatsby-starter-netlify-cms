@@ -24,4 +24,17 @@ separateEnsembles:
     button:
       label: Learn More
       link: /cu-singers
+ensembles:
+  - image: /img/cu-singers.jpg
+    heading: Lorem ipsum
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    button:
+      buttonText: Learn More
+      buttonLink: /ensembles/cu-singers
+  - image: /img/cu-singers.jpg
+    heading: Lorem ipsum
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    button:
+      buttonText: Learn More
+      buttonLink: /ensembles/cu-singers
 ---

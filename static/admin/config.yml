@@ -50,15 +50,6 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
-      - {label: "Ensemble preview on the home page", name: ensemblePreview, widget: object, field: [
-          {label: Image, name: image, widget: image},
-          {label: Heading, name: heading, widget: text},
-          {label: "Short Description", name: description, widget: text},
-          {label: Button, name: button, widget: object, fields: [
-            {label: "Button Label", name: buttonText, widget: string},
-            {label: "Button Link", name: buttonLink, widget: string}
-          ]}
-        ]}
 
   - name: "pages"
     label: "Pages"
@@ -89,6 +80,15 @@ collections:
               {label: Button, name: button, widget: object, fields: [
                 {label: "Button Label", name: label, widget: string},
                 {label: "Button Link", name: link, widget: string}
+              ]}
+            ]}
+          - {label: "Ensembles", name: ensembles, widget: list, field: [
+              {label: Image, name: image, widget: image},
+              {label: Heading, name: heading, widget: text},
+              {label: "Short Description", name: description, widget: text},
+              {label: Button, name: button, widget: object, fields: [
+                {label: "Button Label", name: buttonText, widget: string},
+                {label: "Button Link", name: buttonLink, widget: string}
               ]}
             ]}
       - file: "src/pages/about/index.md"
