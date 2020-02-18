@@ -146,21 +146,6 @@ export const pageQuery = graphql`
           topText
           bottomText
         }
-        separateEnsembles {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          heading
-          description
-          button {
-            label
-            link
-          }
-        }
         ensembles {
           button {
             buttonLink

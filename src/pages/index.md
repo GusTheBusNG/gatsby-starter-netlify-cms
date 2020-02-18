@@ -17,13 +17,6 @@ socialMedia:
 homePageHeading:
   topText: Clemson Vocal Studies
   bottomText: Ensembles
-separateEnsembles:
-  - image: /img/home-jumbotron.jpg
-    heading: CU Singers
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-    button:
-      label: Learn More
-      link: /cu-singers
 ensembles:
   - image: /img/cu-singers.jpg
     heading: Lorem ipsum

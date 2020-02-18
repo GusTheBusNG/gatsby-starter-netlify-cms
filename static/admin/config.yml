@@ -73,16 +73,7 @@ collections:
               {label: "Top Text", name: topText, widget: string},
               {label: "Bottom Text", name: bottomText, widget: text}
             ]}
-          - {label: "Tigeroar and Take Note", name: separateEnsembles , fields: [
-              {label: Image, name: image, widget: image},
-              {label: Heading, name: heading, widget: string},
-              {label: "Small Description", name: description, widget: string},
-              {label: Button, name: button, widget: object, fields: [
-                {label: "Button Label", name: label, widget: string},
-                {label: "Button Link", name: link, widget: string}
-              ]}
-            ]}
-          - {label: "Ensembles", name: ensembles, widget: list, field: [
+          - {label: "Ensembles", name: ensembles, widget: list, fields: [
               {label: Image, name: image, widget: image},
               {label: Heading, name: heading, widget: text},
               {label: "Short Description", name: description, widget: text},

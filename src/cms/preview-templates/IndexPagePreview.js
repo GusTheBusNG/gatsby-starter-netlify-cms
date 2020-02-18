@@ -12,7 +12,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         missionStatement={data.missionStatement}
         backgroundImage={data.backgroundImage}
         socialMedia={data.socialMedia}
-        heading={data.heading}
+        heading={data.homePageHeading}
         ensembles={data.ensembles}
       />
     )
