@@ -59,16 +59,16 @@ export const IndexPageTemplate = ({
     <div class="ensembles">
       {
         ensembles && ensembles.map(({
-          button,
+          image,
           description,
           heading,
-          image
+          button
         }) => (
           <FloatingCardWithBigPicture
-            button={button}
+            image={image}
             description={description}
             heading={heading}
-            image={image}
+            button={button}
           />
         ))
       }
@@ -158,18 +158,18 @@ export const pageQuery = graphql`
           bottomText
         }
         ensembles {
-          button {
-            buttonLink
-            buttonText
-          }
-          description
-          heading
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
+          }
+          description
+          heading
+          button {
+            buttonLink
+            buttonText
           }
         }
       }
