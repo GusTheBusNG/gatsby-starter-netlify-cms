@@ -85,6 +85,17 @@ IndexPageTemplate.propTypes = {
   ensembles: PropTypes.array
 }
 
+IndexPageTemplate.defaultProps = {
+  missionStatement: {
+    heading: 'Mission Statement Heading',
+    content: 'Mission statement content'
+  },
+  heading: {
+    topText: 'Top heading text',
+    bottomText: 'bottom heading text'
+  },
+}
+
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
