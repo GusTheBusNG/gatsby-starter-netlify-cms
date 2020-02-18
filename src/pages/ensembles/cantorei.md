@@ -1,7 +1,7 @@
 ---
-templateKey: cu-singers-page
+templateKey: ensembles
 header:
-  bottomText: CU Singers
+  bottomText: CU Cantorei
   topText: Clemson Vocal Arts
 image: /img/cu-singers.jpg
 subheading: About CU Singers

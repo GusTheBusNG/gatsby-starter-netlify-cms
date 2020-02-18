@@ -7,7 +7,7 @@
   font-weight: 700;
   line-height: 2.5;
 
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 
   border: 0.155rem solid $clemson-orange;
   border-radius: $border-radius;
@@ -24,6 +24,9 @@
   }
 
   &:focus {
+    background-color: $clemson-orange;
+    color: $background-white;
+    border-color: $clemson-orange;
     box-shadow: 0 0 3px 1px $clemson-orange;
   }
 }

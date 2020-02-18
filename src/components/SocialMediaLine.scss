@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.social-media-line {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-evenly;
+
+  &__icon {
+    height: 3.5rem;
+
+    object-fit: contain;
+  }
+}
