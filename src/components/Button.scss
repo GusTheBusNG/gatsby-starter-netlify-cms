@@ -5,13 +5,14 @@
 
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.5;
 
   padding: 0.5rem 1rem;
 
   border: 0.155rem solid $clemson-orange;
   border-radius: $border-radius;
   color: $clemson-orange;
-  background-color: $background-white;
+  background-color: #fff;
 
   transition: 0.2s;
 
@@ -19,6 +20,7 @@
     background-color: $clemson-orange;
     color: $background-white;
     border-color: $clemson-orange;
+    cursor: pointer;
   }
 
   &:focus {

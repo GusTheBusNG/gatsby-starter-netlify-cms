@@ -2,12 +2,12 @@
 
 .floating-card {
   display: grid;
-  grid-template: auto auto auto / auto 1fr;
-  grid-column-gap: 0.5rem;
+  grid-template: auto 1fr auto / auto 1fr;
 
   align-items: center;
 
-  width: 100%;
+  width: 95%;
+  width: calc(100% - 2rem);
 
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -29,7 +29,7 @@
     border-radius: $border-radius;
     object-fit: cover;
 
-    margin: 0 0.75rem;
+    margin-right: 0.75rem;
   }
 
   &__heading {
@@ -39,7 +39,8 @@
     font-weight: 550;
     font-size: 16px;
     color: $subheading-text;
-    margin: 0 0 0.2rem;
+
+    margin: 0 0 0.25rem 0;
   }
 
   &__content {
@@ -50,6 +51,7 @@
 
     font-size: 14px;
     color: $text-color;
+
     margin: 0;
   }
 
