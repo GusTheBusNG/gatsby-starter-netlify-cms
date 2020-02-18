@@ -1,0 +1,55 @@
+@import '../variables.scss';
+
+.home-page {
+  background-color: $background-white;
+}
+
+.landing-content {
+  position: relative;
+  height: calc(100vh - 2rem);
+  width: 100vw;
+
+  margin-bottom: 1rem;
+
+  padding: 1rem 0;
+
+  border-radius: 0 0 $border-radius $border-radius;
+
+  &__logo {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: $max-column-width;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    top: 8vh;
+  }
+
+  &__mission-statement {
+    position: absolute;
+    width: calc(100vw - 2rem);
+    max-width: $max-column-width;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    box-shadow: none;
+
+    bottom: 10vh;
+  }
+
+  &__social-media {
+    position: absolute;
+    width: calc(100vw - 2rem);
+    max-width: $max-column-width;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    box-shadow: none;
+
+    bottom: 1vh;
+  }
+}
