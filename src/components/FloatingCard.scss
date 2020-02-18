@@ -6,7 +6,8 @@
 
   align-items: center;
 
-  width: 100%;
+  width: 95%;
+  width: calc(100% - 2rem);
 
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -52,7 +53,6 @@
     color: $text-color;
 
     margin: 0;
-    padding: 0 0.75rem 0 0;
   }
 
   &__children {
