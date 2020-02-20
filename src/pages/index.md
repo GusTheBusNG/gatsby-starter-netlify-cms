@@ -7,16 +7,14 @@ missionStatement:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud
   heading: Clemson Vocal Studies Mission Statement
-backgroundImage: /img/home-jumbotron.jpg
+backgroundImage: /img/WorldPremiere2019.jpg
 socialMedia:
-  - icon: /img/home-jumbotron.jpg
-    link: /cu-singers
-  - icon: /img/home-jumbotron.jpg
-    link: /cu-singers
-  - icon: /img/home-jumbotron.jpg
-    link: /cu-singers
-  - icon: /img/home-jumbotron.jpg
-    link: /cu-singers
+  - icon: /img/facebook-logo.png
+    link: 'https://www.facebook.com/clemsonchoirs/'
+  - icon: /img/instagram.png
+    link: 'https://www.instagram.com/clemsonchoirs/'
+  - icon: /img/youtube-logo.png
+    link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
 homePageHeading:
   bottomText: Ensembles
   topText: Clemson Vocal Studies
