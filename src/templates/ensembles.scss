@@ -8,16 +8,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   @include desktop {
-    width: 45vw;
+    width: 47vw;
     height: 95vh;
-    margin: 2.5vh 2.5vw;
+    margin: 2.5vh 1.5vw;
     background-position: center;
     border-radius: $border-radius;
   }
 }
 
-.cu-singers {
+.ensembles {
   background-color: #FDFDFD;
 
   &__content {
@@ -34,9 +35,10 @@
     border-radius: $border-radius $border-radius 0 0;
 
     @include desktop {
-      width: 45vw;
+      width: 47vw;
       height: 95vh;
-      margin: 2.5vh 2.5vw;
+      margin: 2.5vh 1.5vw;
+      padding: 0;
     }
   }
 

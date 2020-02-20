@@ -26,6 +26,30 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - name: "ensembles"
+    label: "Ensembles"
+    folder: "src/pages/ensembles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ensembles"}
+      - {label: Header, name: header, widget: object, fields: [
+          {label: "Top Text", name: topText, widget: string},
+          {label: "Bottom Text", name: bottomText, widget: text}
+        ]}
+      - {label: Image, name: image, widget: image}
+      - {label: Subheading, name: subheading, widget: string}
+      - {label: About, name: about, widget: string}
+      - {label: Button, name: button, widget: object, fields: [
+          {label: "Button Label", name: buttonText, widget: string},
+          {label: "Button Link", name: buttonLink, widget: string}
+        ]}
+      - {label: "Second Subheading", name: subheadingTwo, widget: string}
+      - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
+          {label: Image, name: image, widget: image},
+          {label: Heading, name: heading, widget: text},
+          {label: Text, name: text, widget: text}
+        ]}
 
   - name: "pages"
     label: "Pages"
@@ -35,39 +59,39 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: TitleTwo, name: titleTwo, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-      - file: "src/pages/cu-singers/index.md"
-        label: "CU Singers"
-        name: "cu-singers"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "cu-singers-page"}
-          - {label: Header, name: header, widget: object, fields: [
-              {label: "Top Text", name: topText, widget: string},
-              {label: "Bottom Text", name: bottomText, widget: text}
-            ]}
-          - {label: Image, name: image, widget: image}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: About, name: about, widget: string}
-          - {label: Button, name: button, widget: object, fields: [
-              {label: "Button Label", name: buttonText, widget: string},
-              {label: "Button Link", name: buttonLink, widget: string}
-            ]}
-          - {label: "Button Label", name: buttonText, widget: string}
-          - {label: "Button Link", name: buttonLink, widget: string}
-          - {label: "Second Subheading", name: subheadingTwo, widget: string}
-          - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
-              {label: Image, name: image, widget: image},
-              {label: Heading, name: heading, widget: text},
-              {label: Text, name: text, widget: text}
-            ]}
+          - {label: Logo, name: logo, widget: image}
+          - label: "Mission Statement"
+            name: missionStatement
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Statement, name: content, widget: text}
+          - {label: "Background Image", name: backgroundImage, widget: image}
+          - label: "Social Media"
+            name: socialMedia
+            widget: list
+            fields:
+              - {label: Icon, name: icon, widget: image}
+              - {label: Link, name: link, widget: string}
+          - label: Heading
+            name: homePageHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string}
+              - {label: "Bottom Text", name: bottomText, widget: string}
+          - label: "Ensembles"
+            name: ensembles
+            widget: list
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Heading, name: heading, widget: text}
+              - {label: "Short Description", name: description, widget: text}
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - {label: "Button Label", name: buttonText, widget: string}
+                  - {label: "Button Link", name: buttonLink, widget: string}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"

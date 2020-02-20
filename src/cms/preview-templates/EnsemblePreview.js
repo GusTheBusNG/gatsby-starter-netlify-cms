@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CUSingersPageTemplate } from '../../templates/cu-singers-page'
+import { EnsemblesTemplate } from '../../templates/ensembles'
 
-const CUSingersPagePreview = ({ entry, getAsset }) => {
+const EnsemblesPreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
  
   if (data) {
     return (
-      <CUSingersPageTemplate
+      <EnsemblesTemplate
         image={data.image}
         header={data.header}
         subheading={data.subheading}
@@ -22,11 +22,11 @@ const CUSingersPagePreview = ({ entry, getAsset }) => {
   }
 }
 
-CUSingersPagePreview.propTypes = {
+EnsemblesPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default CUSingersPagePreview
+export default EnsemblesPreview
