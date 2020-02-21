@@ -8,6 +8,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include desktop {
+    width: 47vw;
+    height: 95vh;
+    margin: 2.5vh 1.5vw;
+    background-position: center;
+    border-radius: $border-radius;
+  }
 }
 
 .ensembles {
@@ -25,5 +33,16 @@
     margin-top: -$border-radius;
     padding: 1.25rem;
     border-radius: $border-radius $border-radius 0 0;
+
+    @include desktop {
+      width: 47vw;
+      height: 95vh;
+      margin: 2.5vh 1.5vw;
+      padding: 0;
+    }
+  }
+
+  @include desktop {
+    display: flex;
   }
 }
