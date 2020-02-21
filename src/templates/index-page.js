@@ -24,8 +24,9 @@ export const IndexPageTemplate = ({
   ensembles
 }) => (
   <div className="home-page">
+    { console.log(logo) }
     <div 
-      class="landing-content"
+      className="landing-content"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent 60%),
         url(${
@@ -52,11 +53,12 @@ export const IndexPageTemplate = ({
         socialMedia={socialMedia}
       />
     </div>
-    <Header
-      topText={topText}
-      bottomText={bottomText}
-    />
-    <div class="ensembles">
+
+    <div className="ensembles">
+      <Header
+        topText={topText}
+        bottomText={bottomText}
+      />
       {
         ensembles && ensembles.map(({
           button,
@@ -69,6 +71,7 @@ export const IndexPageTemplate = ({
             description={description}
             heading={heading}
             image={image}
+            key={heading}
           />
         ))
       }

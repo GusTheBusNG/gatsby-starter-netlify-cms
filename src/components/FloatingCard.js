@@ -21,7 +21,6 @@ export const FloatingCard = ({ image, header, content, children, className }) =>
 );
 
 FloatingCard.propTypes = {
-  image: PropTypes.isRequired,
   header: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired
 }
