@@ -1,15 +1,27 @@
 @import '../variables.scss';
 
+.floating-card-with-big-picture {
+  max-width: $screen-mobile;
+
+  @include mobile {
+    margin: 0 1rem;
+  }
+}
+
 .big-picture {
   position: relative;
   width: 100%;
-  height: 30vh;
+  height: 32.5vh;
 
   object-fit: cover;
   object-position: center;
   z-index: 1;
 
   margin: 1rem 0 0;
+
+  @include mobile {
+    border-radius: $border-radius;
+  }
 }
 
 .description-card {

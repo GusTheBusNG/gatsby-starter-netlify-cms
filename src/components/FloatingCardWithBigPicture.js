@@ -12,7 +12,7 @@ export const FloatingCardWithBigPicture = ({
   description,
   button: { buttonLink, buttonText }
 }) => (
-  <>
+  <div className="floating-card-with-big-picture">
     <img
       className="big-picture"
       src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
@@ -27,7 +27,7 @@ export const FloatingCardWithBigPicture = ({
         {buttonText}
       </Button>
     </FloatingCard>
-  </>
+  </div>
 );
 
 FloatingCardWithBigPicture.propTypes = {
