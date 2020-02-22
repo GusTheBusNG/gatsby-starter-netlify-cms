@@ -54,7 +54,7 @@ export const IndexPageTemplate = ({
       />
     </div>
 
-    <div className="ensembles">
+    <div className="ensembles-list">
       <Header
         topText={topText}
         bottomText={bottomText}
