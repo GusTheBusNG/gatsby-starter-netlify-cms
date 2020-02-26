@@ -1,3 +1,29 @@
+@import '../variables.scss';
+
 .staff-list {
   margin: 1rem;
+}
+
+.floating-card {
+  &__expand {
+    display: block;
+    position: absolute;
+      right: 0;
+      bottom: 0;
+    
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background: $clemson-purple;
+    border-radius: $border-radius 0 $border-radius 0;
+    border: 0;
+
+    background-image: url(../../static/img/down-chevron.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__children {
+    display: none;
+  }
 }
