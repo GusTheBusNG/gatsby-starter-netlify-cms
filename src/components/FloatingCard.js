@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 
-import './FloatingCard.scss';
+import './FloatingCard.scss'
 
-export const FloatingCard = ({ image, header, content, children, className }) => (
+const FloatingCard = ({ image, header, content, drawer, children, className }) => {
+  const [collapsed, setCollapsed] = useState(1)
+  
+  return (
   <div className={`floating-card ${className}`}>
     { !!image &&
       <img
@@ -14,12 +17,19 @@ export const FloatingCard = ({ image, header, content, children, className }) =>
     }
     <h3 className="floating-card__heading">{header}</h3>
     <p className="floating-card__content">{content}</p>
-    <div className="floating-card__children">
-      {children}
-    </div>
-    <button className="floating-card__expand"></button>
+    { !!drawer &&
+      <>
+        <button onClick={() => setCollapsed(!collapsed)} className="floating-card__expand"></button>
+        <p className={`floating-card__drawer  ${collapsed ? 'collapsed' : 'expanded'}`}>{drawer}</p>
+      </>
+    }
+    { !!children &&
+      <div className="floating-card__children">
+        {children}
+      </div>
+    } 
   </div>
-);
+)};
 
 FloatingCard.propTypes = {
   header: PropTypes.string.isRequired,
