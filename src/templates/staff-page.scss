@@ -2,9 +2,20 @@
 
 .staff-list {
   margin: 1rem;
+  display: flex;
+
+  flex-flow: column;
+  align-items: center;
+
+  @include desktop {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 }
 
-.floating-card {
+.staff-list .floating-card {
+  max-width: 30rem;
+
   &__expand {
     display: block;
     position: absolute;
@@ -25,5 +36,9 @@
   }
   &__children {
     display: none;
+  }
+
+  @include desktop {
+    margin: 0.5rem;
   }
 }
