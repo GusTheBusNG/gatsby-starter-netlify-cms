@@ -8,7 +8,7 @@ const FloatingCard = ({ image, header, content, drawer, children, className }) =
   const [height, setHeight] = useState(0)
   
   return (
-  <>
+  <div className="card-container">
     <div className={`floating-card ${className}`}>
       { !!image &&
         <img
@@ -34,12 +34,12 @@ const FloatingCard = ({ image, header, content, drawer, children, className }) =
       <AnimateHeight 
         duration={200}
         height={height}
-        className={`drawer  ${height === 'auto' ? 'expanded' : 'collapsed'}`}>
-          <p className="drawer__text">{drawer}</p>
+        className={`card-drawer  ${height === 'auto' ? 'expanded' : 'collapsed'}`}>
+          <p className="card-drawer__text">{drawer}</p>
       </AnimateHeight>
     
     }
-  </>
+  </div>
 )};
 
 FloatingCard.propTypes = {
