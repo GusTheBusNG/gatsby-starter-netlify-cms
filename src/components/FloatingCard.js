@@ -8,8 +8,8 @@ const FloatingCard = ({ image, header, content, drawer, children, className }) =
   const [height, setHeight] = useState(0)
   
   return (
-  <div className="card-container">
-    <div className={`floating-card ${className}`}>
+  <div className={`card-container ${className}`}>
+    <div className="floating-card">
       { !!image &&
         <img
           alt="icon"
