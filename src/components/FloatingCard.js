@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './FloatingCard.scss'
 
-const FloatingCard = ({ image, header, content, drawer, children, className }) => {
+const FloatingCard = ({ image, header, content, drawer, email, children, className }) => {
   const [height, setHeight] = useState(0)
   
   return (
@@ -36,6 +36,7 @@ const FloatingCard = ({ image, header, content, drawer, children, className }) =
         height={height}
         className={`card-drawer  ${height === 'auto' ? 'expanded' : 'collapsed'}`}>
           <p className="card-drawer__text">{drawer}</p>
+          <a className="card-drawer__link" href={`mailto: ${email}`}></a>
       </AnimateHeight>
     
     }

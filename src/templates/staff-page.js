@@ -25,12 +25,14 @@ export const StaffPageTemplate = ({
           image,
           name,
           title,
-          bio
+          bio,
+          email
         }) => (
           <FloatingCard
             header={name}
             content={title}
             drawer={bio}
+            email={email}
             image={image}
           />
         ))
@@ -83,6 +85,7 @@ export const pageQuery = graphql`
         staffList {
           name
           title
+          email
           bio
           image {
             childImageSharp {

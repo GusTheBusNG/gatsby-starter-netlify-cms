@@ -118,6 +118,7 @@ collections:
               - {label: Name, name: name, widget: text}
               - {label: Title, name: title, widget: text}
               - {label: Bio, name: bio, widget: text}
+              - {label: Email, name: email, widget: text}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

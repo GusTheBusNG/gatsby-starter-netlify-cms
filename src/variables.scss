@@ -1,5 +1,6 @@
 $clemson-orange: #F66733;
 $clemson-purple: #522D80;
+$light-purple: #733EB3;
 
 $background-white: #FCFCFC;
 $highlight-white: #FFFFFF;
@@ -22,6 +23,11 @@ body {
   font-family: $font-family;
   margin: 0;
   padding: 0;
+}
+
+a {
+  transition: none $transition-time $transition-timing;
+  transition-property: background-color, background-image, color;
 }
 
 // Small tablets and large smartphones (landscape view)
