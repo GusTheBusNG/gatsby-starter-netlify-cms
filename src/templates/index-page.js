@@ -24,7 +24,6 @@ export const IndexPageTemplate = ({
   ensembles
 }) => (
   <div className="home-page">
-    { console.log(logo) }
     <div 
       className="landing-content"
       style={{

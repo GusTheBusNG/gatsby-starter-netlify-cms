@@ -1,0 +1,59 @@
+@import '../variables.scss';
+
+.concert-parent {
+  padding-bottom: 2rem;
+
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.concert {
+  display: flex;
+  flex-wrap: nowrap;
+
+  border-radius: $border-radius;
+  background-color: $highlight-white;
+  box-shadow: $box-shadow;
+
+  margin: 0 1rem;
+
+  &__section {
+    width: 85vw;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+
+    &.description {
+      padding-top: 0.25rem;
+    }
+
+    &__image {
+      width: 100%;
+      object-fit: contain;
+      border-radius: $border-radius 0;
+
+      &.full-image {
+        height: 100%;
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+    }
+
+    &__description {
+      color: $subheading-text;
+      opacity: 80%;
+      margin: 0;
+      padding: 0.25rem;
+      font-size: 12pt;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
