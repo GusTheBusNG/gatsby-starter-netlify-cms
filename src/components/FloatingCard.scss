@@ -134,6 +134,7 @@
     &__link {
       display: block;
       margin: auto;
+      border: none;
       
       width: 2.5rem;
       height: 2.5rem;
@@ -144,6 +145,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-color: $clemson-purple;
+      color: transparent; // hide text in button but keep accessible for screen readers
 
       &:hover {
         background-color: $light-purple;

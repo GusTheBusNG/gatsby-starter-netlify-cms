@@ -4,11 +4,13 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  height: 100vh;
+  
 
   margin: 1rem;
 
   @include desktop {
+    height: 100vh;
+
     align-content: center;
     &::before, ::after {
       content: "";
