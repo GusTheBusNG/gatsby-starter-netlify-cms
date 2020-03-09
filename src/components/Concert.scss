@@ -5,8 +5,9 @@
 
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  position: relative;
   -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 
   &::-webkit-scrollbar {
     display: none;
@@ -20,6 +21,10 @@
   border-radius: $border-radius;
   background-color: $highlight-white;
   box-shadow: $box-shadow;
+
+  overflow-x: visible;
+  transition-property: transform;
+  will-change: transform;
 
   &__section {
     width: 80vw;
