@@ -5,7 +5,7 @@ import CardTitle from './CardTitle'
 // import Logo from '../img/logo.svg'
 
 import './Concert.scss';
-const IMG_WIDTH = 205;
+const IMG_WIDTH = 323;
 
 class Concert extends Component {
   wheelTimeout;
@@ -97,8 +97,6 @@ class Concert extends Component {
   };
   render() {
     const { currentIndex, movement, transitionDuration } = this.state;
-    const maxLength = 2;
-    const maxMovement = maxLength * IMG_WIDTH;
     const {
       photo: image,
       showTitle,
@@ -109,7 +107,6 @@ class Concert extends Component {
         buttonLink,
         buttonText
       },
-      location
     } = this.props.concert;
 
     return (
@@ -137,8 +134,13 @@ class Concert extends Component {
               showTitle && (<CardTitle subtitle={date} title={title} />)
             }
           </div>
-          <div className="concert__button">
-          </div>
+          <button
+            className="concert__button"
+            onClick={() => {
+              this.transitionTo(currentIndex === 0 ? 1 : 0 , 0.5);
+            }}
+          >
+          </button>
           <div className="concert__section description">
             <CardTitle subtitle={date} title={title} />
             <p className="concert__section__description">{description}</p>
@@ -146,8 +148,13 @@ class Concert extends Component {
               <Button link={buttonLink}>{buttonText}</Button>
             </div>
           </div>
-          <div className="concert__button">
-          </div>
+          <button
+            className="concert__button"
+            onClick={() => {
+              this.transitionTo(currentIndex <= 1 ? 2 : 1 , 0.5);
+            }}
+          >
+          </button>
           <div className="concert__section description">
             <CardTitle subtitle={date} title={title} />
             <p className="concert__section__description">{description}</p>
@@ -159,23 +166,3 @@ class Concert extends Component {
 }
 
 export default Concert;
-
-// {movement !== 0 && (
-//   <button
-//     className="back move"
-//     onClick={() => {
-//       this.transitionTo(currentIndex - 1, 0.5);
-//     }}
-//   >
-//     ←
-//   </button>
-// )}
-// {movement !== maxMovement && (
-//   <button
-//     className="next move"
-//     onClick={() => {
-//       this.transitionTo(currentIndex + 1, 0.5);
-//     }}
-//   >
-//     →
-//   </button>
