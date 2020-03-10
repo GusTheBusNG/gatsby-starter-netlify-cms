@@ -99,6 +99,26 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/staff/index.md"
+        label: "Staff Page"
+        name: staff
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "staff-page"}
+          - label: Heading
+            name: staffHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string}
+              - {label: "Bottom Text", name: bottomText, widget: string}
+          - label: Staff
+            name: staffList
+            widget: list
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Name, name: name, widget: text}
+              - {label: Title, name: title, widget: text}
+              - {label: Bio, name: bio, widget: text}
+              - {label: Email, name: email, widget: text}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
