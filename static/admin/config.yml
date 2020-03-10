@@ -99,6 +99,30 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/major/index.md"
+        label: "Major Page"
+        name: major
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "major-page"}
+          - label: Heading
+            name: majorHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string}
+              - {label: "Bottom Text", name: bottomText, widget: string}
+          - {label: Subheading, name: subheading, widget: string}
+          - {label: About, name: about, widget: string}
+          - {label: Button, name: button, widget: object, fields: [
+              {label: "Button Label", name: buttonText, widget: string},
+              {label: "Button Link", name: buttonLink, widget: string}
+            ]}
+          - {label: "Second Subheading", name: subheadingTwo, widget: string}
+          - {label: "Audition Information", name: majorAuditionInfo, widget: list, fields: [
+              {label: Image, name: image, widget: image},
+              {label: Heading, name: heading, widget: text},
+              {label: Text, name: text, widget: text}
+            ]}
+          - {label: "Third Subheading", name: subheadingThree, widget: string}
       - file: "src/pages/staff/index.md"
         label: "Staff Page"
         name: staff
