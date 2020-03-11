@@ -1,1 +1,21 @@
 @import '../variables.scss';
+
+.major {
+  background-color: #FDFDFD;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1.25rem;
+
+    @include desktop {
+      max-width: 30rem;
+    }
+  }
+}

@@ -2,8 +2,8 @@
 templateKey: major-page
 title: Major
 majorHeading: 
-  bottomText: Major
-  topText: Clemson Vocal Arts
+  bottomText: Major  
+  topText: Clemson Vocal Arts  
 subheading: Major in Vocal Arts
 about: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

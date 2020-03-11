@@ -19,37 +19,41 @@ export const MajorPageTemplate = ({
   majorAuditionInfo,
   subheadingThree
 }) => (
-  <div className="major-page">
-    <Header topText={topText} bottomText={bottomText} />
-    <TextContent header={subheading} content={about} />
-    <Button link={buttonLink}>
-      {buttonText}
-    </Button>
-    <Subheading>{subheadingTwo}</Subheading>
+  <div className="major">
+    <div className="major__content">
+      <Header topText={topText} bottomText={bottomText} />
+      <TextContent header={subheading} content={about} />
+      <Button link={buttonLink}>
+        {buttonText}
+      </Button>
+      <Subheading>{subheadingTwo}</Subheading>
 
-    {
-      majorAuditionInfo ?
-        majorAuditionInfo.map(({ image, heading, text }) => (
-          <FloatingCard
-            image={image}
-            header={heading}
-            content={text}
-          />
-        )) : null
-    }
+      <div className="major__content__auditions">
+        {
+          majorAuditionInfo ?
+            majorAuditionInfo.map(({ image, heading, text }) => (
+              <FloatingCard
+                image={image}
+                header={heading}
+                content={text}
+              />
+            )) : null
+        }
+      </div>
 
-    <Subheading>{subheadingThree}</Subheading>
+      <Subheading>{subheadingThree}</Subheading>
+    </div>
   </div>
 );
 
 MajorPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  header: PropTypes.object,
+  majorHeading: PropTypes.object,
   subheading: PropTypes.string,
   about: PropTypes.string,
   button: PropTypes.object,
   subheadingTwo: PropTypes.string,
-  auditionInformation: PropTypes.array,
+  majorAuditionInfo: PropTypes.array,
   subheadingThree: PropTypes.string,
 }
 
@@ -65,7 +69,7 @@ const MajorPage = ({ data }) => {
 
   return (
     <MajorPageTemplate
-      header={frontmatter.header}
+      majorHeading={frontmatter.majorHeading}
       subheading={frontmatter.subheading}
       about={frontmatter.about}
       button={frontmatter.button}
