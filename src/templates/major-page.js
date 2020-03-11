@@ -53,6 +53,13 @@ MajorPageTemplate.propTypes = {
   subheadingThree: PropTypes.string,
 }
 
+MajorPageTemplate.defaultProps = {
+  majorHeading: {
+    topText: 'Top heading text',
+    bottomText: 'bottom heading text'
+  },
+}
+
 const MajorPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
