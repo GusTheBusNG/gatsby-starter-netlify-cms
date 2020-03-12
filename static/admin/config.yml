@@ -108,8 +108,8 @@ collections:
             name: majorHeading
             widget: object
             fields:
-              - {label: "Top Text", name: topText, widget: string}
-              - {label: "Bottom Text", name: bottomText, widget: string}
+              - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
+              - {label: "Bottom Text", name: bottomText, widget: string, default: "Major"}
           - {label: Subheading, name: subheading, widget: string}
           - {label: About, name: about, widget: string}
           - {label: Button, name: button, widget: object, fields: [
@@ -132,8 +132,8 @@ collections:
             name: staffHeading
             widget: object
             fields:
-              - {label: "Top Text", name: topText, widget: string}
-              - {label: "Bottom Text", name: bottomText, widget: string}
+              - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
+              - {label: "Bottom Text", name: bottomText, widget: string, default: "Staff"}
           - label: Staff
             name: staffList
             widget: list

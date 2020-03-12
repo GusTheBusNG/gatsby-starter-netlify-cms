@@ -46,13 +46,6 @@ StaffPageTemplate.propTypes = {
   staffList: PropTypes.array
 }
 
-StaffPageTemplate.defaultProps = {
-  staffHeading: {
-    topText: 'Top heading text',
-    bottomText: 'bottom heading text'
-  },
-}
-
 const StaffPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
