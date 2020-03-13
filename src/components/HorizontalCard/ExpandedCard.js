@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import CardTitle from '../CardTitle';
 import Button from '../Button';
 
@@ -12,6 +12,11 @@ const ExpandedCard = ({
   button: {
     buttonLink,
     buttonText
+  },
+  showLocation,
+  secondDescription: {
+    subtitle,
+    description: secondDescription
   }
 }) => (
   <div className="expanded-card">
@@ -23,6 +28,14 @@ const ExpandedCard = ({
     <div className="expanded-card__description">
       <CardTitle subtitle={date} title={title} />
       <p className="expanded-card__description__text">{description}</p>
+      {
+        !showLocation && (
+          <Fragment>
+            <CardTitle subtitle={subtitle} />
+            <p className="expanded-card__description__text">{secondDescription}</p>
+          </Fragment>
+        )
+      }
       <div className="expanded-card__description__button">
         <Button link={buttonLink}>{buttonText}</Button>
       </div>

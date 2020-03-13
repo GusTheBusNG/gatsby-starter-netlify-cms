@@ -127,6 +127,11 @@ class HorizontalCard extends Component {
         buttonLink,
         buttonText
       },
+      showLocation,
+      secondDescription: {
+        subtitle,
+        description: secondDescription
+      }
     } = this.props;
 
     return (
@@ -175,10 +180,19 @@ class HorizontalCard extends Component {
             }}
           >
           </button>
-          <div className="concert__section description">
-            <CardTitle subtitle={date} title={title} />
-            <p className="concert__section__description">{description}</p>
-          </div>
+          {
+            showLocation ? (
+              <div className="concert__section description">
+                <CardTitle subtitle={date} title={title} />
+                <p className="concert__section__description">Still need to add a location thing</p>
+              </div>
+            ) : (
+              <div className="concert__section description">
+                <CardTitle subtitle={subtitle} title={title} />
+                <p className="concert__section__description">{secondDescription}</p>
+              </div>
+            )
+          }
         </div>
       </div>
     );

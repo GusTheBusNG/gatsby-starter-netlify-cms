@@ -82,6 +82,11 @@ export const pageQuery = graphql`
               }
             }
           }
+          showLocation
+          secondDescription {
+            subtitle
+            description
+          }
         }
       }
     }
