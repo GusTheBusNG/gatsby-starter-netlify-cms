@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 .concert-parent {
-  padding: 0 1rem 2rem;
+  padding: 0 1rem 1rem;
 
   display: flex;
   flex-wrap: nowrap;
@@ -36,6 +36,7 @@
 
     &__image {
       width: 100%;
+      height: calc(100% - 50px);
       object-fit: cover;
       border-radius: $border-radius 0;
 

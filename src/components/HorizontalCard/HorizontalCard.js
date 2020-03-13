@@ -127,7 +127,7 @@ class HorizontalCard extends Component {
         buttonLink,
         buttonText
       },
-    } = this.props.concert;
+    } = this.props;
 
     return (
       <div

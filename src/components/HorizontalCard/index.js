@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HorizontalCard from './HorizontalCard';
+import ExpandedCard from './ExpandedCard';
 
 class HorizontalCardWrapper extends Component {
   constructor(props) {
@@ -27,11 +28,12 @@ class HorizontalCardWrapper extends Component {
 
   render() {
     const { screenWidth } = this.state;
+    const { concert } = this.props;
 
     if (screenWidth > 530) {
-      return <p>hello</p>
+      return <ExpandedCard {...concert} {...this.props} />
     } else {
-      return <HorizontalCard {...this.props} />
+      return <HorizontalCard {...concert} {...this.props} />
     }
   }
 }

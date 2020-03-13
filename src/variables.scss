@@ -1,7 +1,7 @@
 $clemson-orange: #F66733;
 $clemson-purple: #522D80;
 
-$background-white: #F1F1F1;
+$background-white: #FAFAFA;
 $highlight-white: #FFFFFF;
 
 $border-radius: 10px;
@@ -21,6 +21,9 @@ body {
   background-color: $background-white;
 }
 
+// Even smaller screens (mainly used for the horizontal card)
+$screen-mobile-portrait: 530px;
+
 // Small tablets and large smartphones (landscape view)
 $screen-mobile: 576px;
 
@@ -34,29 +37,37 @@ $screen-desktop: 992px;
 $screen-xl-desktop: 1200px;
 
 // Small devices
+@mixin sm-mobile {
+	@media (min-width: #{$screen-mobile-portrait}) {
+		@content;
+	}
+}
+
+
+// Small devices
 @mixin mobile {
-    @media (min-width: #{$screen-mobile}) {
-        @content;
-    }
+	@media (min-width: #{$screen-mobile}) {
+		@content;
+	}
  }
  
  // Medium devices
  @mixin tablet {
-    @media (min-width: #{$screen-tablet}) {
-        @content;
-    }
+	@media (min-width: #{$screen-tablet}) {
+		@content;
+	}
  }
  
  // Large devices
  @mixin desktop {
-    @media (min-width: #{$screen-desktop}) {
-        @content;
-    }
+	@media (min-width: #{$screen-desktop}) {
+		@content;
+	}
  }
  
  // Extra large devices
  @mixin xl-desktop {
-    @media (min-width: #{$screen-xl-desktop}) {
-        @content;
-    }
+	@media (min-width: #{$screen-xl-desktop}) {
+		@content;
+	}
 }
