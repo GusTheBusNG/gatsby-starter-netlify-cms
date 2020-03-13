@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
-import Button from './Button'
-import CardTitle from './CardTitle'
+import Button from '../Button'
+import CardTitle from '../CardTitle'
 
-import './Concert.scss';
+import './HorizontalCard.scss';
 
-class Concert extends Component {
+class HorizontalCard extends Component {
   wheelTimeout;
   transitionTimeout;
   constructor(props) {
@@ -186,4 +185,4 @@ class Concert extends Component {
   }
 }
 
-export default Concert;
+export default HorizontalCard;

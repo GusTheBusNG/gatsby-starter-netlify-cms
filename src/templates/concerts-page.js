@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header';
-import Concert from '../components/Concert';
+import HorizontalCard from '../components/HorizontalCard';
 
 import './concerts-page.scss'
 
@@ -20,7 +20,7 @@ export const ConcertsPageTemplate = ({
       bottomText={bottomText}
     />
     {
-      concerts && concerts.map(concert => (<Concert key={concert.title} concert={concert} /> ))
+      concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
     }
   </div>
 );
