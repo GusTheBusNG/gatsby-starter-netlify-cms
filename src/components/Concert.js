@@ -2,23 +2,45 @@ import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import Button from './Button'
 import CardTitle from './CardTitle'
-// import Logo from '../img/logo.svg'
 
 import './Concert.scss';
-const IMG_WIDTH = 323;
 
 class Concert extends Component {
   wheelTimeout;
   transitionTimeout;
-  lastTouch = 0;
-  state = {
-    currentIndex: 0,
-    movement: 0,
-    transitionDuration: "0s",
-  };
+  constructor(props) {
+    super(props);
+    this.lastTouch = 0;
+    this.state = {
+      currentIndex: 0,
+      movement: 0,
+      transitionDuration: "0s",
+      movementMultiplier: 0
+    };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
   componentWillUnmount = () => {
     clearTimeout(this.transitionTimeout);
+    window.removeEventListener('resize', this.updateWindowDimensions);
   };
+
+  updateWindowDimensions() {
+    let change = 0;
+
+    if (window.innerWidth < 370) change = 0.885; else
+    if (window.innerWidth < 400) change = 0.86; else
+    if (window.innerWidth < 430) change = 0.85; else
+    if (window.innerWidth < 460) change = 0.84; else 
+    if (window.innerWidth < 490) change = 0.83;
+    else change = 0.82;
+    this.setState({ movementMultiplier: window.innerWidth*change });
+  }
 
   handleTouchStart = e => {
     this.lastTouch = e.nativeEvent.touches[0].clientX;
@@ -49,9 +71,8 @@ class Concert extends Component {
       if (nextMovement < 0) {
         nextMovement = 0;
       }
-
-      if (nextMovement > maxLength * IMG_WIDTH) {
-        nextMovement = maxLength * IMG_WIDTH;
+      if (nextMovement > maxLength * state.movementMultiplier) {
+        nextMovement = maxLength * state.movementMultiplier;
       }
 
       return {
@@ -62,9 +83,9 @@ class Concert extends Component {
   };
 
   handleMovementEnd = () => {
-    const { movement, currentIndex } = this.state;
+    const { movement, currentIndex, movementMultiplier } = this.state;
 
-    const endPosition = movement / IMG_WIDTH;
+    const endPosition = movement / movementMultiplier;
     const endPartial = endPosition % 1;
     const endingIndex = endPosition - endPartial;
     const deltaInteger = endingIndex - currentIndex;
@@ -85,11 +106,11 @@ class Concert extends Component {
     this.transitionTo(nextIndex, Math.min(0.5, 1 - Math.abs(endPartial)));
   };
   transitionTo = (index, duration) => {
-    this.setState({
+    this.setState(state => ({
       currentIndex: index,
-      movement: index * IMG_WIDTH,
+      movement: index * state.movementMultiplier,
       transitionDuration: `${duration}s`,
-    });
+    }));
 
     this.transitionTimeout = setTimeout(() => {
       this.setState({ transitionDuration: "0s" });
