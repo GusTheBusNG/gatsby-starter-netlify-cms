@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { ConcertPageTemplate } from '../../pages/concerts';
+import { ConcertsPageTemplate } from '../../templates/concerts-page';
 
 const ConcertPagePreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS();
@@ -12,7 +12,7 @@ const ConcertPagePreview = ({ entry }) => {
     concerts
   } = data;
 
-  return <ConcertPageTemplate heading={heading} concerts={concerts} />;
+  return <ConcertsPageTemplate heading={heading} concerts={concerts} />;
 }
 
 ConcertPagePreview.propTypes = {
