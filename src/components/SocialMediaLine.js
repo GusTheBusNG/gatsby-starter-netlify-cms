@@ -2,16 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './SocialMediaLine.scss';
+import Image from './Image';
 
 export const SocialMediaLine = ({ socialMedia, className }) => (
   <div className={`social-media-line ${className}`}>
     {
       socialMedia.map(({ icon, link }) => (
         <a key={link} href={link}>
-          <img
+          <Image
             alt="Social Media Icon"
             className="social-media-line__icon"
-            src={!!icon.childImageSharp ? icon.childImageSharp.fluid.src : icon}
+            image={icon}
           />
         </a>
       ))

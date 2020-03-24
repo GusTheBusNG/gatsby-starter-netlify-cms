@@ -3,6 +3,7 @@ import AnimateHeight from 'react-animate-height'
 import PropTypes from 'prop-types'
 
 import './FloatingCard.scss'
+import Image from './Image';
 
 const FloatingCard = ({ image, header, content, drawer, email, children, className }) => {
   const [height, setHeight] = useState(0)
@@ -11,10 +12,10 @@ const FloatingCard = ({ image, header, content, drawer, email, children, classNa
   <div className={`card-container ${className}`}>
     <div className="floating-card">
       { !!image &&
-        <img
+        <Image
           alt="icon"
           className="floating-card__image"
-          src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
+          image={image}
         />
       }
       <h3 className="floating-card__heading">{header}</h3>
