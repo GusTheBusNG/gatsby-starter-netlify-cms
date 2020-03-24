@@ -71,6 +71,8 @@
     border: none;
     border-radius: $border-radius $border-radius 0 0;
 
+    cursor: pointer;
+
     &::after {
       content: ".";
       color: white;
