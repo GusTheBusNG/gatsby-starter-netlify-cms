@@ -1,0 +1,40 @@
+@import '../variables.scss';
+
+.staff-list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  
+
+  margin: 1rem;
+
+  @include desktop {
+    height: 100vh;
+
+    align-content: center;
+    &::before, ::after {
+      content: "";
+      flex-basis: 100%;
+      width: 0;
+      order: 2;
+    }
+  }
+}
+
+.staff-list .card-container {
+  max-width: 30rem;
+
+  @include desktop {
+    margin: 0.5rem;
+
+    &:nth-child(3n+1) {
+      order: 1;
+    }
+    &:nth-child(3n+2) {
+      order: 2;
+    }
+    &:nth-child(3n) {
+      order: 3;
+    }
+  }
+}
