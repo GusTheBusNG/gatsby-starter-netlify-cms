@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react';
 import Button from '../Button'
 import CardTitle from '../CardTitle'
 
@@ -117,6 +117,7 @@ class HorizontalCard extends Component {
   };
   render() {
     const { currentIndex, movement, transitionDuration } = this.state;
+    const [clicked, setClicked] = useState(0);
     const {
       photo: image,
       showTitle,
@@ -160,9 +161,10 @@ class HorizontalCard extends Component {
             }
           </div>
           <button
-            className="concert__button"
+            className={`concert__button ${clicked === 1 ? 'prev' : 'next'}`}
             onClick={() => {
-              this.transitionTo(currentIndex === 0 ? 1 : 0 , 0.5);
+              this.transitionTo(currentIndex === 0 ? 1 : 0 , 0.5)
+              setClicked(clicked === 0 ? 1 : 0)
             }}
           >
           </button>
@@ -174,9 +176,10 @@ class HorizontalCard extends Component {
             </div>
           </div>
           <button
-            className="concert__button"
+            className={`concert__button ${clicked === 1 ? 'prev' : 'next'}`}
             onClick={() => {
-              this.transitionTo(currentIndex <= 1 ? 2 : 1 , 0.5);
+              this.transitionTo(currentIndex <= 1 ? 2 : 1 , 0.5)
+              setClicked(clicked === 0 ? 1 : 0)
             }}
           >
           </button>
