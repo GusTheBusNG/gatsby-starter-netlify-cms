@@ -9,6 +9,7 @@ import Image from '../components/Image';
 import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 
 import './index-page.scss'
+import Navbar from '../components/Navbar'
 
 export const IndexPageTemplate = ({
   logo,
@@ -25,6 +26,7 @@ export const IndexPageTemplate = ({
   ensembles
 }) => (
   <div className="home-page">
+    <Navbar active='home' />
     <div 
       className="landing-content"
       style={{

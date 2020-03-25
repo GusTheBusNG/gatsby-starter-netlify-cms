@@ -1,101 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import HamburgerMenu from 'react-hamburger-menu'
+import './Navbar.scss'
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
-  }
+const Navbar = ({ active }) => {
+  const [open, setOpen] = useState(false)
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
+  return (
+    <nav className="navbar">
+      <div className="navbar__hamburger-menu">
+        <HamburgerMenu
+          isOpen={open}
+          menuClicked={() => setOpen(!open)}
+          width={32}
+          height={20}
+          strokeWidth={2}
+          color='#F66733'
+          borderRadius={20}
+          animationDuration={0.5}
+        />
+      </div>
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              tabindex="0"
-              onKeyDown={() => console.log('pressed hamburger')}
-              role="button"
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
+      <div className={`slider ${open && 'open'}`}>
+        <Link to="/">
+          <h2 className={`link ${active === 'home' && 'active'}`}>
+            <span role="img" aria-label="Home">🏡</span> Home
+          </h2>
+        </Link>
+        <Link to="/concerts">
+          <h2 className={`link ${active === 'concerts' && 'active'}`}>
+            <span role="img" aria-label="Concerts">🎵</span> Concerts
+          </h2>
+        </Link>
+        <Link to="/major">
+          <h2 className={`link ${active === 'graduate' && 'active'}`}>
+            <span role="img" aria-label="Graduate">🎓</span> Major
+          </h2>
+        </Link>
+        <Link to="/staff">
+          <h2 className={`link ${active === 'staff' && 'active'}`}>
+            <span role="img" aria-label="Staff">👨‍🏫</span> Staff
+          </h2>
+        </Link>
+        <Link to="/outreach">
+          <h2 className={`link ${active === 'outreach' && 'active'}`}>
+            <span role="img" aria-label="Outreach">🤝</span> Outreach Programs
+          </h2>
+        </Link>
+      </div>
+    </nav>
+  )
+}
+
+Navbar.defaultProps = {
+  active: 'home'
+}
+
+Navbar.propTypes = {
+  active: PropTypes.oneOf([
+    'home',
+    'concerts',
+    'ensembles',
+    'graduate',
+    'staff',
+    'outreach'
+  ]).isRequired
 }
 
 export default Navbar

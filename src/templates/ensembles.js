@@ -10,6 +10,7 @@ import Subheading from '../components/Subheading';
 import './ensembles.scss';
 import FloatingCard from '../components/FloatingCard';
 import { BackgroundImageDiv } from '../components/Image';
+import Navbar from '../components/Navbar';
 
 export const EnsemblesTemplate = ({
   image,
@@ -21,6 +22,7 @@ export const EnsemblesTemplate = ({
   auditionInformation
 }) => (
   <div className="ensembles">
+    <Navbar active='ensembles' />
     <BackgroundImageDiv
       className="top-image"
       image={image}

@@ -1,0 +1,51 @@
+@import '../variables.scss';
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+
+  &__hamburger-menu {
+    margin: 0.5rem;
+    padding: 0.6rem 0.5rem;
+
+    border: 2px solid $clemson-orange;
+    border-radius: 10px;
+  }
+  
+  .slider {
+    position: fixed;
+    height: 100%;
+    top: 0;
+
+    z-index: -1;
+
+    background-color: $background-white;
+    border-radius: 0 $border-radius;
+
+    transition: left 0.5s;
+    left: -20rem;
+    &.open { left: 0; }
+
+    padding-top: 4rem;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .link {
+      font-size: 28px;
+      margin: 1rem;
+      padding: 0.25rem;
+      font-weight: normal;
+      color: $subheading-text;
+
+      border-radius: $border-radius;
+
+      &.active {
+        background-color: $clemson-orange;
+        color: $highlight-white;
+      }
+    }
+  }
+}

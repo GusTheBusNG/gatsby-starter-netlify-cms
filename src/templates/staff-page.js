@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import FloatingCard from '../components/FloatingCard'
 
 import './staff-page.scss'
+import Navbar from '../components/Navbar';
 
 export const StaffPageTemplate = ({
   staffHeading: {
@@ -15,6 +16,7 @@ export const StaffPageTemplate = ({
   staffList
 }) => (
   <div className="staff-page">
+    <Navbar active='staff' />
     <Header
       topText={topText}
       bottomText={bottomText}
