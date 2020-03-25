@@ -49,6 +49,34 @@ const Navbar = ({ active }) => {
           </h2>
         </Link>
       </div>
+
+      <div className="desktop">
+        <Link to="/">
+          <h2 className={`link ${active === 'home' && 'active'}`}>
+            Home
+          </h2>
+        </Link>
+        <Link to="/concerts">
+          <h2 className={`link ${active === 'concerts' && 'active'}`}>
+            Concerts
+          </h2>
+        </Link>
+        <Link to="/major">
+          <h2 className={`link ${active === 'graduate' && 'active'}`}>
+            Major
+          </h2>
+        </Link>
+        <Link to="/staff">
+          <h2 className={`link ${active === 'staff' && 'active'}`}>
+            Staff
+          </h2>
+        </Link>
+        <Link to="/outreach">
+          <h2 className={`link ${active === 'outreach' && 'active'}`}>
+            Outreach Programs
+          </h2>
+        </Link>
+      </div>
     </nav>
   )
 }
