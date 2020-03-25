@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.concerts-page {
+  background-color: $background-white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include sm-mobile {
+    padding: 0 0.5rem;
+    align-items: center;
+
+  }
+}
