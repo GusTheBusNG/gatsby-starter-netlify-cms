@@ -123,6 +123,40 @@ collections:
               {label: Text, name: text, widget: text}
             ]}
           - {label: "Third Subheading", name: subheadingThree, widget: string}
+      - file: "src/pages/concerts/index.md"
+        label: Concerts
+        name: concerts
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "concerts-page"}
+          - label: Heading
+            name: concertsPageHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
+              - {label: "Bottom Text", name: bottomText, widget: string, default: "Concerts"}
+          - label: Concerts
+            name: concerts
+            widget: list
+            fields:
+              - {label: "Hook Photo", name: photo, widget: string}
+              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
+              - {label: "Title", name: title, widget: string, default: "Example Title"}
+              - {label: "Date", name: date, widget: datetime, dateFormat: "MMM Do, YYYY", timeFormat: "hh:mm a"}
+              - {label: "Long description", name: description, widget: text, default: "This is the long description"}
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - {label: "Button Label", name: buttonText, widget: string}
+                  - {label: "Button Link", name: buttonLink, widget: string}
+              - {label: "Show location on the last part of the slider", name: showLocation, widget: boolean, default: true}
+              - {label: "Location", name: location, widget: map, default: '{type": "FeatureCollection","features": [{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [-82.836012840271,34.67347479873117]}}]}'}
+              - label: "Second description (for the last part if no location)"
+                name: secondDescription
+                widget: object
+                fields:
+                  - {label: Subtitle, name: subtitle, widget: string, default: "Example Subtitle"}
+                  - {label: Description, name: description, widget: text, default: "Example description"}
       - file: "src/pages/staff/index.md"
         label: "Staff Page"
         name: staff

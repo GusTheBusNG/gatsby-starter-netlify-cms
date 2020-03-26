@@ -9,6 +9,7 @@ import Subheading from '../components/Subheading';
 
 import './ensembles.scss';
 import FloatingCard from '../components/FloatingCard';
+import { BackgroundImageDiv } from '../components/Image';
 
 export const EnsemblesTemplate = ({
   image,
@@ -20,14 +21,10 @@ export const EnsemblesTemplate = ({
   auditionInformation
 }) => (
   <div className="ensembles">
-    <div
+    <BackgroundImageDiv
       className="top-image"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    ></div>
+      image={image}
+    />
 
     <div className="ensembles__content">
       <Header topText={topText} bottomText={bottomText} />
@@ -98,6 +95,7 @@ export const pageQuery = graphql`
           bottomText
         }
         image {
+          publicURL
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
@@ -113,6 +111,7 @@ export const pageQuery = graphql`
         subheadingTwo
         auditionInformation {
           image {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 240, quality: 64) {
                 ...GatsbyImageSharpFluid

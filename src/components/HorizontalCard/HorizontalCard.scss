@@ -1,0 +1,95 @@
+@import '../../variables.scss';
+
+.concert-parent {
+  padding: 0 1rem 1rem;
+
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.concert {
+  display: flex;
+  flex-wrap: nowrap;
+
+  border-radius: $border-radius;
+  background-color: $highlight-white;
+  box-shadow: $box-shadow;
+
+  overflow-x: visible;
+  transition-property: transform;
+  will-change: transform;
+
+  &__section {
+    width: 80vw;
+    padding-bottom: 0.5rem;
+
+    &.description {
+      padding-top: 0.25rem;
+    }
+
+    &__image {
+      width: 100%;
+      height: calc(100% - 50px);
+      object-fit: cover;
+      border-radius: $border-radius 0;
+
+      &.full-image {
+        height: 100%;
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+    }
+
+    &__description {
+      color: $subheading-text;
+      opacity: 80%;
+      margin: 0;
+      padding: 0.25rem;
+      font-size: 12pt;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-self: flex-end;
+    background-color: $clemson-purple;
+
+    margin: 0 0.4rem;
+    border: none;
+    border-radius: $border-radius $border-radius 0 0;
+
+    cursor: pointer;
+
+    &::after {
+      content: ".";
+      color: white;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      background-image: url(../../../static/img/chevron.svg);
+      background-size: 80%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: rotate(-90deg);
+      transition: transform $transition-time $transition-timing;
+    }
+
+    &.rotate::after {
+      transform: rotate(90deg);
+    }
+  }
+}

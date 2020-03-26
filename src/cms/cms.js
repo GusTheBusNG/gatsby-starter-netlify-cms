@@ -7,6 +7,7 @@ import AboutPagePreview from './preview-templates/AboutPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
+import ConcertPagePreview from './preview-templates/ConcertPagePreview'
 import StaffPagePreview from './preview-templates/StaffPagePreview'
 import MajorPagePreview from './preview-templates/MajorPagePreview'
 
@@ -20,3 +21,4 @@ CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('ensembles', EnsemblePreview)
 CMS.registerPreviewTemplate('major', MajorPagePreview)
+CMS.registerPreviewTemplate('concerts', ConcertPagePreview)
