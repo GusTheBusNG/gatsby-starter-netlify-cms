@@ -5,13 +5,13 @@
   flex-flow: column wrap;
   align-items: center;
   
-
-  margin: 1rem;
+  margin: 1rem auto;
 
   @include desktop {
     height: 100vh;
 
     align-content: center;
+
     &::before, ::after {
       content: "";
       flex-basis: 100%;
@@ -22,19 +22,17 @@
 }
 
 .staff-list .card-container {
+  width: 30vw;
   max-width: 30rem;
 
   @include desktop {
     margin: 0.5rem;
 
-    &:nth-child(3n+1) {
+    &:nth-child(3n) {
       order: 1;
     }
-    &:nth-child(3n+2) {
+    &:nth-child(3n+1) {
       order: 2;
-    }
-    &:nth-child(3n) {
-      order: 3;
     }
   }
 }
