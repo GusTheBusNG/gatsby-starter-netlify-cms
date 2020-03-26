@@ -30,8 +30,8 @@ subheadingThree: Stories
 stories:
   - photo: /img/cu-singers.jpg
     showTitle: true
-    title: CU Singers
-    date: Some date here
+    title: Trey Lockett
+    date: Graduated Spring 2019
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     button:
@@ -41,9 +41,9 @@ stories:
       subtitle: Where he is now
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   - photo: /img/cu-singers.jpg
-    showTitle: false
-    title: CU Singers 2
-    date: Some date here
+    showTitle: true
+    title: Josh Rogers
+    date: Graduated Spring 2019
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
