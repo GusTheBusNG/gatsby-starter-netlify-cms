@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import CardTitle from '../CardTitle';
 import Button from '../Button';
 
@@ -25,21 +25,21 @@ const ExpandedCard = ({
       className="expanded-card__image"
       src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
     />
-    <div className="expanded-card__description">
-      <CardTitle subtitle={date} title={title} />
-      <p className="expanded-card__description__text">{description}</p>
-      {
-        !showLocation && (
-          <Fragment>
-            <CardTitle subtitle={subtitle} />
-            <p className="expanded-card__description__text">{secondDescription}</p>
-          </Fragment>
-        )
-      }
-      <div className="expanded-card__description__button">
-        <Button link={buttonLink}>{buttonText}</Button>
-      </div>
-    </div>
+    { 
+      !showLocation && (
+        <div className="expanded-card__description">
+          <CardTitle subtitle={date} title={title} />
+          <p className="expanded-card__description__text">{description}</p>
+          
+          <CardTitle subtitle={subtitle} />
+          <p className="expanded-card__description__text">{secondDescription}</p>
+            
+          <div className="expanded-card__description__button">
+            <Button link={buttonLink}>{buttonText}</Button>
+          </div>
+        </div>
+      )
+    }
   </div>
 )
 
