@@ -123,6 +123,28 @@ collections:
               {label: Text, name: text, widget: text}
             ]}
           - {label: "Third Subheading", name: subheadingThree, widget: string}
+          - label: Stories
+            name: stories
+            widget: list
+            fields:
+              - {label: "Hook Photo", name: photo, widget: string}
+              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
+              - {label: "Title", name: title, widget: string, default: "Example Title"}
+              - {label: "Date", name: date, widget: datetime, dateFormat: "MMM Do, YYYY", timeFormat: "hh:mm a"}
+              - {label: "Long description", name: description, widget: text, default: "This is the long description"}
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - {label: "Button Label", name: buttonText, widget: string}
+                  - {label: "Button Link", name: buttonLink, widget: string}
+              - label: "Second description"
+                name: secondDescription
+                widget: object
+                fields:
+                  - {label: Subtitle, name: subtitle, widget: string, default: "Example Subtitle"}
+                  - {label: Description, name: description, widget: text, default: "Example description"}
+
       - file: "src/pages/concerts/index.md"
         label: Concerts
         name: concerts

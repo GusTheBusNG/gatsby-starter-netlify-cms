@@ -20,7 +20,7 @@ export const ConcertsPageTemplate = ({
       bottomText={bottomText}
     />
     {
-      concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
+      concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
     }
   </div>
 );
