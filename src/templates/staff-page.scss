@@ -6,33 +6,12 @@
   align-items: center;
   
   margin: 1rem auto;
-
-  @include desktop {
-    height: 100vh;
-
-    align-content: center;
-
-    &::before, ::after {
-      content: "";
-      flex-basis: 100%;
-      width: 0;
-      order: 2;
-    }
-  }
 }
 
 .staff-list .card-container {
-  width: 30vw;
   max-width: 30rem;
 
   @include desktop {
     margin: 0.5rem;
-
-    &:nth-child(3n) {
-      order: 1;
-    }
-    &:nth-child(3n+1) {
-      order: 2;
-    }
   }
 }
