@@ -4,8 +4,9 @@ import { graphql } from 'gatsby'
 
 import FloatingCard from '../components/FloatingCard'
 import SocialMediaLine from '../components/SocialMediaLine'
-import Header from '../components/Header';
-import Image from '../components/Image';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Image from '../components/Image'
 import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 
 import './index-page.scss'
@@ -25,57 +26,60 @@ export const IndexPageTemplate = ({
   ensembles
 }) => (
   <div className="home-page">
-    <div 
-      className="landing-content"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent 60%),
-        url(${
-          !!backgroundImage.childImageSharp ?
-            backgroundImage.childImageSharp.fluid.src :
-            backgroundImage
-        })`,
-      }}
-    >
-      <Image
-        alt={topText}
-        className="landing-content__logo"
-        image={logo}
-      />
+    <div className="home-page__content">
+      <div 
+        className="landing-content"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent 60%),
+          url(${
+            !!backgroundImage.childImageSharp ?
+              backgroundImage.childImageSharp.fluid.src :
+              backgroundImage
+          })`,
+        }}
+      >
+        <Image
+          alt={topText}
+          className="landing-content__logo"
+          image={logo}
+        />
 
-      <FloatingCard
-        className="landing-content__mission-statement"
-        header={missionStatementHeading}
-        content={missionStatementContent}
-      />
+        <FloatingCard
+          className="landing-content__mission-statement"
+          header={missionStatementHeading}
+          content={missionStatementContent}
+        />
 
-      <SocialMediaLine
-        className="landing-content__social-media"
-        socialMedia={socialMedia}
-      />
+        <SocialMediaLine
+          className="landing-content__social-media"
+          socialMedia={socialMedia}
+        />
+      </div>
+
+      <div className="ensembles-list">
+        <Header
+          topText={topText}
+          bottomText={bottomText}
+        />
+        {
+          ensembles && ensembles.map(({
+            button,
+            description,
+            heading,
+            image
+          }) => (
+            <FloatingCardWithBigPicture
+              button={button}
+              description={description}
+              heading={heading}
+              image={image}
+              key={heading}
+            />
+          ))
+        }
+      </div>
     </div>
-
-    <div className="ensembles-list">
-      <Header
-        topText={topText}
-        bottomText={bottomText}
-      />
-      {
-        ensembles && ensembles.map(({
-          button,
-          description,
-          heading,
-          image
-        }) => (
-          <FloatingCardWithBigPicture
-            button={button}
-            description={description}
-            heading={heading}
-            image={image}
-            key={heading}
-          />
-        ))
-      }
-    </div>
+    <Footer />
   </div>
 );
 
