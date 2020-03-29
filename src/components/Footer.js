@@ -15,7 +15,7 @@ const Footer = class extends React.Component {
           <img
             src={logo}
             alt="Clemson Vocal Arts logo"
-            style={{ width: '15rem', height: 'auto' }}
+            className = "footer__content__logo"
           />
           <p className="footer__content__copy-text">Clemson University Vocal Arts &copy; {this.getYear()}</p>
         </div>
