@@ -4,8 +4,9 @@ import { graphql } from 'gatsby'
 
 import FloatingCard from '../components/FloatingCard'
 import SocialMediaLine from '../components/SocialMediaLine'
-import Header from '../components/Header';
-import Image from '../components/Image';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Image from '../components/Image'
 import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 
 import './index-page.scss'
@@ -76,6 +77,7 @@ export const IndexPageTemplate = ({
         ))
       }
     </div>
+  <Footer></Footer>
   </div>
 );
 
