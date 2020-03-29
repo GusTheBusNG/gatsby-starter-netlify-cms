@@ -19,11 +19,16 @@ $max-column-width: 25rem;
 $transition-time: 200ms;
 $transition-timing: ease-out;
 
+html {
+  height: 100%;
+}
+
 body {
-  font-family: $font-family;
   margin: 0;
   padding: 0;
+
   background-color: $background-white;
+  font-family: $font-family;
 }
 
 a {

@@ -19,7 +19,19 @@
 }
 
 .ensembles {
-  background-color: #FDFDFD;
+  background-color: $background-white;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 
   &__content {
     position: relative;
@@ -28,7 +40,7 @@
 
     align-items: center;
     
-    background-color: #FDFDFD;
+    background-color: $background-white;
 
     margin-top: -$border-radius;
     padding: 1.25rem;
@@ -39,10 +51,7 @@
       height: 95vh;
       margin: 2.5vh 1.5vw;
       padding: 0;
+      
     }
-  }
-
-  @include desktop {
-    display: flex;
   }
 }
