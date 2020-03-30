@@ -5,8 +5,6 @@ import { ConcertsPageTemplate } from '../../templates/concerts-page';
 const ConcertPagePreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS();
 
-  console.log('hit')
-
   if (!data) return <div>Loading....</div>
 
   const {

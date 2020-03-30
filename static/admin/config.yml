@@ -125,6 +125,7 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+              - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[0,0]}'}
               - {label: "Show location on the last part of the slider", name: showLocation, widget: boolean, default: true}
               - label: "Second description (for the last part if no location)"
                 name: secondDescription

@@ -86,6 +86,7 @@ export const pageQuery = graphql`
             buttonText
             buttonLink
           }
+          location
           showLocation
           secondDescription {
             subtitle

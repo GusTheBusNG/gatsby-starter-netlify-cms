@@ -20,6 +20,7 @@ concerts:
       buttonLink: /ensembles/cu-singers
       buttonText: Get Tickets
     showLocation: false
+    location: '{"type":"Point","coordinates":[0,0]}'
     secondDescription:
       subtitle: Where he is now
       description: >-
@@ -46,6 +47,7 @@ concerts:
       buttonLink: /ensembles/cu-singers
       buttonText: Get Tickets
     showLocation: true
+    location: '{"type":"Point","coordinates":[0,0]}'
     secondDescription:
       subtitle: Where he is now
       description: >-
