@@ -9,6 +9,7 @@
   @include sm-mobile {
     padding: 0 0.5rem;
     align-items: center;
-
   }
+
+  @include desktop { margin-top: $desktop-header-height; }
 }

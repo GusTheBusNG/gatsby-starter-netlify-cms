@@ -27,31 +27,33 @@ const Navbar = ({ active }) => {
         <Link to="/">
           <h2 className={`link ${active === 'home' && 'active'}`}>Home</h2>
         </Link>
-        <button onClick={() => setEnsemblesActive(!ensemblesActive)}>
-          <h2 className='link'>Ensembles</h2>
-        </button>
-        <div className={`ensembles ${ensemblesActive && 'active'}`}>
-          <StaticQuery
-            query={graphql`
-              query Navbar {
-                markdownRemark {
-                  frontmatter {
-                    ensembles {
-                      button {
-                        buttonLink
+        <div>
+          <button onClick={() => setEnsemblesActive(!ensemblesActive)}>
+            <h2 className={`link ${active === 'ensembles' && 'active'}`}>Ensembles</h2>
+          </button>
+          <div className={`ensembles ${ensemblesActive && 'active'}`}>
+            <StaticQuery
+              query={graphql`
+                query Navbar {
+                  markdownRemark {
+                    frontmatter {
+                      ensembles {
+                        button {
+                          buttonLink
+                        }
+                        heading
                       }
-                      heading
                     }
                   }
                 }
-              }
-            `}
-            render={({ markdownRemark: { frontmatter: { ensembles }}}) => ensembles.map(({ button: { buttonLink }, heading }) => (
-              <Link to={buttonLink}>
-                <h3 className={`ensemble`}>{heading}</h3>
-              </Link>
-            ))}
-          />
+              `}
+              render={({ markdownRemark: { frontmatter: { ensembles }}}) => ensembles.map(({ button: { buttonLink }, heading }) => (
+                <Link to={buttonLink}>
+                  <h3 className={`ensemble`}>{heading}</h3>
+                </Link>
+              ))}
+            />
+          </div>
         </div>
         <Link to="/concerts">
           <h2 className={`link ${active === 'concerts' && 'active'}`}>Concerts</h2>

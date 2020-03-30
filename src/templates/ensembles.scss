@@ -44,5 +44,7 @@
 
   @include desktop {
     display: flex;
+
+    margin-top: $desktop-header-height;
   }
 }
