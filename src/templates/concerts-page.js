@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from '../components/Header';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import HorizontalCard from '../components/HorizontalCard';
 
 import './concerts-page.scss'
@@ -18,14 +19,17 @@ export const ConcertsPageTemplate = ({
   <>
     <Navbar active='concerts' />
     <div className="concerts-page">
-      <Header
-        topText={topText}
-        bottomText={bottomText}
-      />
-      {
-        concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
-      }
+      <div className="concerts-page__content">
+        <Header
+          topText={topText}
+          bottomText={bottomText}
+        />
+        {
+          concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
+        }
+      </div>
     </div>
+    <Footer />
   </>
 );
 

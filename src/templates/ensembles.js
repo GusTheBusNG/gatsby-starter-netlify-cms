@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from '../components/Header';
-import TextContent from '../components/TextContent';
-import Button from '../components/Button';
-import Subheading from '../components/Subheading';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import TextContent from '../components/TextContent'
+import Button from '../components/Button'
+import Subheading from '../components/Subheading'
 
 import './ensembles.scss';
 import FloatingCard from '../components/FloatingCard';
@@ -23,32 +24,33 @@ export const EnsemblesTemplate = ({
 }) => (
   <div className="ensembles">
     <Navbar active='ensembles' />
-    <BackgroundImageDiv
-      className="top-image"
-      image={image}
-    />
+    <div className="ensembles__wrapper">
+      <BackgroundImageDiv
+        className="top-image"
+        image={image}
+      />
 
-    <div className="ensembles__content">
-      <Header topText={topText} bottomText={bottomText} />
-      <TextContent header={subheading} content={about} />
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
-      <Subheading>{subheadingTwo}</Subheading>
+      <div className="ensembles__content">
+        <Header topText={topText} bottomText={bottomText} />
+        <TextContent header={subheading} content={about} />
+        <Button link={buttonLink}>
+          {buttonText}
+        </Button>
+        <Subheading>{subheadingTwo}</Subheading>
 
-      {
-        auditionInformation ?
-          auditionInformation.map(({ image, heading, text }) => (
-            <FloatingCard
-              image={image}
-              header={heading}
-              content={text}
-            />
-          )) : null
-      }
+        {
+          auditionInformation ?
+            auditionInformation.map(({ image, heading, text }) => (
+              <FloatingCard
+                image={image}
+                header={heading}
+                content={text}
+              />
+            )) : null
+        }
+      </div>
     </div>
-    
-    <br></br>
+    <Footer />
   </div>
 );
 

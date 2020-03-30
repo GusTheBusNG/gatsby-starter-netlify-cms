@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import FloatingCard from '../components/FloatingCard'
 
 import './staff-page.scss'
@@ -40,6 +41,7 @@ export const StaffPageTemplate = ({
         ))
       }
     </div>
+    <Footer />
   </div>
 );
 
