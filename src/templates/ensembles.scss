@@ -11,8 +11,10 @@
 
   @include desktop {
     width: 47vw;
-    height: 95vh;
+    min-height: 75vh;
+    min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
     margin: 2.5vh 1.5vw;
+
     background-position: center;
     border-radius: $border-radius;
   }
@@ -30,6 +32,8 @@
     @include desktop {
       display: flex;
       flex-direction: row;
+
+      min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
     }
   }
 
@@ -48,7 +52,8 @@
 
     @include desktop {
       width: 47vw;
-      height: 95vh;
+      min-height: 75vh;
+      min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
       margin: 2.5vh 1.5vw;
       padding: 0;
       
@@ -56,8 +61,6 @@
   }
 
   @include desktop {
-    display: flex;
-
     margin-top: $desktop-header-height;
   }
 }

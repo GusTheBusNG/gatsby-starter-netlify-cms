@@ -7,9 +7,10 @@
   min-height: 100vh;
 
   @include desktop {
-    height: 100vh;
-
-    margin-top: 3.25rem;
+    height: 95vh;
+    height: calc(100vh - #{$desktop-header-height});
+    min-height: calc(100vh - #{$desktop-header-height});
+    margin-top: $desktop-header-height;
   }
 }
 
