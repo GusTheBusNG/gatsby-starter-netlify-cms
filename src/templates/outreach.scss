@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.top-image {
+  width: 100vw;
+  height: 14rem;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include desktop {
+    width: 47vw;
+    height: 95vh;
+    margin: 2.5vh 1.5vw;
+    background-position: center;
+    border-radius: $border-radius;
+  }
+}
+
+.outreach {
+  background-color: #FDFDFD;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    
+    background-color: #FDFDFD;
+
+    margin-top: -$border-radius;
+    padding: 1.25rem;
+    border-radius: $border-radius $border-radius 0 0;
+
+    @include desktop {
+      width: 47vw;
+      height: 95vh;
+      margin: 2.5vh 1.5vw;
+      padding: 0;
+    }
+  }
+
+  @include desktop {
+    display: flex;
+  }
+}

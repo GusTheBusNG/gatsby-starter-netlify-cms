@@ -74,6 +74,11 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
+      - {label: "Third Subheading", name: subheadingThree, widget: string}
+      - {label: Button, name: buttonTwo, widget: object, fields: [
+          {label: "Button Label", name: buttonTwoText, widget: string},
+          {label: "Button Link", name: buttonTwoLink, widget: string}
+        ]}
 
   - name: "pages"
     label: "Pages"
