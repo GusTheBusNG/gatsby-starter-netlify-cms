@@ -8,7 +8,7 @@ const ConcertPagePreview = ({ entry }) => {
   if (!data) return <div>Loading....</div>
 
   const {
-    heading,
+    concertsPageHeading: heading,
     concerts
   } = data;
 
