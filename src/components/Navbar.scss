@@ -12,6 +12,8 @@
     border: 2px solid $clemson-orange;
     border-radius: 10px;
 
+    cursor: pointer;
+
     @include desktop { display: none; }
   }
   
@@ -25,7 +27,7 @@
     background-color: $background-white;
     border-radius: 0 $border-radius;
 
-    transition: left 0.5s;
+    transition: left $transition-time;
     left: -20rem;
     &.open { left: 0; }
 
@@ -51,7 +53,14 @@
       }
     }
 
-    button { padding: 0; }
+    button { 
+      padding: 0; 
+      background: transparent;
+      outline: none;
+      border: none;
+
+      cursor: pointer;
+    }
 
     .ensembles {
       display: none;
