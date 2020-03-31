@@ -9,6 +9,7 @@ import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import StaffPagePreview from './preview-templates/StaffPagePreview'
 import MajorPagePreview from './preview-templates/MajorPagePreview'
+import OutreachLandingPagePreview from './preview-templates/OutreachLandingPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
@@ -20,3 +21,4 @@ CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('ensembles', EnsemblePreview)
 CMS.registerPreviewTemplate('major', MajorPagePreview)
+CMS.registerPreviewTemplate('outreach-landing', OutreachLandingPagePreview)

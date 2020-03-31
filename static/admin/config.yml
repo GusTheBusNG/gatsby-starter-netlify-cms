@@ -50,6 +50,30 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
+  - name: "outreach"
+    label: "Outreach Programs"
+    folder: "src/pages/outreach-programs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach"}
+      - {label: Header, name: header, widget: object, fields: [
+          {label: "Top Text", name: topText, widget: string},
+          {label: "Bottom Text", name: bottomText, widget: text}
+        ]}
+      - {label: Image, name: image, widget: image}
+      - {label: Subheading, name: subheading, widget: string}
+      - {label: About, name: about, widget: string}
+      - {label: Button, name: button, widget: object, fields: [
+          {label: "Button Label", name: buttonText, widget: string},
+          {label: "Button Link", name: buttonLink, widget: string}
+        ]}
+      - {label: "Second Subheading", name: subheadingTwo, widget: string}
+      - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
+          {label: Image, name: image, widget: image},
+          {label: Heading, name: heading, widget: text},
+          {label: Text, name: text, widget: text}
+        ]}
 
   - name: "pages"
     label: "Pages"
@@ -143,6 +167,30 @@ collections:
               - {label: Title, name: title, widget: text}
               - {label: Bio, name: bio, widget: text}
               - {label: Email, name: email, widget: text}
+    - file: "src/pages/outreach-programs/index.md"
+        label: "Outreach Programs Landing Page"
+        name: "outreach-landing"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach-landing-page"}
+          - label: Heading
+            name: outreachProgramsLandingHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string}
+              - {label: "Bottom Text", name: bottomText, widget: string}
+          - label: "Programs"
+            name: programs
+            widget: list
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Heading, name: heading, widget: text}
+              - {label: "Short Description", name: description, widget: text}
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - {label: "Button Label", name: buttonText, widget: string}
+                  - {label: "Button Link", name: buttonLink, widget: string}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
