@@ -4,18 +4,15 @@
   display: flex;
   flex-direction: column;
 
-  min-height: 100vh;
 
   background-color: $background-white;
 
-  &__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-    @include sm-mobile {
-      padding: 0 0.5rem;
-      align-items: center;
-    }
+  @include sm-mobile {
+    padding: 0 0.5rem;
+    align-items: center;
   }
 }

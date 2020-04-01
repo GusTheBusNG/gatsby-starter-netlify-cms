@@ -11,7 +11,7 @@ export const FloatingCardWithBigPicture = ({
   image,
   heading,
   description,
-  button: { buttonLink, buttonText }
+  button
 }) => (
   <div className="floating-card-with-big-picture">
     <Image
@@ -24,9 +24,11 @@ export const FloatingCardWithBigPicture = ({
       header={heading}
       content={description}
     >
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
+      { button &&
+        <Button link={button.buttonLink}>
+          {button.buttonText}
+        </Button>
+      }
     </FloatingCard>
   </div>
 );
