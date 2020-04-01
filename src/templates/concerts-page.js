@@ -33,6 +33,13 @@ export const ConcertsPageTemplate = ({
   </>
 );
 
+ConcertsPageTemplate.defaultProps = {
+  heading: {
+    topText: 'Clemson Vocal Arts',
+    bottomText: 'Concerts'
+  }
+}
+
 ConcertsPageTemplate.propTypes = {
   heading: PropTypes.object,
   concerts: PropTypes.array
@@ -83,13 +90,7 @@ export const pageQuery = graphql`
             buttonText
             buttonLink
           }
-          location {
-            features {
-              geometry {
-                coordinates
-              }
-            }
-          }
+          location
           showLocation
           secondDescription {
             subtitle
