@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import FloatingCard from '../components/FloatingCard'
+import Layout from '../components/Layout'
 
 import './staff-page.scss'
 
@@ -97,7 +97,6 @@ export class StaffPageTemplate extends Component {
             ))
           }
         </div>
-        <Footer />
       </div>
     );
   }
@@ -119,10 +118,12 @@ const StaffPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <StaffPageTemplate
-      staffHeading={frontmatter.staffHeading}
-      staffList={frontmatter.staffList}
-    />
+    <Layout>
+      <StaffPageTemplate
+        staffHeading={frontmatter.staffHeading}
+        staffList={frontmatter.staffList}
+      />
+    </Layout>
   )
 }
 

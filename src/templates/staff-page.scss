@@ -25,5 +25,9 @@
 }
 
 .staff-list .card-container {
-  max-width: 30rem;
+  width: 17rem;
+
+  @include sm-mobile {
+    width: 29rem;
+  }
 }

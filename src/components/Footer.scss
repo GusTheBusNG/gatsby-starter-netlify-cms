@@ -2,7 +2,10 @@
 
 .footer {
   display: flex;
+  position: absolute;
   justify-content: center;
+  bottom: 0;
+  width: 100%;
 
   background: white;
   border-radius: $border-radius $border-radius 0 0;
