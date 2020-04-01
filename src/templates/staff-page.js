@@ -68,6 +68,7 @@ export class StaffPageTemplate extends Component {
 
     return (
       <div className="staff-page">
+        <Navbar active='staff' />
         <Header
           topText={topText}
           bottomText={bottomText}
