@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import HorizontalCard from '../components/HorizontalCard';
+import Layout from '../components/Layout'
 
 import './concerts-page.scss'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'
 
 export const ConcertsPageTemplate = ({
   heading: {
@@ -49,10 +50,12 @@ const ConcertsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <ConcertsPageTemplate
-      heading={frontmatter.concertsPageHeading}
-      concerts={frontmatter.concerts}
-    />
+    <Layout>
+      <ConcertsPageTemplate
+        heading={frontmatter.concertsPageHeading}
+        concerts={frontmatter.concerts}
+      />
+    </Layout>
   )
 }
 

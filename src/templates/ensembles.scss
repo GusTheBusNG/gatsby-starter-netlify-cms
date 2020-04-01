@@ -23,11 +23,10 @@
 .ensembles {
   background-color: $background-white;
 
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    min-height: 100vh;
+  min-height: 100vh;
 
     @include desktop {
       display: flex;
@@ -35,7 +34,6 @@
 
       min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
     }
-  }
 
   &__content {
     position: relative;
@@ -47,7 +45,7 @@
     background-color: $background-white;
 
     margin-top: -$border-radius;
-    padding: 1.25rem;
+    padding: 1.25rem 1.25rem 0;
     border-radius: $border-radius $border-radius 0 0;
 
     @include desktop {
