@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import HorizontalCard from '../components/HorizontalCard';
+import Layout from '../components/Layout'
 
 import './concerts-page.scss'
 import Navbar from '../components/Navbar';
@@ -33,6 +33,13 @@ export const ConcertsPageTemplate = ({
   </>
 );
 
+ConcertsPageTemplate.defaultProps = {
+  heading: {
+    topText: 'Clemson Vocal Arts',
+    bottomText: 'Concerts'
+  }
+}
+
 ConcertsPageTemplate.propTypes = {
   heading: PropTypes.object,
   concerts: PropTypes.array
@@ -42,10 +49,12 @@ const ConcertsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <ConcertsPageTemplate
-      heading={frontmatter.concertsPageHeading}
-      concerts={frontmatter.concerts}
-    />
+    <Layout>
+      <ConcertsPageTemplate
+        heading={frontmatter.concertsPageHeading}
+        concerts={frontmatter.concerts}
+      />
+    </Layout>
   )
 }
 
@@ -83,13 +92,7 @@ export const pageQuery = graphql`
             buttonText
             buttonLink
           }
-          location {
-            features {
-              geometry {
-                coordinates
-              }
-            }
-          }
+          location
           showLocation
           secondDescription {
             subtitle
