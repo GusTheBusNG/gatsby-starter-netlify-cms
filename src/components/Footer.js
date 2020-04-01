@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../static/img/vocal-arts-logo-full-color.svg'
+import logo from '../img/vocal-arts-logo-full-color.svg'
 
 import './Footer.scss'
 
