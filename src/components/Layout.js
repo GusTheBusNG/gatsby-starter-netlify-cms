@@ -4,11 +4,14 @@ import Footer from '../components/Footer'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import logo from '../img/vocal-arts-logo-full-color.svg'
+import Navbar from './Navbar'
+
+import './Layout.scss'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <div className="the-whole-dang-thing">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -31,7 +34,8 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
 
-      <div style={{ paddingBottom: '9.75rem' }}>{children}</div>
+      <Navbar />
+      <div className="page-content">{children}</div>
       <Footer />
     </div>
   )

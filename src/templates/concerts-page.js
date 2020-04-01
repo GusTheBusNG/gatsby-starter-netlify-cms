@@ -7,8 +7,6 @@ import HorizontalCard from '../components/HorizontalCard';
 import Layout from '../components/Layout'
 
 import './concerts-page.scss'
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer'
 
 export const ConcertsPageTemplate = ({
   heading: {
@@ -17,21 +15,17 @@ export const ConcertsPageTemplate = ({
   },
   concerts
 }) => (
-  <>
-    <Navbar active='concerts' />
-    <div className="concerts-page">
-      <div className="concerts-page__content">
-        <Header
-          topText={topText}
-          bottomText={bottomText}
-        />
-        {
-          concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
-        }
-      </div>
+  <div className="concerts-page">
+    <div className="concerts-page__content">
+      <Header
+        topText={topText}
+        bottomText={bottomText}
+      />
+      {
+        concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
+      }
     </div>
-    <Footer />
-  </>
+  </div>
 );
 
 ConcertsPageTemplate.defaultProps = {

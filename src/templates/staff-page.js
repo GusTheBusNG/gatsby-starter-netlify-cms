@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
@@ -7,42 +7,100 @@ import FloatingCard from '../components/FloatingCard'
 import Layout from '../components/Layout'
 
 import './staff-page.scss'
-import Navbar from '../components/Navbar';
 
-export const StaffPageTemplate = ({
-  staffHeading: {
-    topText,
-    bottomText
-  },
-  staffList
-}) => (
-  <div className="staff-page">
-    <Navbar active='staff' />
-    <Header
-      topText={topText}
-      bottomText={bottomText}
-    />
-    <div class="staff-list">
-      {
-        staffList && staffList.map(({
-          image,
-          name,
-          title,
-          bio,
-          email
-        }) => (
-          <FloatingCard
-            header={name}
-            content={title}
-            drawer={bio}
-            email={email}
-            image={image}
-          />
-        ))
-      }
-    </div>
-  </div>
-);
+export class StaffPageTemplate extends Component {
+  constructor(props) {
+    super(props);
+    const { staffList } = this.props;
+
+    this.state = {
+      staffList: [staffList]
+    }
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount = () => {
+    clearTimeout(this.transitionTimeout);
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  };
+
+  updateWindowDimensions() {
+    const screenWidth = window.innerWidth;
+
+    // 992 pixels from variables.scss
+    if (screenWidth > 992 && this.state.staffList.length === 1) {
+      this.setState(({ staffList }) => {
+        let newStaffList = [[], []];
+
+        staffList[0].map((staff, index) =>
+          index % 2 === 0 ? newStaffList[0].push(staff) : newStaffList[1].push(staff));
+
+        return { staffList: newStaffList };
+      })
+    } else if (screenWidth <= 992 && this.state.staffList.length === 2) {
+      this.setState(({ staffList }) => {
+        let newStaffList = [[]];
+
+        staffList[0].map((staff, index) => {
+          newStaffList[0].push(staff);
+          return staffList[1][index] && newStaffList[0].push(staffList[1][index]);
+        });
+
+        return { staffList: newStaffList };
+      })
+    }
+  }
+
+  render() {
+    const { staffList } = this.state;
+    const {
+      staffHeading: {
+        topText,
+        bottomText
+      },
+    } = this.props;
+
+    return (
+      <div className="staff-page">
+        <Header
+          topText={topText}
+          bottomText={bottomText}
+        />
+        <div className="staff-page__parent-list">
+          {
+            staffList && staffList.map(innerList => (
+              <div className="staff-list" key={innerList[0].name}>
+                {
+                  innerList && innerList.map(({
+                    image,
+                    name,
+                    title,
+                    bio,
+                    email
+                  }) => (
+                    <FloatingCard
+                      key={name}
+                      header={name}
+                      content={title}
+                      drawer={bio}
+                      email={email}
+                      image={image}
+                    />
+                  ))
+                }
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    );
+  }
+}
 
 StaffPageTemplate.propTypes = {
   staffHeading: PropTypes.object,

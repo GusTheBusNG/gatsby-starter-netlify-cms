@@ -7,13 +7,11 @@
   background-position: bottom;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: center;
 
   @include desktop {
+    height: 85vh;
     width: 47vw;
-    min-height: 75vh;
-    min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
-    margin: 2.5vh 1.5vw;
 
     background-position: center;
     border-radius: $border-radius;
@@ -26,13 +24,10 @@
   display: flex;
   flex-direction: column;
 
-  &__wrapper {
-    @include desktop {
-      display: flex;
-      flex-direction: row;
-
-      min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
-    }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   &__content {
@@ -50,11 +45,7 @@
 
     @include desktop {
       width: 47vw;
-      min-height: 75vh;
-      min-height: calc(95vh - #{$desktop-header-height} - #{$footer-height} - 2rem);
-      margin: 2.5vh 1.5vw;
       padding: 0;
-      
     }
   }
 

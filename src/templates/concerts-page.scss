@@ -10,16 +10,19 @@
     align-items: center;
   }
 
-  @include desktop { margin-top: $desktop-header-height; }
+  @include desktop {
+    margin-top: 0.75rem;
+  }
   
   &__content {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
 
-  @include sm-mobile {
-    padding: 0 0.5rem;
-    align-items: center;
+    @include sm-mobile {
+      padding: 0 0.5rem;
+      align-items: center;
     }
   } 
 }
