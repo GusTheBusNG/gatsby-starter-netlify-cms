@@ -6,9 +6,9 @@
 }
 
 .page-content {
-  padding-bottom: 9.75rem;
+  padding-bottom: 7.5rem;
 
   @include desktop {
-    padding-top: 2rem;
+    padding-top: $desktop-header-height;
   }
 }

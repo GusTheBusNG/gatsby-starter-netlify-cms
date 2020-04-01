@@ -49,7 +49,7 @@ const Navbar = () => {
                       }
                     }
                   `}
-                  render={({ markdownRemark: { frontmatter: { ensembles }}}) => ensembles.map(({ button: { buttonLink }, heading }) => (
+                  render={({ markdownRemark: { frontmatter: { ensembles }}}) => ensembles && ensembles.map(({ button: { buttonLink }, heading }) => (
                     <Link to={buttonLink}>
                       <h3 className={`ensemble`}>{heading}</h3>
                     </Link>

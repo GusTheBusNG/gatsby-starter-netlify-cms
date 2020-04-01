@@ -9,10 +9,6 @@
   @include sm-mobile {
     align-items: center;
   }
-
-  @include desktop {
-    margin-top: 0.75rem;
-  }
   
   &__content {
     position: relative;
