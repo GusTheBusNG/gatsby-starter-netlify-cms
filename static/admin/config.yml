@@ -20,8 +20,8 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ensembles"}
       - {label: Header, name: header, widget: object, fields: [
-          {label: "Top Text", name: topText, widget: string},
-          {label: "Bottom Text", name: bottomText, widget: text}
+          {label: "Top Text", name: topText, widget: string, default: 'Top text'},
+          {label: "Bottom Text", name: bottomText, widget: text, , default: 'Bottom Text'}
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
@@ -63,15 +63,15 @@ collections:
             name: homePageHeading
             widget: object
             fields:
-              - {label: "Top Text", name: topText, widget: string}
-              - {label: "Bottom Text", name: bottomText, widget: string}
+              - {label: "Top Text", name: topText, widget: string, default: 'Top text'}
+              - {label: "Bottom Text", name: bottomText, widget: string, default: 'Bottom Text'}
           - label: "Ensembles"
             name: ensembles
             widget: list
             fields:
-              - {label: Image, name: image, widget: image}
-              - {label: Heading, name: heading, widget: text}
-              - {label: "Short Description", name: description, widget: text}
+              - {label: Image, name: image, widget: image, default: '/img/cu-singers.jpg'}
+              - {label: Heading, name: heading, widget: text, default: 'Heading'}
+              - {label: "Short Description", name: description, widget: text, default: 'Short Description'}
               - label: Button
                 name: button
                 widget: object
@@ -121,8 +121,8 @@ collections:
             name: staffHeading
             widget: object
             fields:
-              - {label: "Top Text", name: topText, widget: string}
-              - {label: "Bottom Text", name: bottomText, widget: string}
+              - {label: "Top Text", name: topText, widget: string, default: 'Top text'}
+              - {label: "Bottom Text", name: bottomText, widget: string, , default: 'Bottom Text'}
           - label: Staff
             name: staffList
             widget: list
