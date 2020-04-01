@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import HorizontalCard from '../components/HorizontalCard';
+import Layout from '../components/Layout'
 
 import './concerts-page.scss'
 
@@ -16,16 +16,13 @@ export const ConcertsPageTemplate = ({
   concerts
 }) => (
   <div className="concerts-page">
-    <div className="concerts-page__content">
-      <Header
-        topText={topText}
-        bottomText={bottomText}
-      />
-      {
-        concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
-      }
-    </div>
-    <Footer />
+    <Header
+      topText={topText}
+      bottomText={bottomText}
+    />
+    {
+      concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
+    }
   </div>
 );
 
@@ -45,10 +42,12 @@ const ConcertsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <ConcertsPageTemplate
-      heading={frontmatter.concertsPageHeading}
-      concerts={frontmatter.concerts}
-    />
+    <Layout>
+      <ConcertsPageTemplate
+        heading={frontmatter.concertsPageHeading}
+        concerts={frontmatter.concerts}
+      />
+    </Layout>
   )
 }
 
