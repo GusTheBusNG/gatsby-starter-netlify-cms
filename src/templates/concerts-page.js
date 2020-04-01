@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 
 import './concerts-page.scss'
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer'
 
 export const ConcertsPageTemplate = ({
   heading: {
