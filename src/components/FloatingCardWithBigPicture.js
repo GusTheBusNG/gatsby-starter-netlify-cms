@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import FloatingCard from './FloatingCard';
 import Button from './Button';
+import Image from './Image';
 
 import './FloatingCardWithBigPicture.scss'
 
@@ -10,12 +11,12 @@ export const FloatingCardWithBigPicture = ({
   image,
   heading,
   description,
-  button: { buttonLink, buttonText }
+  button
 }) => (
   <div className="floating-card-with-big-picture">
-    <img
+    <Image
       className="big-picture"
-      src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
+      image={image}
       alt="Ensemble"
     />
     <FloatingCard
@@ -23,9 +24,11 @@ export const FloatingCardWithBigPicture = ({
       header={heading}
       content={description}
     >
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
+      { button &&
+        <Button link={button.buttonLink}>
+          {button.buttonText}
+        </Button>
+      }
     </FloatingCard>
   </div>
 );

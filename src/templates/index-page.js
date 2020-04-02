@@ -4,10 +4,12 @@ import { graphql } from 'gatsby'
 
 import FloatingCard from '../components/FloatingCard'
 import SocialMediaLine from '../components/SocialMediaLine'
-import Header from '../components/Header';
+import Header from '../components/Header'
+import Image from '../components/Image'
+import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
+import Layout from '../components/Layout'
 
 import './index-page.scss'
-import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 
 export const IndexPageTemplate = ({
   logo,
@@ -24,7 +26,6 @@ export const IndexPageTemplate = ({
   ensembles
 }) => (
   <div className="home-page">
-    { console.log(logo) }
     <div 
       className="landing-content"
       style={{
@@ -36,10 +37,10 @@ export const IndexPageTemplate = ({
         })`,
       }}
     >
-      <img
+      <Image
         alt={topText}
         className="landing-content__logo"
-        src={!!logo.childImageSharp ? logo.childImageSharp.fluid.src : logo}
+        image={logo}
       />
 
       <FloatingCard
@@ -103,14 +104,16 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <IndexPageTemplate
-      logo={frontmatter.logo}
-      missionStatement={frontmatter.missionStatement}
-      backgroundImage={frontmatter.backgroundImage}
-      socialMedia={frontmatter.socialMedia}
-      heading={frontmatter.homePageHeading}
-      ensembles={frontmatter.ensembles}
-    />
+    <Layout>
+      <IndexPageTemplate
+        logo={frontmatter.logo}
+        missionStatement={frontmatter.missionStatement}
+        backgroundImage={frontmatter.backgroundImage}
+        socialMedia={frontmatter.socialMedia}
+        heading={frontmatter.homePageHeading}
+        ensembles={frontmatter.ensembles}
+      />
+    </Layout>
   )
 }
 
@@ -129,6 +132,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         logo {
+          publicURL
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
@@ -148,6 +152,7 @@ export const pageQuery = graphql`
         }
         socialMedia {
           icon {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
@@ -168,6 +173,7 @@ export const pageQuery = graphql`
           description
           heading
           image {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid

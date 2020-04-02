@@ -1,40 +1,33 @@
 @import '../variables.scss';
 
-.staff-list {
+.staff-page {
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  
+  flex-direction: column;
 
-  margin: 1rem;
+  &__parent-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
 
-  @include desktop {
-    height: 100vh;
-
-    align-content: center;
-    &::before, ::after {
-      content: "";
-      flex-basis: 100%;
-      width: 0;
-      order: 2;
+    @include desktop {
+      flex-direction: row;
     }
   }
 }
 
+.staff-list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  margin: 1rem;
+}
+
 .staff-list .card-container {
-  max-width: 30rem;
+  width: 17rem;
 
-  @include desktop {
-    margin: 0.5rem;
-
-    &:nth-child(3n+1) {
-      order: 1;
-    }
-    &:nth-child(3n+2) {
-      order: 2;
-    }
-    &:nth-child(3n) {
-      order: 3;
-    }
+  @include sm-mobile {
+    width: 29rem;
   }
 }

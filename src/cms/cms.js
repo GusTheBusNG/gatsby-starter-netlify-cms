@@ -3,10 +3,8 @@ import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 
 import EnsemblePreview from './preview-templates/EnsemblePreview'
-import AboutPagePreview from './preview-templates/AboutPagePreview'
-import BlogPostPreview from './preview-templates/BlogPostPreview'
-import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
+import ConcertPagePreview from './preview-templates/ConcertPagePreview'
 import StaffPagePreview from './preview-templates/StaffPagePreview'
 import MajorPagePreview from './preview-templates/MajorPagePreview'
 import OutreachLandingPagePreview from './preview-templates/OutreachLandingPagePreview'
@@ -15,10 +13,8 @@ CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('staff', StaffPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('ensembles', EnsemblePreview)
 CMS.registerPreviewTemplate('major', MajorPagePreview)
 CMS.registerPreviewTemplate('outreach-landing', OutreachLandingPagePreview)
+CMS.registerPreviewTemplate('concerts', ConcertPagePreview)
