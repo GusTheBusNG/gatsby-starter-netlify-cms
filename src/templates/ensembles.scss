@@ -7,12 +7,12 @@
   background-position: bottom;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: center;
 
   @include desktop {
+    height: 85vh;
     width: 47vw;
-    height: 95vh;
-    margin: 2.5vh 1.5vw;
+
     background-position: center;
     border-radius: $border-radius;
   }
@@ -24,11 +24,10 @@
   display: flex;
   flex-direction: column;
 
-  min-height: 100vh;
-
   @include desktop {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
   }
 
   &__content {
@@ -46,10 +45,11 @@
 
     @include desktop {
       width: 47vw;
-      height: 95vh;
-      margin: 2.5vh 1.5vw;
       padding: 0;
-      
     }
+  }
+
+  @include desktop {
+    margin: 0.75rem 0;
   }
 }
