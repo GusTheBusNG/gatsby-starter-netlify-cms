@@ -1,0 +1,137 @@
+@import '../variables.scss';
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+
+  &__hamburger-menu {
+    margin: 0.5rem;
+    padding: 0.6rem 0.5rem;
+
+    border: 2px solid $clemson-orange;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    @include desktop { display: none; }
+  }
+  
+  .slider {
+    position: fixed;
+    height: 100%;
+    top: 0;
+
+    z-index: -1;
+
+    background-color: $background-white;
+    border-radius: 0 $border-radius;
+
+    transition: left $transition-time;
+    left: -20rem;
+    &.open { left: 0; }
+
+    padding-top: 4rem;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .link {
+      font-size: 28px;
+      margin: 1rem 1rem 0;
+      padding: 0 0.5rem;
+      font-weight: normal;
+      color: $subheading-text;
+
+      border-radius: $border-radius;
+
+      &.active {
+        background-color: $clemson-orange;
+        color: $highlight-white;
+      }
+    }
+
+    button { 
+      padding: 0; 
+      background: transparent;
+      outline: none;
+      border: none;
+
+      cursor: pointer;
+    }
+
+    .ensembles {
+      display: none;
+      background-color: $background-white;
+
+      margin-left: 2.5rem;
+
+      &.active {
+        display: block;
+      }
+
+      .ensemble {
+        background-color: $background-white;
+
+        margin: 0.25rem 0;
+
+        font-weight: normal;
+        color: $subheading-text;
+      }
+    }
+
+    @include desktop {
+      display: flex;
+      left: 0;
+      padding: 0;
+      height: $desktop-header-height;
+      width: 100vw;
+      border-radius: 0;
+  
+      background-color: $background-white;
+      
+      justify-content: space-evenly;
+      align-items: flex-end;
+  
+      box-shadow: $box-shadow;
+
+      .ensembles {
+        position: absolute;
+        margin: 0 auto;
+        padding: 0.25rem 1rem;
+        border-radius: 0 0 $border-radius $border-radius;
+        box-shadow: 0 3px 3px rgba(55, 55, 55, 0.5);;
+      }
+
+      button {
+        padding: 0;
+        background-color: $background-white;
+        border: none;
+      }
+  
+      a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+  
+      .link {
+        padding: 0.5rem 1rem;
+        margin: 0;
+
+        font-size: 18px;
+        font-weight: normal;
+        color: $subheading-text;
+        border-radius: $border-radius $border-radius 0 0;
+
+        cursor: pointer;
+  
+        &.active {
+          background-color: $clemson-orange;
+          color: $highlight-white;
+        }
+      }
+    }
+  }
+}

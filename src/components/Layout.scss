@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.the-whole-dang-thing {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-content {
+  padding-bottom: 7.5rem;
+
+  @include desktop {
+    padding-top: $desktop-header-height;
+  }
+}
