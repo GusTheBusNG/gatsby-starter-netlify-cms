@@ -16,13 +16,15 @@ export const ConcertsPageTemplate = ({
   concerts
 }) => (
   <div className="concerts-page">
-    <Header
-      topText={topText}
-      bottomText={bottomText}
-    />
-    {
-      concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
-    }
+    <div className="concerts-page__content">
+      <Header
+        topText={topText}
+        bottomText={bottomText}
+      />
+      {
+        concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
+      }
+    </div>
   </div>
 );
 

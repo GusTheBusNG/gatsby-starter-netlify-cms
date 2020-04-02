@@ -8,9 +8,9 @@ import Button from '../components/Button'
 import Subheading from '../components/Subheading'
 import Layout from '../components/Layout'
 
-import './ensembles.scss'
-import FloatingCard from '../components/FloatingCard'
-import { BackgroundImageDiv } from '../components/Image'
+import './ensembles.scss';
+import FloatingCard from '../components/FloatingCard';
+import { BackgroundImageDiv } from '../components/Image';
 
 export const EnsemblesTemplate = ({
   image,
