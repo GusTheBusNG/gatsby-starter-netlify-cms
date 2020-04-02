@@ -4,9 +4,10 @@ import { graphql } from 'gatsby'
 
 import FloatingCard from '../components/FloatingCard'
 import SocialMediaLine from '../components/SocialMediaLine'
-import Header from '../components/Header';
-import Image from '../components/Image';
+import Header from '../components/Header'
+import Image from '../components/Image'
 import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
+import Layout from '../components/Layout'
 
 import './index-page.scss'
 
@@ -103,14 +104,16 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <IndexPageTemplate
-      logo={frontmatter.logo}
-      missionStatement={frontmatter.missionStatement}
-      backgroundImage={frontmatter.backgroundImage}
-      socialMedia={frontmatter.socialMedia}
-      heading={frontmatter.homePageHeading}
-      ensembles={frontmatter.ensembles}
-    />
+    <Layout>
+      <IndexPageTemplate
+        logo={frontmatter.logo}
+        missionStatement={frontmatter.missionStatement}
+        backgroundImage={frontmatter.backgroundImage}
+        socialMedia={frontmatter.socialMedia}
+        heading={frontmatter.homePageHeading}
+        ensembles={frontmatter.ensembles}
+      />
+    </Layout>
   )
 }
 

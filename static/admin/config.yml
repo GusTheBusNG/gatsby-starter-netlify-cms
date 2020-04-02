@@ -12,20 +12,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
   - name: "ensembles"
     label: "Ensembles"
     folder: "src/pages/ensembles"
@@ -34,8 +20,8 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ensembles"}
       - {label: Header, name: header, widget: object, fields: [
-          {label: "Top Text", name: topText, widget: string},
-          {label: "Bottom Text", name: bottomText, widget: text}
+          {label: "Top Text", name: topText, widget: string, default: 'Top text'},
+          {label: "Bottom Text", name: bottomText, widget: text, , default: 'Bottom Text'}
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
@@ -77,74 +63,21 @@ collections:
             name: homePageHeading
             widget: object
             fields:
-              - {label: "Top Text", name: topText, widget: string}
-              - {label: "Bottom Text", name: bottomText, widget: string}
+              - {label: "Top Text", name: topText, widget: string, default: 'Top text'}
+              - {label: "Bottom Text", name: bottomText, widget: string, default: 'Bottom Text'}
           - label: "Ensembles"
             name: ensembles
             widget: list
             fields:
-              - {label: Image, name: image, widget: image}
-              - {label: Heading, name: heading, widget: text}
-              - {label: "Short Description", name: description, widget: text}
+              - {label: Image, name: image, widget: image, default: '/img/cu-singers.jpg'}
+              - {label: Heading, name: heading, widget: text, default: 'Heading'}
+              - {label: "Short Description", name: description, widget: text, default: 'Short Description'}
               - label: Button
                 name: button
                 widget: object
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/major/index.md"
-        label: "Major Page"
-        name: major
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "major-page"}
-          - label: Heading
-            name: majorHeading
-            widget: object
-            fields:
-              - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
-              - {label: "Bottom Text", name: bottomText, widget: string, default: "Major"}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: About, name: about, widget: string}
-          - {label: Button, name: button, widget: object, fields: [
-              {label: "Button Label", name: buttonText, widget: string},
-              {label: "Button Link", name: buttonLink, widget: string}
-            ]}
-          - {label: "Second Subheading", name: subheadingTwo, widget: string}
-          - {label: "Audition Information", name: majorAuditionInfo, widget: list, fields: [
-              {label: Image, name: image, widget: image},
-              {label: Heading, name: heading, widget: text},
-              {label: Text, name: text, widget: text}
-            ]}
-          - {label: "Third Subheading", name: subheadingThree, widget: string}
-          - label: Stories
-            name: stories
-            widget: list
-            fields:
-              - {label: "Hook Photo", name: photo, widget: string}
-              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
-              - {label: "Title", name: title, widget: string, default: "Example Title"}
-              - {label: "Date", name: date, widget: datetime, dateFormat: "MMM Do, YYYY", timeFormat: "hh:mm a"}
-              - {label: "Long description", name: description, widget: text, default: "This is the long description"}
-              - label: Button
-                name: button
-                widget: object
-                fields:
-                  - {label: "Button Label", name: buttonText, widget: string}
-                  - {label: "Button Link", name: buttonLink, widget: string}
-              - label: "Second description"
-                name: secondDescription
-                widget: object
-                fields:
-                  - {label: Subtitle, name: subtitle, widget: string, default: "Example Subtitle"}
-                  - {label: Description, name: description, widget: text, default: "Example description"}
-
       - file: "src/pages/concerts/index.md"
         label: Concerts
         name: concerts
@@ -171,8 +104,8 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+              - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[0,0]}'}
               - {label: "Show location on the last part of the slider", name: showLocation, widget: boolean, default: true}
-              - {label: "Location", name: location, widget: map, default: '{type": "FeatureCollection","features": [{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [-82.836012840271,34.67347479873117]}}]}'}
               - label: "Second description (for the last part if no location)"
                 name: secondDescription
                 widget: object
@@ -188,8 +121,8 @@ collections:
             name: staffHeading
             widget: object
             fields:
-              - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
-              - {label: "Bottom Text", name: bottomText, widget: string, default: "Staff"}
+              - {label: "Top Text", name: topText, widget: string, default: 'Top text'}
+              - {label: "Bottom Text", name: bottomText, widget: string, , default: 'Bottom Text'}
           - label: Staff
             name: staffList
             widget: list
@@ -199,24 +132,3 @@ collections:
               - {label: Title, name: title, widget: text}
               - {label: Bio, name: bio, widget: text}
               - {label: Email, name: email, widget: text}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [
-              {label: Heading, name: heading, widget: string},
-              {label: Description, name: description, widget: text},
-              {label: Blurbs, name: blurbs, widget: list, fields: [
-                {label: Image, name: image, widget: image},
-                {label: Text, name: text, widget: text}
-              ]}
-            ]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}

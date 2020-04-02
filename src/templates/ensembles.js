@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from '../components/Header';
-import TextContent from '../components/TextContent';
-import Button from '../components/Button';
-import Subheading from '../components/Subheading';
+import Header from '../components/Header'
+import TextContent from '../components/TextContent'
+import Button from '../components/Button'
+import Subheading from '../components/Subheading'
+import Layout from '../components/Layout'
 
-import './ensembles.scss';
-import FloatingCard from '../components/FloatingCard';
-import { BackgroundImageDiv } from '../components/Image';
+import './ensembles.scss'
+import FloatingCard from '../components/FloatingCard'
+import { BackgroundImageDiv } from '../components/Image'
 
 export const EnsemblesTemplate = ({
   image,
@@ -45,8 +46,6 @@ export const EnsemblesTemplate = ({
           )) : null
       }
     </div>
-    
-    <br></br>
   </div>
 );
 
@@ -64,15 +63,17 @@ const Ensembles = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <EnsemblesTemplate
-      image={frontmatter.image}
-      header={frontmatter.header}
-      subheading={frontmatter.subheading}
-      about={frontmatter.about}
-      button={frontmatter.button}
-      subheadingTwo={frontmatter.subheadingTwo}
-      auditionInformation={frontmatter.auditionInformation}
-    />
+    <Layout>
+      <EnsemblesTemplate
+        image={frontmatter.image}
+        header={frontmatter.header}
+        subheading={frontmatter.subheading}
+        about={frontmatter.about}
+        button={frontmatter.button}
+        subheadingTwo={frontmatter.subheadingTwo}
+        auditionInformation={frontmatter.auditionInformation}
+      />
+    </Layout>
   )
 }
 
