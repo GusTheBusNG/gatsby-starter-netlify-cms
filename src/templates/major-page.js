@@ -8,6 +8,7 @@ import Button from '../components/Button';
 import Subheading from '../components/Subheading';
 import FloatingCard from '../components/FloatingCard';
 import HorizontalCard from '../components/HorizontalCard';
+import Layout from '../components/Layout';
 
 import './major-page.scss'
 
@@ -69,16 +70,18 @@ const MajorPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <MajorPageTemplate
-      majorHeading={frontmatter.majorHeading}
-      subheading={frontmatter.subheading}
-      about={frontmatter.about}
-      button={frontmatter.button}
-      subheadingTwo={frontmatter.subheadingTwo}
-      majorAuditionInfo={frontmatter.majorAuditionInfo}
-      subheadingThree={frontmatter.subheadingThree}
-      stories={frontmatter.stories}
-    />
+    <Layout>
+      <MajorPageTemplate
+        majorHeading={frontmatter.majorHeading}
+        subheading={frontmatter.subheading}
+        about={frontmatter.about}
+        button={frontmatter.button}
+        subheadingTwo={frontmatter.subheadingTwo}
+        majorAuditionInfo={frontmatter.majorAuditionInfo}
+        subheadingThree={frontmatter.subheadingThree}
+        stories={frontmatter.stories}
+      />
+    </Layout>
   )
 }
 

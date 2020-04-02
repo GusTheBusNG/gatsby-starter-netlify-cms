@@ -7,7 +7,6 @@ import FloatingCard from '../components/FloatingCard'
 import Layout from '../components/Layout'
 
 import './staff-page.scss'
-import Navbar from '../components/Navbar';
 
 export class StaffPageTemplate extends Component {
   constructor(props) {

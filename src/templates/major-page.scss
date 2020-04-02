@@ -17,8 +17,6 @@
   }
 
   &__stories {
-    padding: 0.25rem;
-
     &__heading {
       padding: 0 1rem;
     }
@@ -31,6 +29,10 @@
 
     @include desktop {
       width: 50%;
+
+      height: 100vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
   }
 

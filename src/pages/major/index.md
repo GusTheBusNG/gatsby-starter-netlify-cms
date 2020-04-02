@@ -13,8 +13,8 @@ about: >-
   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
   in culpa qui officia deserunt mollit anim id est laborum.
 button:
-  buttonText: Concert Attire
-  buttonLink: /concert-attire
+  buttonText: Learn More
+  buttonLink: /major
 subheadingTwo: Audition for the major
 majorAuditionInfo:
   - image: /img/cu-singers.jpg
