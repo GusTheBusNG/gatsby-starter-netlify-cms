@@ -5,11 +5,11 @@ import { graphql } from 'gatsby'
 import Header from '../components/Header';
 import TextContent from '../components/TextContent';
 import Button from '../components/Button';
+import FloatingCard from '../components/FloatingCard';
 import Subheading from '../components/Subheading';
 import Layout from '../components/Layout';
 
 import './outreach.scss';
-import FloatingCard from '../components/FloatingCard';
 
 export const OutreachTemplate = ({
   image,

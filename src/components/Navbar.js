@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link to="/staff">
               <h2 className={`link ${pathname.includes('staff') && 'active'}`}>Staff</h2>
             </Link>
-            <Link to="/outreach">
+            <Link to="/outreach-programs">
               <h2 className={`link ${pathname.includes('outreach') && 'active'}`}>Outreach Programs</h2>
             </Link>
           </div>

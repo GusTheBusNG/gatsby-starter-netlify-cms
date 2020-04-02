@@ -5,14 +5,14 @@ outreachProgramsLandingHeading:
   topText: Clemson Vocal Studies
 programs:
   - button:
-      buttonLink: /
+      buttonLink: /outreach-programs/choral-arts-exchange
       buttonText: Learn More
     description: >-
       One choir. One year. One unforgettable experience.
     heading: Clemson Choral Arts Exchange
     image: /img/cu-singers.jpg
   - button:
-      buttonLink: /
+      buttonLink: /outreach-programs/vocal-institute
       buttonText: Learn More
     description: >-
       In partnership with the Clemson Summer Scholars program for rising 9th - 12th graders

@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
+import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 import './outreach-landing-page.scss'
-import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture'
 
 export const OutreachLandingPageTemplate = ({
   heading: {
@@ -58,10 +59,12 @@ const OutreachLandingPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <OutreachLandingPageTemplate
-      heading={frontmatter.outreachProgramsLandingHeading}
-      programs={frontmatter.programs}
-    />
+    <Layout>
+      <OutreachLandingPageTemplate
+        heading={frontmatter.outreachProgramsLandingHeading}
+        programs={frontmatter.programs}
+      />
+    </Layout>
   )
 }
 
