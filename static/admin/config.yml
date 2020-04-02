@@ -61,7 +61,16 @@ collections:
           {label: Text, name: text, widget: text}
         ]}
       - {label: "Third Subheading", name: subheadingThree, widget: string}
-      - {label: Button, name: buttonTwo, widget: object, fields: [
+      - label: Staff
+            name: staffList
+            widget: list
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Name, name: name, widget: text}
+              - {label: Title, name: title, widget: text}
+              - {label: Bio, name: bio, widget: text}
+              - {label: Email, name: email, widget: text}
+      - {label: "Second Button", name: buttonTwo, widget: object, fields: [
           {label: "Button Label", name: buttonTwoText, widget: string},
           {label: "Button Link", name: buttonTwoLink, widget: string}
         ]}

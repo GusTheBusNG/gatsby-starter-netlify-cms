@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import TextContent from '../components/TextContent';
 import Button from '../components/Button';
 import Subheading from '../components/Subheading';
+import Layout from '../components/Layout';
 
 import './outreach.scss';
 import FloatingCard from '../components/FloatingCard';
@@ -19,6 +20,8 @@ export const OutreachTemplate = ({
   subheadingTwo,
   auditionInformation,
   subheadingThree,
+  buttonTwo: { buttonTwoText, buttonTwoLink },
+  staffList
 }) => (
   <div className="outreach">
     <div
@@ -50,6 +53,27 @@ export const OutreachTemplate = ({
       }
       
       <Subheading>{subheadingThree}</Subheading>
+      {
+        staffList && staffList.map(({
+                    image,
+                    name,
+                    title,
+                    bio,
+                    email
+          }) => (
+            <FloatingCard
+              key={name}
+              header={name}
+              content={title}
+              drawer={bio}
+              email={email}
+              image={image}
+            />
+          ))
+      }
+      <Button link={buttonTwoLink}>
+        {buttonTwoText}
+      </Button>
     </div>
     
     <br></br>
@@ -65,22 +89,28 @@ OutreachTemplate.propTypes = {
   subheadingTwo: PropTypes.string,
   auditionInformation: PropTypes.array,
   subheadingThree: PropTypes.string,
+  staffList: PropTypes.array,
+  buttonTwo: PropTypes.object
 }
 
 const Outreach = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <OutreachTemplate
-      image={frontmatter.image}
-      header={frontmatter.header}
-      subheading={frontmatter.subheading}
-      about={frontmatter.about}
-      button={frontmatter.button}
-      subheadingTwo={frontmatter.subheadingTwo}
-      auditionInformation={frontmatter.auditionInformation}
-      subheadingThree={frontmatter.subheadingThree}
-    />
+    <Layout>
+      <OutreachTemplate
+        image={frontmatter.image}
+        header={frontmatter.header}
+        subheading={frontmatter.subheading}
+        about={frontmatter.about}
+        button={frontmatter.button}
+        subheadingTwo={frontmatter.subheadingTwo}
+        auditionInformation={frontmatter.auditionInformation}
+        subheadingThree={frontmatter.subheadingThree}
+        staffList={frontmatter.staffList}
+        buttonTwo={frontmatter.buttonTwo}
+      />
+    </Layout>
   )
 }
 
@@ -128,6 +158,24 @@ export const pageQuery = graphql`
           heading
         }
         subheadingThree
+        staffList {
+          name
+          title
+          email
+          bio
+          image {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        buttonTwo {
+          buttonTwoText
+          buttonTwoLink
+        }
       }
     }
   }
