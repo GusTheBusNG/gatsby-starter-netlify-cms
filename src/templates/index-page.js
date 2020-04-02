@@ -26,23 +26,22 @@ export const IndexPageTemplate = ({
   ensembles
 }) => (
   <div className="home-page">
-    <div className="home-page__content">
-      <div 
-        className="landing-content"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent 60%),
-          url(${
-            !!backgroundImage.childImageSharp ?
-              backgroundImage.childImageSharp.fluid.src :
-              backgroundImage
-          })`,
-        }}
-      >
-        <Image
-          alt={topText}
-          className="landing-content__logo"
-          image={logo}
-        />
+    <div 
+      className="landing-content"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), transparent 60%),
+        url(${
+          !!backgroundImage.childImageSharp ?
+            backgroundImage.childImageSharp.fluid.src :
+            backgroundImage
+        })`,
+      }}
+    >
+      <Image
+        alt={topText}
+        className="landing-content__logo"
+        image={logo}
+      />
 
       <FloatingCard
         className="landing-content__mission-statement"
@@ -78,7 +77,6 @@ export const IndexPageTemplate = ({
         ))
       }
     </div>
-  </div>
   </div>
 );
 
