@@ -1,5 +1,6 @@
 ---
 templateKey: outreach
+title: choral-arts-exchange
 header:
   bottomText: Choral Arts Exchange
   topText: Clemson Vocal Arts

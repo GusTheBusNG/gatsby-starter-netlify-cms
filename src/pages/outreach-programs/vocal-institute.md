@@ -1,5 +1,6 @@
 ---
 templateKey: outreach
+title: vocal-institute
 header:
   bottomText: Vocal Institute
   topText: Clemson Vocal Arts

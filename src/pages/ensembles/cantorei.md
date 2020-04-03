@@ -1,5 +1,6 @@
 ---
 templateKey: ensembles
+title: cantorei
 header:
   bottomText: CU Cantorei
   topText: Clemson Vocal Arts

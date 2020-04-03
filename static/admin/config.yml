@@ -19,9 +19,10 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ensembles"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: Header, name: header, widget: object, fields: [
           {label: "Top Text", name: topText, widget: string, default: 'Top text'},
-          {label: "Bottom Text", name: bottomText, widget: text, , default: 'Bottom Text'}
+          {label: "Bottom Text", name: bottomText, widget: text, default: 'Bottom Text'}
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
@@ -43,6 +44,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: Header, name: header, widget: object, fields: [
           {label: "Top Text", name: topText, widget: string},
           {label: "Bottom Text", name: bottomText, widget: text}
