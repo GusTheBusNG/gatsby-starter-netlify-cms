@@ -26,10 +26,13 @@ collections:
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
       - {label: About, name: about, widget: string}
-      - {label: Button, name: button, widget: object, fields: [
-          {label: "Button Label", name: buttonText, widget: string},
-          {label: "Button Link", name: buttonLink, widget: string}
-        ]}
+      - label: "Concert Attire"
+        name: concertAttire
+        widget: object
+        fields:
+          - {label: "Concert Attire Heading", name: attireHeading, widget: string}
+          - {label: "Concert Attire Description", name: attireContent, widget: text}
+          - {label: "Concert Attire Content", name: attireDrawer, widget: text}
       - {label: "Second Subheading", name: subheadingTwo, widget: string}
       - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
           {label: Image, name: image, widget: image},
