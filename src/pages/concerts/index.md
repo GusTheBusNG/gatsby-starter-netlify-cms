@@ -3,6 +3,13 @@ templateKey: concerts-page
 concertsPageHeading:
   bottomText: Concerts
   topText: Clemson
+socialMedia:
+  - icon: /img/facebook-logo.png
+    link: 'https://www.facebook.com/clemsonchoirs/'
+  - icon: /img/instagram.png
+    link: 'https://www.instagram.com/clemsonchoirs/'
+  - icon: /img/youtube-logo.png
+    link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
 concerts:
   - photo: /img/cu-singers.jpg
     showTitle: true
