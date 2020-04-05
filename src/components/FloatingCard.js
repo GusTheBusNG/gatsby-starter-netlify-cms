@@ -7,6 +7,8 @@ import Image from './Image';
 
 const FloatingCard = ({ image, header, content, drawer, email, children, className }) => {
   const [height, setHeight] = useState(0)
+
+  if (!header && !content) return <></>;
   
   return (
   <div className={`card-container ${className}`}>
