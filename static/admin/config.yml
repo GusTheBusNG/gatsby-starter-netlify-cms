@@ -71,13 +71,15 @@ collections:
           - label: "Ensembles"
             name: ensembles
             widget: list
+            required: false
             fields:
-              - {label: Image, name: image, widget: image, default: '/img/cu-singers.jpg'}
+              - {label: Image, name: image, widget: image, required: false}
               - {label: Heading, name: heading, widget: text, default: 'Heading'}
               - {label: "Short Description", name: description, widget: text, default: 'Short Description'}
               - label: Button
                 name: button
                 widget: object
+                required: false
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
