@@ -45,10 +45,11 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Logo, name: logo, widget: image}
+          - {label: Logo, name: logo, widget: image, required: false}
           - label: "Mission Statement"
             name: missionStatement
             widget: object
+            required: false
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Statement, name: content, widget: text}
@@ -56,12 +57,14 @@ collections:
           - label: "Social Media"
             name: socialMedia
             widget: list
+            required: false
             fields:
               - {label: Icon, name: icon, widget: image}
               - {label: Link, name: link, widget: string}
           - label: Heading
             name: homePageHeading
             widget: object
+            required: false
             fields:
               - {label: "Top Text", name: topText, widget: string, default: 'Top text'}
               - {label: "Bottom Text", name: bottomText, widget: string, default: 'Bottom Text'}
