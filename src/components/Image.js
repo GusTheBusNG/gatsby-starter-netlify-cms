@@ -10,7 +10,7 @@ const findImageSrc = image => {
   return imageSrc
 }
 
-const Image = ({ image, alt, ...props }) => (
+const Image = ({ image, alt, ...props }) => !!image && (
   <img
     alt={alt}
     src={findImageSrc(image)}
