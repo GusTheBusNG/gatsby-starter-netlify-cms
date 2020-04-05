@@ -30,9 +30,9 @@ collections:
         name: concertAttire
         widget: object
         fields:
-          - {label: "Concert Attire Heading", name: attireHeading, widget: string}
-          - {label: "Concert Attire Description", name: attireContent, widget: text}
-          - {label: "Concert Attire Content", name: attireDrawer, widget: text}
+          - {label: "Concert Attire Heading", name: attireHeading, widget: string, default: 'Concert Attire'}
+          - {label: "Concert Attire Description", name: attireContent, widget: text, default: 'Brief description...'}
+          - {label: "Concert Attire Content", name: attireDrawer, widget: text, default: 'More text here...'}
       - {label: "Second Subheading", name: subheadingTwo, widget: string}
       - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
           {label: Image, name: image, widget: image},
