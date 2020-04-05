@@ -1,6 +1,7 @@
 import React from 'react';
 import CardTitle from '../CardTitle';
 import Button from '../Button';
+import Image from '../Image';
 
 import './ExpandedCard.scss';
 
@@ -20,23 +21,27 @@ const ExpandedCard = ({
   }
 }) => (
   <div className="expanded-card">
-    <img
+    <CardTitle subtitle={date} title={title} />
+
+    <Image
       alt={title}
       className="expanded-card__image"
-      src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
+      image={image}
     />
-    { 
-      !showLocation && (
-        <div className="expanded-card__description">
-          <CardTitle subtitle={date} title={title} />
-          <p className="expanded-card__description__text">{description}</p>
-          
+
+    <p className="expanded-card__description">{description}</p>
+    {
+      !showLocation ? (
+        <>
           <CardTitle subtitle={subtitle} />
-          <p className="expanded-card__description__text">{secondDescription}</p>
-            
-          <div className="expanded-card__description__button">
+          <p className="expanded-card__description">{secondDescription}</p>
+          <div className="expanded-card__button">
             <Button link={buttonLink}>{buttonText}</Button>
           </div>
+        </>
+      ) : (
+        <div className="expanded-card__button">
+          <Button link={buttonLink}>{buttonText}</Button>
         </div>
       )
     }

@@ -46,10 +46,9 @@ export const MajorPageTemplate = ({
     </div>
     <div className="major__stories">
       <Subheading className="major__stories__heading">{subheadingThree}</Subheading>
-      <div className="major__stories__ui">{
+      {
         stories && stories.map(info => (<HorizontalCard key={info.title} info={info} /> ))
       }
-      </div>
     </div>
   </div>
 );
