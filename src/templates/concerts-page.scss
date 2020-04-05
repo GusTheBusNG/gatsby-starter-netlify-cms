@@ -7,18 +7,9 @@
   background-color: $background-white;
 
   @include sm-mobile {
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 1rem;
   }
-  
-  &__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    @include sm-mobile {
-      padding: 0 0.5rem;
-      align-items: center;
-    }
-  } 
 }

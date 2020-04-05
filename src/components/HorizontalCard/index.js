@@ -28,12 +28,12 @@ class HorizontalCardWrapper extends Component {
 
   render() {
     const { screenWidth } = this.state;
-    const { concert } = this.props;
+    const { info } = this.props;
 
     if (screenWidth > 530) {
-      return <ExpandedCard {...concert} {...this.props} />
+      return <ExpandedCard {...info} {...this.props} />
     } else {
-      return <HorizontalCard {...concert} {...this.props} />
+      return <HorizontalCard {...info} {...this.props} />
     }
   }
 }
