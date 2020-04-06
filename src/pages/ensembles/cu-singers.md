@@ -1,5 +1,6 @@
 ---
 templateKey: ensembles
+title: cu-singers
 header:
   bottomText: CU Singers
   topText: Clemson Vocal Arts
