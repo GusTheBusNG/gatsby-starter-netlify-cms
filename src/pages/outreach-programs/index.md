@@ -2,7 +2,7 @@
 templateKey: outreach-landing-page
 outreachProgramsLandingHeading:
   bottomText: Outreach Programs
-  topText: Clemson Vocal Studies
+  topText: Clemson Vocal Arts
 programs:
   - button:
       buttonLink: /outreach-programs/choral-arts-exchange
