@@ -90,8 +90,8 @@ Ensembles.propTypes = {
 export default Ensembles
 
 export const pageQuery = graphql`
-  query Ensembles {
-    markdownRemark(frontmatter: { templateKey: { eq: "ensembles" } }) {
+  query Ensembles($id: String!) {
+    markdownRemark(id: { eq: $id } ) {
       frontmatter {
         header {
           topText
