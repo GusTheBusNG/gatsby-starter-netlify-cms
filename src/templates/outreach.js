@@ -125,8 +125,8 @@ Outreach.propTypes = {
 export default Outreach
 
 export const pageQuery = graphql`
-  query Outreach {
-    markdownRemark(frontmatter: { templateKey: { eq: "outreach" } }) {
+  query Outreach($id: String!) {
+    markdownRemark(id: { eq: $id } ) {
       frontmatter {
         header {
           topText
