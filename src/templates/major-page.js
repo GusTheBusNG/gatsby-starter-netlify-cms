@@ -6,7 +6,9 @@ import Header from '../components/Header';
 import TextContent from '../components/TextContent';
 import Button from '../components/Button';
 import Subheading from '../components/Subheading';
-import FloatingCard from '../components/FloatingCard'
+import FloatingCard from '../components/FloatingCard';
+import HorizontalCard from '../components/HorizontalCard';
+import Layout from '../components/Layout';
 
 import './major-page.scss'
 
@@ -17,7 +19,8 @@ export const MajorPageTemplate = ({
   button: { buttonText, buttonLink },
   subheadingTwo,
   majorAuditionInfo,
-  subheadingThree
+  subheadingThree,
+  stories
 }) => (
   <div className="major">
     <div className="major__content">
@@ -40,8 +43,12 @@ export const MajorPageTemplate = ({
             )) : null
         }
       </div>
-
-      <Subheading>{subheadingThree}</Subheading>
+    </div>
+    <div className="major__stories">
+      <Subheading className="major__stories__heading">{subheadingThree}</Subheading>
+      {
+        stories && stories.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+      }
     </div>
   </div>
 );
@@ -55,21 +62,25 @@ MajorPageTemplate.propTypes = {
   subheadingTwo: PropTypes.string,
   majorAuditionInfo: PropTypes.array,
   subheadingThree: PropTypes.string,
+  stories: PropTypes.array
 }
 
 const MajorPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <MajorPageTemplate
-      majorHeading={frontmatter.majorHeading}
-      subheading={frontmatter.subheading}
-      about={frontmatter.about}
-      button={frontmatter.button}
-      subheadingTwo={frontmatter.subheadingTwo}
-      majorAuditionInfo={frontmatter.majorAuditionInfo}
-      subheadingThree={frontmatter.subheadingThree}
-    />
+    <Layout>
+      <MajorPageTemplate
+        majorHeading={frontmatter.majorHeading}
+        subheading={frontmatter.subheading}
+        about={frontmatter.about}
+        button={frontmatter.button}
+        subheadingTwo={frontmatter.subheadingTwo}
+        majorAuditionInfo={frontmatter.majorAuditionInfo}
+        subheadingThree={frontmatter.subheadingThree}
+        stories={frontmatter.stories}
+      />
+    </Layout>
   )
 }
 
@@ -110,6 +121,27 @@ export const pageQuery = graphql`
           heading
         }
         subheadingThree
+        stories {
+          photo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          showTitle
+          title
+          date
+          description
+          button {
+            buttonText
+            buttonLink
+          }
+          secondDescription {
+            subtitle
+            description
+          }
+        }
       }
     }
   }

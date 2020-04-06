@@ -16,15 +16,13 @@ export const ConcertsPageTemplate = ({
   concerts
 }) => (
   <div className="concerts-page">
-    <div className="concerts-page__content">
-      <Header
-        topText={topText}
-        bottomText={bottomText}
-      />
-      {
-        concerts && concerts.map(concert => (<HorizontalCard key={concert.title} concert={concert} /> ))
-      }
-    </div>
+    <Header
+      topText={topText}
+      bottomText={bottomText}
+    />
+    {
+      concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+    }
   </div>
 );
 
@@ -64,8 +62,8 @@ ConcertsPage.propTypes = {
 export default ConcertsPage
 
 export const pageQuery = graphql`
-  query ConcertsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "concerts-page" } }) {
+  query ConcertsPageTemplate($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         concertsPageHeading {
           topText

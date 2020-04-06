@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
 import TextContent from '../components/TextContent'
-import Button from '../components/Button'
 import Subheading from '../components/Subheading'
 import Layout from '../components/Layout'
 
@@ -17,7 +16,7 @@ export const EnsemblesTemplate = ({
   header: { topText, bottomText },
   subheading,
   about,
-  button: { buttonText, buttonLink },
+  concertAttire: { attireHeading, attireContent, attireDrawer  },
   subheadingTwo,
   auditionInformation
 }) => (
@@ -30,9 +29,12 @@ export const EnsemblesTemplate = ({
     <div className="ensembles__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
+      <FloatingCard
+        header={attireHeading}
+        content={attireContent}
+        drawer={attireDrawer}
+        className="ensembles__concert-attire"
+      />
       <Subheading>{subheadingTwo}</Subheading>
 
       {
@@ -54,7 +56,7 @@ EnsemblesTemplate.propTypes = {
   header: PropTypes.object,
   subheading: PropTypes.string,
   about: PropTypes.string,
-  button: PropTypes.object,
+  concertAttire: PropTypes.object,
   subheadingTwo: PropTypes.string,
   auditionInformation: PropTypes.array,
 }
@@ -69,7 +71,7 @@ const Ensembles = ({ data }) => {
         header={frontmatter.header}
         subheading={frontmatter.subheading}
         about={frontmatter.about}
-        button={frontmatter.button}
+        concertAttire={frontmatter.concertAttire}
         subheadingTwo={frontmatter.subheadingTwo}
         auditionInformation={frontmatter.auditionInformation}
       />
@@ -88,8 +90,8 @@ Ensembles.propTypes = {
 export default Ensembles
 
 export const pageQuery = graphql`
-  query Ensembles {
-    markdownRemark(frontmatter: { templateKey: { eq: "ensembles" } }) {
+  query Ensembles($id: String!) {
+    markdownRemark(id: { eq: $id } ) {
       frontmatter {
         header {
           topText
@@ -105,9 +107,10 @@ export const pageQuery = graphql`
         }
         subheading
         about
-        button {
-          buttonText
-          buttonLink
+        concertAttire {
+          attireHeading
+          attireContent
+          attireDrawer
         }
         subheadingTwo
         auditionInformation {

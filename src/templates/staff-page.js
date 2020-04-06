@@ -107,6 +107,13 @@ StaffPageTemplate.propTypes = {
   staffList: PropTypes.array
 }
 
+StaffPageTemplate.defaultProps = {
+  staffHeading: {
+    topText: 'Top heading text',
+    bottomText: 'bottom heading text'
+  },
+}
+
 const StaffPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
@@ -131,8 +138,8 @@ StaffPage.propTypes = {
 export default StaffPage
 
 export const pageQuery = graphql`
-  query StaffPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "staff-page" } }) {
+  query StaffPageTemplate($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         staffHeading {
           topText

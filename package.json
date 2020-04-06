@@ -5,8 +5,7 @@
   "author": "Clemson University Vocal Arts",
   "dependencies": {
     "bulma": "^0.8.0",
-    "eslint-plugin-react-hooks": "^2.5.1",
-    "gatsby": "^2.20.4",
+    "gatsby": "^2.20.7",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-netlify": "^2.1.32",

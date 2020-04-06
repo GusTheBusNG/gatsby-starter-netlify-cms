@@ -37,7 +37,9 @@ const FloatingCard = ({ image, header, content, drawer, email, children, classNa
         height={height}
         className={`card-drawer  ${height === 'auto' ? 'expanded' : 'collapsed'}`}>
           <p className="card-drawer__text">{drawer}</p>
-          <a className="card-drawer__link" href={`mailto: ${email}`}>{email}</a>
+          {!! email && 
+            <a className="card-drawer__link" href={`mailto: ${email}`}>{email}</a>
+          }
       </AnimateHeight>
     
     }

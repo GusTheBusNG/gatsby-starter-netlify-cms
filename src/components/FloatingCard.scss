@@ -1,8 +1,7 @@
 @import '../variables.scss';
 
 .card-container {
-  width: 95%;
-  width: calc(100% - 2rem);
+  width: 100%;
   margin-bottom: 1rem;
 
   .floating-card{
@@ -128,12 +127,13 @@
       box-shadow: $box-shadow;
     }
     &__text {
-      padding: 2rem 1rem 1rem 1rem;
+      padding: 2rem 1rem 0 1rem;
       margin: 0;
     }
     &__link {
       display: block;
       margin: auto;
+      margin-top: 1rem;
       border: none;
       
       width: 2.5rem;

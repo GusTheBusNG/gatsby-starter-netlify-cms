@@ -3,11 +3,8 @@
 .major {
   background-color: #FDFDFD;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,5 +14,35 @@
     @include desktop {
       max-width: 30rem;
     }
+  }
+
+  &__stories {
+    &__heading {
+      padding: 0 1rem;
+
+      @include sm-mobile {
+        padding: 0;
+      }
+    }
+
+    @include sm-mobile {
+      padding: 0 1rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include desktop {
+      width: 50%;
+
+      align-items: flex-start;
+    }
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
