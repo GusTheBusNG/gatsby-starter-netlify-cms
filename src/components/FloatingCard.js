@@ -13,13 +13,11 @@ const FloatingCard = ({ image, header, content, drawer, email, children, classNa
   return (
   <div className={`card-container ${className}`}>
     <div className="floating-card">
-      { !!image &&
-        <Image
-          alt="icon"
-          className="floating-card__image"
-          image={image}
-        />
-      }
+      <Image
+        alt="icon"
+        className="floating-card__image"
+        image={image}
+      />
       <h3 className="floating-card__heading">{header}</h3>
       <p className="floating-card__content">{content}</p>
       { !!drawer &&
@@ -41,7 +39,6 @@ const FloatingCard = ({ image, header, content, drawer, email, children, classNa
           <p className="card-drawer__text">{drawer}</p>
           <a className="card-drawer__link" href={`mailto: ${email}`}>{email}</a>
       </AnimateHeight>
-    
     }
   </div>
 )};
