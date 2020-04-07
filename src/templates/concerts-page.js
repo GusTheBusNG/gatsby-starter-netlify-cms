@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
+import Subheading from '../components/Subheading'
 import HorizontalCard from '../components/HorizontalCard'
 import SocialMediaLine from '../components/SocialMediaLine'
 import Layout from '../components/Layout'
@@ -14,7 +15,10 @@ export const ConcertsPageTemplate = ({
     topText,
     bottomText
   },
+  subheading,
+  previewConcerts,
   socialMedia,
+  subheadingTwo,
   concerts
 }) => (
   <div className="concerts-page">
@@ -23,14 +27,20 @@ export const ConcertsPageTemplate = ({
         topText={topText}
         bottomText={bottomText}
       />
+      <Subheading className="concerts-page__subheading">{subheading}</Subheading>
+      {
+        previewConcerts && previewConcerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+      }
+      <SocialMediaLine
+        className="concerts-page__social-media"
+        socialMedia={socialMedia}
+      />
+      <Subheading className="concerts-page__subheading">{subheadingTwo}</Subheading>
       {
         concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
       }
     </div>
-    <SocialMediaLine
-        className="concerts-page__social-media"
-        socialMedia={socialMedia}
-      />
+    
   </div>
 );
 
@@ -43,7 +53,10 @@ ConcertsPageTemplate.defaultProps = {
 
 ConcertsPageTemplate.propTypes = {
   heading: PropTypes.object,
+  subheading: PropTypes.string,
+  previewConcerts: PropTypes.array,
   socialMedia: PropTypes.array,
+  subheadingTwo: PropTypes.string,
   concerts: PropTypes.array
 }
 
@@ -54,7 +67,10 @@ const ConcertsPage = ({ data }) => {
     <Layout>
       <ConcertsPageTemplate
         heading={frontmatter.concertsPageHeading}
+        subheading={frontmatter.subheading}
+        previewConcerts={frontmatter.previewConcerts}
         socialMedia={frontmatter.socialMedia}
+        subheadingTwo={frontmatter.subheadingTwo}
         concerts={frontmatter.concerts}
       />
     </Layout>
@@ -79,6 +95,30 @@ export const pageQuery = graphql`
           topText
           bottomText
         }
+        subheading
+        previewConcerts {
+          photo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          showTitle
+          title
+          date
+          description
+          button {
+            buttonText
+            buttonLink
+          }
+          location
+          showLocation
+          secondDescription {
+            subtitle
+            description
+          }
+        }
         socialMedia {
           icon {
             publicURL
@@ -90,6 +130,7 @@ export const pageQuery = graphql`
           }
           link
         }
+        subheadingTwo
         concerts {
           photo {
             childImageSharp {

@@ -18,6 +18,17 @@
     }
   } 
 
+  &__subheading {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include sm-mobile {
+      width: 37rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
   &__social-media {
     margin: 2rem 0;
     padding: 1rem 0;
