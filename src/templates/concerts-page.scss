@@ -5,11 +5,27 @@
   flex-direction: column;
 
   background-color: $background-white;
+  
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include sm-mobile {
+      padding: 0 0.5rem;
+      align-items: center;
+    }
+  } 
+
+  &__social-media {
+    margin: 2rem 0;
+    padding: 1rem 0;
+
+    background: $clemson-orange;
+  }
 
   @include sm-mobile {
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 0 1rem;
+    align-items: center;
   }
 }

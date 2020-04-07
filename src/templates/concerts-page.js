@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
-import HorizontalCard from '../components/HorizontalCard';
+import HorizontalCard from '../components/HorizontalCard'
+import SocialMediaLine from '../components/SocialMediaLine'
 import Layout from '../components/Layout'
 
 import './concerts-page.scss'
@@ -13,16 +14,23 @@ export const ConcertsPageTemplate = ({
     topText,
     bottomText
   },
+  socialMedia,
   concerts
 }) => (
   <div className="concerts-page">
-    <Header
-      topText={topText}
-      bottomText={bottomText}
-    />
-    {
-      concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
-    }
+    <div className="concerts-page__content">
+      <Header
+        topText={topText}
+        bottomText={bottomText}
+      />
+      {
+        concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+      }
+    </div>
+    <SocialMediaLine
+        className="concerts-page__social-media"
+        socialMedia={socialMedia}
+      />
   </div>
 );
 
@@ -35,6 +43,7 @@ ConcertsPageTemplate.defaultProps = {
 
 ConcertsPageTemplate.propTypes = {
   heading: PropTypes.object,
+  socialMedia: PropTypes.array,
   concerts: PropTypes.array
 }
 
@@ -45,6 +54,7 @@ const ConcertsPage = ({ data }) => {
     <Layout>
       <ConcertsPageTemplate
         heading={frontmatter.concertsPageHeading}
+        socialMedia={frontmatter.socialMedia}
         concerts={frontmatter.concerts}
       />
     </Layout>
@@ -68,6 +78,17 @@ export const pageQuery = graphql`
         concertsPageHeading {
           topText
           bottomText
+        }
+        socialMedia {
+          icon {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          link
         }
         concerts {
           photo {
