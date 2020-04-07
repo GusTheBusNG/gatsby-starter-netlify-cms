@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from '../components/Header'
-import TextContent from '../components/TextContent'
-import Button from '../components/Button'
-import Subheading from '../components/Subheading'
-import FloatingCard from '../components/FloatingCard'
-import HorizontalCard from '../components/HorizontalCard'
-import SocialMediaLine from '../components/SocialMediaLine'
-import Layout from '../components/Layout'
+import Header from '../components/Header';
+import TextContent from '../components/TextContent';
+import Button from '../components/Button';
+import Subheading from '../components/Subheading';
+import FloatingCard from '../components/FloatingCard';
+import HorizontalCard from '../components/HorizontalCard';
+import { BackgroundImageDiv } from '../components/Image';
+import Layout from '../components/Layout';
 
 import './major-page.scss'
 
@@ -20,7 +20,7 @@ export const MajorPageTemplate = ({
   button: { buttonText, buttonLink },
   subheadingTwo,
   majorAuditionInfo,
-  socialMedia,
+  image,
   subheadingThree,
   stories
 }) => (
@@ -45,11 +45,11 @@ export const MajorPageTemplate = ({
             )) : null
         }
       </div>
-    </div>
-    <SocialMediaLine
-        className="major__social-media"
-        socialMedia={socialMedia}
+      <BackgroundImageDiv
+        className="major__content__image"
+        image={image}
       />
+    </div>
     <div className="major__stories">
       <Subheading className="major__stories__heading">{subheadingThree}</Subheading>
       {
@@ -67,7 +67,6 @@ MajorPageTemplate.propTypes = {
   button: PropTypes.object,
   subheadingTwo: PropTypes.string,
   majorAuditionInfo: PropTypes.array,
-  socialMedia: PropTypes.array,
   subheadingThree: PropTypes.string,
   stories: PropTypes.array
 }
@@ -84,7 +83,7 @@ const MajorPage = ({ data }) => {
         button={frontmatter.button}
         subheadingTwo={frontmatter.subheadingTwo}
         majorAuditionInfo={frontmatter.majorAuditionInfo}
-        socialMedia={frontmatter.socialMedia}
+        image={frontmatter.image}
         subheadingThree={frontmatter.subheadingThree}
         stories={frontmatter.stories}
       />
@@ -128,16 +127,13 @@ export const pageQuery = graphql`
           text
           heading
         }
-        socialMedia {
-          icon {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+        image {
+          publicURL
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
             }
           }
-          link
         }
         subheadingThree
         stories {
