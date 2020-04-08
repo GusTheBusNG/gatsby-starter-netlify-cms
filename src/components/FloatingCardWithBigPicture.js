@@ -24,11 +24,7 @@ export const FloatingCardWithBigPicture = ({
       header={heading}
       content={description}
     >
-      { button &&
-        <Button link={button.buttonLink}>
-          {button.buttonText}
-        </Button>
-      }
+    <Button data={button} />
     </FloatingCard>
   </div>
 );

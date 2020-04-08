@@ -57,7 +57,9 @@ collections:
       - {label: About, name: about, widget: string}
       - {label: Button, name: button, widget: object, fields: [
           {label: "Button Label", name: buttonText, widget: string},
-          {label: "Button Link", name: buttonLink, widget: string}
+          {label: "Button Link", name: buttonLink, widget: string},
+          {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
+
         ]}
       - {label: "Second Subheading", name: subheadingTwo, widget: string}
       - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
@@ -67,17 +69,18 @@ collections:
         ]}
       - {label: "Third Subheading", name: subheadingThree, widget: string}
       - label: Staff
-            name: staffList
-            widget: list
-            fields:
-              - {label: Image, name: image, widget: image}
-              - {label: Name, name: name, widget: text}
-              - {label: Title, name: title, widget: text}
-              - {label: Bio, name: bio, widget: text}
-              - {label: Email, name: email, widget: text}
+        name: staffList
+        widget: list
+        fields:
+          - {label: Image, name: image, widget: image}
+          - {label: Name, name: name, widget: text}
+          - {label: Title, name: title, widget: text}
+          - {label: Bio, name: bio, widget: text}
+          - {label: Email, name: email, widget: text}
       - {label: "Second Button", name: buttonTwo, widget: object, fields: [
           {label: "Button Label", name: buttonTwoText, widget: string},
-          {label: "Button Link", name: buttonTwoLink, widget: string}
+          {label: "Button Link", name: buttonTwoLink, widget: string},
+          {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
         ]}
 
   - name: "pages"
@@ -104,6 +107,7 @@ collections:
             fields:
               - {label: Icon, name: icon, widget: image}
               - {label: Link, name: link, widget: string}
+              - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: true}
           - label: Heading
             name: homePageHeading
             widget: object
@@ -126,6 +130,7 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
       - file: "src/pages/concerts/index.md"
         label: Concerts
         name: concerts
@@ -152,6 +157,7 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
               - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[0,0]}'}
               - {label: "Show location on the last part of the slider", name: showLocation, widget: boolean, default: true}
               - label: "Second description (for the last part if no location)"
@@ -175,7 +181,8 @@ collections:
           - {label: About, name: about, widget: string}
           - {label: Button, name: button, widget: object, fields: [
               {label: "Button Label", name: buttonText, widget: string},
-              {label: "Button Link", name: buttonLink, widget: string}
+              {label: "Button Link", name: buttonLink, widget: string},
+              {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
             ]}
           - {label: "Second Subheading", name: subheadingTwo, widget: string}
           - {label: "Audition Information", name: majorAuditionInfo, widget: list, fields: [
@@ -204,7 +211,7 @@ collections:
               - {label: Title, name: title, widget: text}
               - {label: Bio, name: bio, widget: text}
               - {label: Email, name: email, widget: text}
-    - file: "src/pages/outreach-programs/index.md"
+      - file: "src/pages/outreach-programs/index.md"
         label: "Outreach Programs Landing Page"
         name: "outreach-landing"
         fields:
@@ -228,6 +235,7 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

@@ -16,11 +16,11 @@ export const OutreachTemplate = ({
   header: { topText, bottomText },
   subheading,
   about,
-  button: { buttonText, buttonLink },
+  button,
   subheadingTwo,
   auditionInformation,
   subheadingThree,
-  buttonTwo: { buttonTwoText, buttonTwoLink },
+  buttonTwo,
   staffList
 }) => (
   <div className="outreach">
@@ -36,9 +36,7 @@ export const OutreachTemplate = ({
     <div className="outreach__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
+      <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
       {
@@ -71,9 +69,7 @@ export const OutreachTemplate = ({
             />
           ))
       }
-      <Button link={buttonTwoLink}>
-        {buttonTwoText}
-      </Button>
+      <Button data={buttonTwo} />
     </div>
     
     <br></br>
@@ -144,6 +140,7 @@ export const pageQuery = graphql`
         button {
           buttonText
           buttonLink
+          newTab
         }
         subheadingTwo
         auditionInformation {
@@ -175,6 +172,7 @@ export const pageQuery = graphql`
         buttonTwo {
           buttonTwoText
           buttonTwoLink
+          newTab
         }
       }
     }

@@ -19,6 +19,7 @@ concerts:
     button:
       buttonLink: /ensembles/cu-singers
       buttonText: Get Tickets
+      newTab: false
     showLocation: false
     location: '{"type":"Point","coordinates":[0,0]}'
     secondDescription:
@@ -46,6 +47,7 @@ concerts:
     button:
       buttonLink: /ensembles/cu-singers
       buttonText: Get Tickets
+      newTab: false
     showLocation: true
     location: '{"type":"Point","coordinates":[0,0]}'
     secondDescription:

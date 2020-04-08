@@ -11,6 +11,7 @@ about: >-
 button:
   buttonText: Download Brochure
   buttonLink: /outreach-programs
+  newTab: false
 subheadingTwo: Details
 auditionInformation:
   - image: /img/cu-singers.jpg
@@ -45,5 +46,6 @@ staffList:
 buttonTwo:
   buttonTwoText: Contact for More Information
   buttonTwoLink: /outreach-programs
+  newTab: false
 ---
 

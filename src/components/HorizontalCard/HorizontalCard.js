@@ -123,10 +123,7 @@ class HorizontalCard extends Component {
       title,
       date,
       description,
-      button: {
-        buttonLink,
-        buttonText
-      },
+      button,
       showLocation,
       secondDescription: {
         subtitle,
@@ -170,7 +167,7 @@ class HorizontalCard extends Component {
             <CardTitle className="concert__section__heading" subtitle={date} title={title} />
             <p className="concert__section__description">{description}</p>
             <div className="concert__section__button">
-              <Button link={buttonLink}>{buttonText}</Button>
+              <Button data={button} />
             </div>
           </div>
           <button

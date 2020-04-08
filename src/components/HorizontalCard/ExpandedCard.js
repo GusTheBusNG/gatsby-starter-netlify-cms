@@ -10,10 +10,7 @@ const ExpandedCard = ({
   title,
   date,
   description,
-  button: {
-    buttonLink,
-    buttonText
-  },
+  button,
   showLocation,
   secondDescription: {
     subtitle,
@@ -40,12 +37,12 @@ const ExpandedCard = ({
             <p className="expanded-card__description">{secondDescription}</p>
           }
           <div className="expanded-card__button">
-            <Button link={buttonLink}>{buttonText}</Button>
+            <Button data={button} />
           </div>
         </>
       ) : (
         <div className="expanded-card__button">
-          <Button link={buttonLink}>{buttonText}</Button>
+          <Button data={button} />
         </div>
       )
     }
