@@ -1,8 +1,8 @@
 ---
 templateKey: concerts-page
 concertsPageHeading:
-  bottomText: Concerts
-  topText: Clemson
+  bottomText: Choral Concerts
+  topText: Clemson Vocal Arts
 concerts:
   - photo: /img/cu-singers.jpg
     showTitle: true

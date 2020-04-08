@@ -19,9 +19,38 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ensembles"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: Header, name: header, widget: object, fields: [
           {label: "Top Text", name: topText, widget: string, default: 'Top text'},
-          {label: "Bottom Text", name: bottomText, widget: text, , default: 'Bottom Text'}
+          {label: "Bottom Text", name: bottomText, widget: text, default: 'Bottom Text'}
+        ]}
+      - {label: Image, name: image, widget: image}
+      - {label: Subheading, name: subheading, widget: string}
+      - {label: About, name: about, widget: string}
+      - label: "Concert Attire"
+        name: concertAttire
+        widget: object
+        fields:
+          - {label: "Concert Attire Heading", name: attireHeading, widget: string, default: 'Concert Attire'}
+          - {label: "Concert Attire Description", name: attireContent, widget: text, default: 'Brief description...'}
+          - {label: "Concert Attire Content", name: attireDrawer, widget: text, default: 'More text here...'}
+      - {label: "Second Subheading", name: subheadingTwo, widget: string}
+      - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
+          {label: Image, name: image, widget: image},
+          {label: Heading, name: heading, widget: text},
+          {label: Text, name: text, widget: text}
+        ]}
+  - name: "outreach"
+    label: "Outreach Programs"
+    folder: "src/pages/outreach-programs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: Header, name: header, widget: object, fields: [
+          {label: "Top Text", name: topText, widget: string},
+          {label: "Bottom Text", name: bottomText, widget: text}
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
@@ -35,6 +64,20 @@ collections:
           {label: Image, name: image, widget: image},
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
+        ]}
+      - {label: "Third Subheading", name: subheadingThree, widget: string}
+      - label: Staff
+            name: staffList
+            widget: list
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Name, name: name, widget: text}
+              - {label: Title, name: title, widget: text}
+              - {label: Bio, name: bio, widget: text}
+              - {label: Email, name: email, widget: text}
+      - {label: "Second Button", name: buttonTwo, widget: object, fields: [
+          {label: "Button Label", name: buttonTwoText, widget: string},
+          {label: "Button Link", name: buttonTwoLink, widget: string}
         ]}
 
   - name: "pages"
@@ -117,6 +160,30 @@ collections:
                 fields:
                   - {label: Subtitle, name: subtitle, widget: string, default: "Example Subtitle"}
                   - {label: Description, name: description, widget: text, default: "Example description"}
+      - file: "src/pages/major/index.md"
+        label: "Major Page"
+        name: major
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "major-page"}
+          - label: Heading
+            name: majorHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
+              - {label: "Bottom Text", name: bottomText, widget: string, default: "Major"}
+          - {label: Subheading, name: subheading, widget: string}
+          - {label: About, name: about, widget: string}
+          - {label: Button, name: button, widget: object, fields: [
+              {label: "Button Label", name: buttonText, widget: string},
+              {label: "Button Link", name: buttonLink, widget: string}
+            ]}
+          - {label: "Second Subheading", name: subheadingTwo, widget: string}
+          - {label: "Audition Information", name: majorAuditionInfo, widget: list, fields: [
+              {label: Image, name: image, widget: image},
+              {label: Heading, name: heading, widget: text},
+              {label: Text, name: text, widget: text}
+            ]}
+          - {label: "Third Subheading", name: subheadingThree, widget: string}
       - file: "src/pages/staff/index.md"
         label: "Staff Page"
         name: staff
@@ -137,3 +204,48 @@ collections:
               - {label: Title, name: title, widget: text}
               - {label: Bio, name: bio, widget: text}
               - {label: Email, name: email, widget: text}
+    - file: "src/pages/outreach-programs/index.md"
+        label: "Outreach Programs Landing Page"
+        name: "outreach-landing"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach-landing-page"}
+          - label: Heading
+            name: outreachProgramsLandingHeading
+            widget: object
+            fields:
+              - {label: "Top Text", name: topText, widget: string}
+              - {label: "Bottom Text", name: bottomText, widget: string}
+          - label: "Programs"
+            name: programs
+            widget: list
+            fields:
+              - {label: Image, name: image, widget: image}
+              - {label: Heading, name: heading, widget: text}
+              - {label: "Short Description", name: description, widget: text}
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - {label: "Button Label", name: buttonText, widget: string}
+                  - {label: "Button Link", name: buttonLink, widget: string}
+      - file: "src/pages/products/index.md"
+        label: "Products Page"
+        name: "products"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [
+              {label: Heading, name: heading, widget: string},
+              {label: Description, name: description, widget: text},
+              {label: Blurbs, name: blurbs, widget: list, fields: [
+                {label: Image, name: image, widget: image},
+                {label: Text, name: text, widget: text}
+              ]}
+            ]}
+          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
+          - {label: Full_image, name: full_image, widget: image}
+          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
