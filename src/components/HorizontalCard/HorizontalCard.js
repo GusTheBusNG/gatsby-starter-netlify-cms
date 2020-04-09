@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from '../Button'
 import CardTitle from '../CardTitle'
+import Image from '../Image'
 
 import './HorizontalCard.scss';
 
@@ -147,10 +148,10 @@ class HorizontalCard extends Component {
           }}
         >
           <div className="concert__section" style={{ paddingBottom: showTitle ? '0.5rem' : '0'}}>
-            <img
+            <Image
               alt={title}
               className={`concert__section__image ${!showTitle && 'full-image'}`}
-              src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
+              image={image}
             />
             {
               showTitle && (<CardTitle className="concert__section__heading" subtitle={date} title={title} />)

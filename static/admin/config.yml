@@ -146,10 +146,10 @@ collections:
             name: concerts
             widget: list
             fields:
-              - {label: "Hook Photo", name: photo, widget: string}
-              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
               - {label: "Title", name: title, widget: string, default: "Example Title"}
               - {label: "Date", name: date, widget: datetime, dateFormat: "MMMM Do, YYYY", timeFormat: "hh:mm a", format: "MMMM Do, YYYY hh:mm a"}
+              - {label: "Hook Photo", name: photo, widget: image}
+              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
               - {label: "Long description", name: description, widget: text, default: "This is the long description"}
               - label: Button
                 name: button
@@ -158,7 +158,7 @@ collections:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
                   - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
-              - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[0,0]}'}
+              - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'}
               - {label: "Show location on the last part of the slider", name: showLocation, widget: boolean, default: true}
               - label: "Second description (for the last part if no location)"
                 name: secondDescription

@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 const findImageSrc = image => {
-  let imageSrc = image;
+  if (!!image.childImageSharp) return image.childImageSharp.fluid.src;
+  if (!!image.publicURL) return image.publicURL;
 
-  if (!!image.childImageSharp) imageSrc = image.childImageSharp.fluid.src;
-  else if (!!image.publicURL) imageSrc = image.publicURL;
-
-  return imageSrc
+  return image;
 }
 
 const Image = ({ image, alt, ...props }) => !!image && (

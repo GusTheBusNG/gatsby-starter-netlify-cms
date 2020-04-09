@@ -13,7 +13,7 @@ export const Button = ({ data }) => {
     </button>
   );
 
-  if (button.newTab) {
+  if (data.newTab) {
     return (
       <a href={data.buttonLink} target="_blank" rel="noopener noreferrer">
         {button}
