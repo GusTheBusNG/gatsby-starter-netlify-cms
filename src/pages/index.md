@@ -11,10 +11,13 @@ backgroundImage: /img/WorldPremiere2019.jpg
 socialMedia:
   - icon: /img/facebook-logo.png
     link: 'https://www.facebook.com/clemsonchoirs/'
+    newTab: true
   - icon: /img/instagram.png
     link: 'https://www.instagram.com/clemsonchoirs/'
+    newTab: true
   - icon: /img/youtube-logo.png
     link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
+    newTab: true
 homePageHeading:
   bottomText: Ensembles
   topText: Clemson Vocal Studies
@@ -22,6 +25,7 @@ ensembles:
   - button:
       buttonLink: /ensembles/cu-singers
       buttonText: Learn More
+      newTab: false
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -31,6 +35,7 @@ ensembles:
   - button:
       buttonLink: /ensembles/cu-singers
       buttonText: Learn More
+      newTab: false
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

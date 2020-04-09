@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from '../Button'
 import CardTitle from '../CardTitle'
+import Image from '../Image'
 
 import './HorizontalCard.scss';
 
@@ -123,10 +124,7 @@ class HorizontalCard extends Component {
       title,
       date,
       description,
-      button: {
-        buttonLink,
-        buttonText
-      },
+      button,
       showLocation,
       secondDescription: {
         subtitle,
@@ -150,13 +148,13 @@ class HorizontalCard extends Component {
           }}
         >
           <div className="concert__section" style={{ paddingBottom: showTitle ? '0.5rem' : '0'}}>
-            <img
+            <Image
               alt={title}
               className={`concert__section__image ${!showTitle && 'full-image'}`}
-              src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
+              image={image}
             />
             {
-              showTitle && (<CardTitle subtitle={date} title={title} />)
+              showTitle && (<CardTitle className="concert__section__heading" subtitle={date} title={title} />)
             }
           </div>
           <button
@@ -167,10 +165,10 @@ class HorizontalCard extends Component {
           >
           </button>
           <div className="concert__section description">
-            <CardTitle subtitle={date} title={title} />
+            <CardTitle className="concert__section__heading" subtitle={date} title={title} />
             <p className="concert__section__description">{description}</p>
             <div className="concert__section__button">
-              <Button link={buttonLink}>{buttonText}</Button>
+              <Button data={button} />
             </div>
           </div>
           <button
@@ -183,12 +181,12 @@ class HorizontalCard extends Component {
           {
             showLocation ? (
               <div className="concert__section description">
-                <CardTitle subtitle={date} title={title} />
+                <CardTitle className="concert__section__heading" subtitle={date} title={title} />
                 <p className="concert__section__description">Still need to add a location thing</p>
               </div>
             ) : (
               <div className="concert__section description">
-                <CardTitle subtitle={subtitle} title={title} />
+                <CardTitle className="concert__section__heading" subtitle={subtitle} title={title} />
                 <p className="concert__section__description">{secondDescription}</p>
               </div>
             )

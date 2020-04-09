@@ -10,10 +10,7 @@ const ExpandedCard = ({
   title,
   date,
   description,
-  button: {
-    buttonLink,
-    buttonText
-  },
+  button,
   showLocation,
   secondDescription: {
     subtitle,
@@ -29,19 +26,23 @@ const ExpandedCard = ({
       image={image}
     />
 
-    <p className="expanded-card__description">{description}</p>
+    {!!description && 
+      <p className="expanded-card__description">{description}</p>
+    }
     {
       !showLocation ? (
         <>
-          <CardTitle subtitle={subtitle} />
-          <p className="expanded-card__description">{secondDescription}</p>
+          <CardTitle className="expanded-card__subtitle" subtitle={subtitle} />
+          {!!secondDescription &&
+            <p className="expanded-card__description">{secondDescription}</p>
+          }
           <div className="expanded-card__button">
-            <Button link={buttonLink}>{buttonText}</Button>
+            <Button data={button} />
           </div>
         </>
       ) : (
         <div className="expanded-card__button">
-          <Button link={buttonLink}>{buttonText}</Button>
+          <Button data={button} />
         </div>
       )
     }

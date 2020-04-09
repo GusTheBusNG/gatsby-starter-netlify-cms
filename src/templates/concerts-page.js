@@ -84,6 +84,7 @@ export const pageQuery = graphql`
           button {
             buttonText
             buttonLink
+            newTab
           }
           location
           showLocation

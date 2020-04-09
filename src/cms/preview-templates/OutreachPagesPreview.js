@@ -1,20 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { EnsemblesTemplate } from '../../templates/ensembles'
+import { OutreachTemplate } from '../../templates/outreach'
 
-const EnsemblesPreview = ({ entry, getAsset }) => {
+const OutreachPreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
  
   if (data) {
     return (
-      <EnsemblesTemplate
+      <OutreachTemplate
         image={data.image}
         header={data.header}
         subheading={data.subheading}
         about={data.about}
-        concertAttire={data.concertAttire}
+        button={data.button}
         subheadingTwo={data.subheadingTwo}
         auditionInformation={data.auditionInformation}
+        subheadingThree={data.subheadingThree}
+        buttonTwo={data.buttonTwo}
+        staffList={data.staffList}
       />
     )
   } else {
@@ -22,11 +25,11 @@ const EnsemblesPreview = ({ entry, getAsset }) => {
   }
 }
 
-EnsemblesPreview.propTypes = {
+OutreachPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default EnsemblesPreview
+export default OutreachPreview
