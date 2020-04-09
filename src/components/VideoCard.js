@@ -5,11 +5,13 @@ import './VideoCard.scss'
 
 const VideoCard = ({ videoLink, header, content, className }) => {
   return (
-  <div className={`video-card__container ${className}`}>
+  <div className={`card-container ${className}`}>
     <div className="video-card">
       <iframe 
+        className="video-card__video"
+        title="Preview Concert Video"
         width="560" 
-        height="315" 
+        height="315"
         src={`${videoLink}`} 
         frameborder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 

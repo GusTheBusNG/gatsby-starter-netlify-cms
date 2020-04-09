@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import Header from '../components/Header'
 import Subheading from '../components/Subheading'
 import HorizontalCard from '../components/HorizontalCard'
+import VideoCard from '../components/VideoCard'
 import SocialMediaLine from '../components/SocialMediaLine'
 import Layout from '../components/Layout'
 
@@ -29,7 +30,7 @@ export const ConcertsPageTemplate = ({
       />
       <Subheading className="concerts-page__subheading">{subheading}</Subheading>
       {
-        previewConcerts && previewConcerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+        previewConcerts && previewConcerts.map(info => (<VideoCard key={info.title} {...info}/> ))
       }
       <SocialMediaLine
         className="concerts-page__social-media"
@@ -97,27 +98,9 @@ export const pageQuery = graphql`
         }
         subheading
         previewConcerts {
-          photo {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          showTitle
-          title
-          date
-          description
-          button {
-            buttonText
-            buttonLink
-          }
-          location
-          showLocation
-          secondDescription {
-            subtitle
-            description
-          }
+          header
+          content
+          videoLink
         }
         socialMedia {
           icon {
