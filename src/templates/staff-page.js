@@ -24,6 +24,23 @@ export class StaffPageTemplate extends Component {
     window.addEventListener('resize', this.updateWindowDimensions);
   }
 
+  componentDidUpdate({ staffList: nextStaffList }) {
+    if (nextStaffList !== this.props.staffList) {
+      this.setState(({ staffList }) => {
+        if (staffList.length === 1) {
+          return { staffList: [nextStaffList]}
+        } else {
+          let newStaffList = [[], []];
+
+          nextStaffList.map((staff, index) =>
+            index % 2 === 0 ? newStaffList[0].push(staff) : newStaffList[1].push(staff));
+
+          return { staffList: newStaffList };
+        }
+      });
+    }
+  }
+
   componentWillUnmount = () => {
     clearTimeout(this.transitionTimeout);
     window.removeEventListener('resize', this.updateWindowDimensions);
