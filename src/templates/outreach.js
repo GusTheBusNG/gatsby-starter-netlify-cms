@@ -10,6 +10,7 @@ import Subheading from '../components/Subheading';
 import Layout from '../components/Layout';
 
 import './outreach.scss';
+import { BackgroundImageDiv } from '../components/Image';
 
 export const OutreachTemplate = ({
   image,
@@ -24,14 +25,10 @@ export const OutreachTemplate = ({
   staffList
 }) => (
   <div className="outreach">
-    <div
+    <BackgroundImageDiv
       className="top-image"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    ></div>
+      image={image}
+    />
 
     <div className="outreach__content">
       <Header topText={topText} bottomText={bottomText} />
@@ -170,8 +167,8 @@ export const pageQuery = graphql`
           }
         }
         buttonTwo {
-          buttonTwoText
-          buttonTwoLink
+          buttonText
+          buttonLink
           newTab
         }
       }

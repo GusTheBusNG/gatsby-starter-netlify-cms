@@ -44,8 +44,8 @@ staffList:
     bio: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 buttonTwo:
-  buttonTwoText: Contact for More Information
-  buttonTwoLink: /outreach-programs
+  buttonText: Contact for More Information
+  buttonLink: /outreach-programs
   newTab: false
 ---
 

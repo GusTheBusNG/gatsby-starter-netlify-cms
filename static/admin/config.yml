@@ -49,8 +49,8 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: Header, name: header, widget: object, fields: [
-          {label: "Top Text", name: topText, widget: string},
-          {label: "Bottom Text", name: bottomText, widget: text}
+          {label: "Top Text", name: topText, widget: string, default: 'Clemson Vocal Arts'},
+          {label: "Bottom Text", name: bottomText, widget: text, default: 'Outreach'}
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
@@ -78,8 +78,8 @@ collections:
           - {label: Bio, name: bio, widget: text}
           - {label: Email, name: email, widget: text}
       - {label: "Second Button", name: buttonTwo, widget: object, fields: [
-          {label: "Button Label", name: buttonTwoText, widget: string},
-          {label: "Button Link", name: buttonTwoLink, widget: string},
+          {label: "Button Label", name: buttonText, widget: string},
+          {label: "Button Link", name: buttonLink, widget: string},
           {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
         ]}
 
