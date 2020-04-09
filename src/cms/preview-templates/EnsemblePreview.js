@@ -12,7 +12,7 @@ const EnsemblesPreview = ({ entry, getAsset }) => {
         header={data.header}
         subheading={data.subheading}
         about={data.about}
-        button={data.button}
+        concertAttire={data.concertAttire}
         subheadingTwo={data.subheadingTwo}
         auditionInformation={data.auditionInformation}
       />

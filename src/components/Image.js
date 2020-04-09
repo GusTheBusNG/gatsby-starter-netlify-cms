@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 const findImageSrc = image => {
+  if (!image) return image
   if (!!image.childImageSharp) return image.childImageSharp.fluid.src;
   if (!!image.publicURL) return image.publicURL;
 

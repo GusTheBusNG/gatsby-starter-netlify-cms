@@ -16,7 +16,7 @@ export const EnsemblesTemplate = ({
   header: { topText, bottomText },
   subheading,
   about,
-  concertAttire: { attireHeading, attireContent, attireDrawer  },
+  concertAttire,
   subheadingTwo,
   auditionInformation
 }) => (
@@ -29,12 +29,12 @@ export const EnsemblesTemplate = ({
     <div className="ensembles__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
-      <FloatingCard
-        header={attireHeading}
-        content={attireContent}
-        drawer={attireDrawer}
+      {concertAttire && <FloatingCard
+        header={concertAttire.attireHeading}
+        content={concertAttire.attireContent}
+        drawer={concertAttire.attireDrawer}
         className="ensembles__concert-attire"
-      />
+      />}
       <Subheading>{subheadingTwo}</Subheading>
 
       {
