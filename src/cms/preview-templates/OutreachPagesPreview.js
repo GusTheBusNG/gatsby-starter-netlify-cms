@@ -11,13 +11,13 @@ const OutreachPreview = ({ entry, getAsset }) => {
         image={data.image}
         header={data.header}
         subheading={data.subheading}
-        about={data.about}
         button={data.button}
         subheadingTwo={data.subheadingTwo}
         auditionInformation={data.auditionInformation}
         subheadingThree={data.subheadingThree}
         buttonTwo={data.buttonTwo}
         staffList={data.staffList}
+        html={data.html}
       />
     )
   } else {

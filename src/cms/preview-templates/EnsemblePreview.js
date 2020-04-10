@@ -11,10 +11,10 @@ const EnsemblesPreview = ({ entry, getAsset }) => {
         image={data.image}
         header={data.header}
         subheading={data.subheading}
-        about={data.about}
         concertAttire={data.concertAttire}
         subheadingTwo={data.subheadingTwo}
         auditionInformation={data.auditionInformation}
+        html={data.html}
       />
     )
   } else {

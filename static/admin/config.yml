@@ -26,7 +26,7 @@ collections:
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
-      - {label: About, name: about, widget: string}
+      - {label: Body, name: body, widget: markdown}
       - label: "Concert Attire"
         name: concertAttire
         widget: object

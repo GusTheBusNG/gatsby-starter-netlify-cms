@@ -7,12 +7,12 @@ const MajorPagePreview = ({ entry, getAsset }) => {
   const {
     majorHeading,
     subheading,
-    about,
     button,
     subheadingTwo,
     majorAuditionInfo,
     subheadingThree,
-    stories
+    stories,
+    html
   } = data;
  
   if (data) {
@@ -20,12 +20,12 @@ const MajorPagePreview = ({ entry, getAsset }) => {
       <MajorPageTemplate
         majorHeading={majorHeading}
         subheading={subheading}
-        about={about}
         button={button}
         subheadingTwo={subheadingTwo}
         majorAuditionInfo={majorAuditionInfo}
         subheadingThree={subheadingThree}
         stories={stories}
+        html={html}
       />
     )
   } else {

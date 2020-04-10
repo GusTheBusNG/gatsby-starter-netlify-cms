@@ -136,7 +136,6 @@ export const pageQuery = graphql`
           }
         }
         subheading
-        about
         button {
           buttonText
           buttonLink
