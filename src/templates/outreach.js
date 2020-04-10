@@ -136,7 +136,9 @@ export const pageQuery = graphql`
         about
         button {
           buttonText
-          file
+          file {
+            publicURL
+          }
         }
         subheadingTwo
         auditionInformation {
