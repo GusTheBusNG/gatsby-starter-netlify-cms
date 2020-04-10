@@ -13,7 +13,7 @@ previewConcerts:
 socialMedia:
   - icon: /img/facebook/fb-color.svg
     link: 'https://www.facebook.com/clemsonchoirs/'
-  - icon: /img/instagram/ig-black.svg
+  - icon: /img/instagram/ig-color.png
     link: 'https://www.instagram.com/clemsonchoirs/'
   - icon: /img/youtube/yt-color.svg
     link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
