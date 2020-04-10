@@ -46,7 +46,7 @@ buttonTwo:
   buttonLink: /outreach-programs
   newTab: false
 ---
-​In partnership with the Clemson Summer Scholars  Program for raising 9th - 12th grade
+​In partnership with the Clemson Summer Scholars Program for raising 9th - 12th grade
   - Grow as a singer. 
   - Explore and improve vocal talents in choral and solo 
   settings. 
