@@ -159,6 +159,14 @@ collections:
               - {label: "Title", name: header, widget: string, default: "Example Title"}
               - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
               - {label: "Description", name: content, widget: text, default: "Example description"}
+          - label: "Social Media"
+            name: socialMedia
+            widget: list
+            required: false
+            fields:
+              - {label: Icon, name: icon, widget: image}
+              - {label: Link, name: link, widget: string}
+              - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: true}
           - label: Concerts
             name: concerts
             widget: list
@@ -215,6 +223,14 @@ collections:
               {label: Text, name: text, widget: text}
             ]}
           - {label: Image, name: image, widget: image}
+          - label: "Social Media"
+            name: socialMedia
+            widget: list
+            required: false
+            fields:
+              - {label: Icon, name: icon, widget: image}
+              - {label: Link, name: link, widget: string}
+              - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: true}
           - {label: "Third Subheading", name: subheadingThree, widget: string}
           - label: Stories
             name: stories

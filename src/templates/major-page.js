@@ -9,6 +9,7 @@ import Subheading from '../components/Subheading';
 import FloatingCard from '../components/FloatingCard';
 import HorizontalCard from '../components/HorizontalCard';
 import { BackgroundImageDiv } from '../components/Image';
+import SocialMediaLine from '../components/SocialMediaLine'
 import Layout from '../components/Layout';
 
 import './major-page.scss'
@@ -21,17 +22,18 @@ export const MajorPageTemplate = ({
   subheadingTwo,
   majorAuditionInfo,
   image,
+  socialMedia,
   subheadingThree,
   stories
 }) => (
-  <div className="major">
-    <div className="major__content">
+  <div className="major-page">
+    <div className="major-page__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
       <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
-      <div className="major__content__auditions">
+      <div className="major-page__content__auditions">
         {
           majorAuditionInfo ?
             majorAuditionInfo.map(({ image, heading, text }) => (
@@ -43,13 +45,17 @@ export const MajorPageTemplate = ({
             )) : null
         }
       </div>
+      <SocialMediaLine
+        className="major-page__content__social-media"
+        socialMedia={socialMedia}
+      />
       <BackgroundImageDiv
-        className="major__content__image"
+        className="major-page__content__image"
         image={image}
       />
     </div>
-    <div className="major__stories">
-      <Subheading className="major__stories__heading">{subheadingThree}</Subheading>
+    <div className="major-page__stories">
+      <Subheading className="major-page__stories__heading">{subheadingThree}</Subheading>
       {
         stories && stories.map(info => (<HorizontalCard key={info.title} info={info} /> ))
       }
@@ -65,6 +71,7 @@ MajorPageTemplate.propTypes = {
   button: PropTypes.object,
   subheadingTwo: PropTypes.string,
   majorAuditionInfo: PropTypes.array,
+  socialMedia: PropTypes.array,
   subheadingThree: PropTypes.string,
   stories: PropTypes.array
 }
@@ -82,6 +89,7 @@ const MajorPage = ({ data }) => {
         subheadingTwo={frontmatter.subheadingTwo}
         majorAuditionInfo={frontmatter.majorAuditionInfo}
         image={frontmatter.image}
+        socialMedia={frontmatter.socialMedia}
         subheadingThree={frontmatter.subheadingThree}
         stories={frontmatter.stories}
       />
@@ -132,6 +140,17 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        socialMedia {
+          icon {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          link
         }
         subheadingThree
         stories {

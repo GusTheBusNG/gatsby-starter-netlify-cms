@@ -28,6 +28,13 @@ majorAuditionInfo:
     text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     heading: What?
 image: /img/cu-singers.jpg
+socialMedia:
+  - icon: /img/facebook/fb-color.svg
+    link: 'https://www.facebook.com/clemsonchoirs/'
+  - icon: /img/instagram/ig-color.png
+    link: 'https://www.instagram.com/clemsonchoirs/'
+  - icon: /img/youtube/yt-color.svg
+    link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
 subheadingThree: Stories
 stories:
   - photo: /img/cu-singers.jpg
