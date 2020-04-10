@@ -138,8 +138,9 @@ export const pageQuery = graphql`
         subheading
         button {
           buttonText
-          buttonLink
-          newTab
+          file {
+            publicURL
+          }
         }
         subheadingTwo
         auditionInformation {

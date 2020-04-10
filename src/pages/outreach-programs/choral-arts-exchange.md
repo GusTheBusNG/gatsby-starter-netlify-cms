@@ -8,8 +8,7 @@ image: /img/cu-singers.jpg
 subheading: About the program
 button:
   buttonText: Download Brochure
-  buttonLink: /outreach-programs
-  newTab: false
+  file: /img/cu-singers.jpg
 subheadingTwo: Details
 auditionInformation:
   - image: /img/cu-singers.jpg

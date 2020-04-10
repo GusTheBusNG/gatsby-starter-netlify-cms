@@ -8,7 +8,7 @@ export const SocialMediaLine = ({ socialMedia, className }) => (
   <div className={`social-media-line ${className}`}>
     {
       socialMedia.map(({ icon, link, newTab }) => (
-        <a key={link} href={link} target={newTab && '_blank'}>
+        <a key={link} href={link} target={newTab && '_blank'} className="social-media-line__link">
           <Image
             alt="Social Media Icon"
             className="social-media-line__icon"

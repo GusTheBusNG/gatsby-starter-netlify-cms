@@ -57,9 +57,7 @@ collections:
       - {label: Body, name: body, widget: markdown}
       - {label: Button, name: button, widget: object, fields: [
           {label: "Button Label", name: buttonText, widget: string},
-          {label: "Button Link", name: buttonLink, widget: string},
-          {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
-
+          {label: "Brochure file", name: file, widget: file}
         ]}
       - {label: "Second Subheading", name: subheadingTwo, widget: string}
       - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
@@ -131,6 +129,18 @@ collections:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
                   - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
+          - label: "Subheading"
+            name: homeSubheading
+            widget: string
+            default: "Downloadable files"
+          - label: "Downloadable files"
+            name: files
+            widget: list
+            fields:
+              - {label: Button, name: button, widget: object, fields: [
+                  {label: "Button Label", name: buttonText, widget: string},
+                  {label: "Brochure file", name: file, widget: file}
+                ]}
       - file: "src/pages/concerts/index.md"
         label: Concerts
         name: concerts
@@ -142,6 +152,13 @@ collections:
             fields:
               - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
               - {label: "Bottom Text", name: bottomText, widget: string, default: "Concerts"}
+          - label: "Preview Concerts"
+            name: previewConcerts
+            widget: list
+            fields:
+              - {label: "Title", name: header, widget: string, default: "Example Title"}
+              - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
+              - {label: "Description", name: content, widget: text, default: "Example description"}
           - label: Concerts
             name: concerts
             widget: list

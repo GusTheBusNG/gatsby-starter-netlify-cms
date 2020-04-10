@@ -5,11 +5,69 @@
   flex-direction: column;
 
   background-color: $background-white;
+  
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include sm-mobile {
+      width: 95%;
+      width: calc(100% - 2rem);
+
+      padding: 0 0.5rem;
+      align-items: center;
+    }
+  } 
+
+  &__subheading-1, &__subheading-2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include sm-mobile {
+      max-width: 37rem;
+    }
+  }
+
+  &__subheading-2 {
+    @include xl-desktop {
+      max-width: 80vw;
+    }
+  }
+
+  &__preview {
+    margin: 0 1rem;
+
+    @include desktop {
+      margin: 0;
+
+      max-width: 40rem;
+    }
+  }
+
+  &__upcoming {
+    @include sm-mobile {
+      .expanded-card {
+        margin: 0.5rem;
+      }
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+  
+      width: 100%;
+    }
+  }
+
+  &__social-media {
+    padding: 1rem 0;
+
+    @include sm-mobile {
+      max-width: 39rem;
+    }
+  }
 
   @include sm-mobile {
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 0 1rem;
+    align-items: center;
   }
 }
