@@ -12,6 +12,9 @@
     flex-direction: column;
 
     @include sm-mobile {
+      width: 95%;
+      width: calc(100% - 2rem);
+
       padding: 0 0.5rem;
       align-items: center;
     }
