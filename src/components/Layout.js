@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
-import logo from '../../static/img/vocal-arts-logo-full-color.svg'
+import logo from '../img/vocal-arts-logo-full-color.svg'
 import Navbar from './Navbar'
 
 import './Layout.scss'
