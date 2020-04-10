@@ -20,15 +20,11 @@ export const FloatingCardWithBigPicture = ({
       alt="Ensemble"
     />
     <FloatingCard
-      className="description-card"
+      className={image && "description-card"}
       header={heading}
       content={description}
     >
-      { button &&
-        <Button link={button.buttonLink}>
-          {button.buttonText}
-        </Button>
-      }
+    <Button data={button} />
     </FloatingCard>
   </div>
 );

@@ -49,15 +49,15 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "outreach"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: Header, name: header, widget: object, fields: [
-          {label: "Top Text", name: topText, widget: string},
-          {label: "Bottom Text", name: bottomText, widget: text}
+          {label: "Top Text", name: topText, widget: string, default: 'Clemson Vocal Arts'},
+          {label: "Bottom Text", name: bottomText, widget: text, default: 'Outreach'}
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
       - {label: About, name: about, widget: string}
       - {label: Button, name: button, widget: object, fields: [
           {label: "Button Label", name: buttonText, widget: string},
-          {label: "Button Link", name: buttonLink, widget: string}
+          {label: "Brochure file", name: file, widget: file}
         ]}
       - {label: "Second Subheading", name: subheadingTwo, widget: string}
       - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
@@ -67,17 +67,18 @@ collections:
         ]}
       - {label: "Third Subheading", name: subheadingThree, widget: string}
       - label: Staff
-            name: staffList
-            widget: list
-            fields:
-              - {label: Image, name: image, widget: image}
-              - {label: Name, name: name, widget: text}
-              - {label: Title, name: title, widget: text}
-              - {label: Bio, name: bio, widget: text}
-              - {label: Email, name: email, widget: text}
+        name: staffList
+        widget: list
+        fields:
+          - {label: Image, name: image, widget: image}
+          - {label: Name, name: name, widget: text}
+          - {label: Title, name: title, widget: text}
+          - {label: Bio, name: bio, widget: text}
+          - {label: Email, name: email, widget: text}
       - {label: "Second Button", name: buttonTwo, widget: object, fields: [
-          {label: "Button Label", name: buttonTwoText, widget: string},
-          {label: "Button Link", name: buttonTwoLink, widget: string}
+          {label: "Button Label", name: buttonText, widget: string},
+          {label: "Button Link", name: buttonLink, widget: string},
+          {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
         ]}
 
   - name: "pages"
@@ -88,10 +89,11 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Logo, name: logo, widget: image}
+          - {label: Logo, name: logo, widget: image, required: false}
           - label: "Mission Statement"
             name: missionStatement
             widget: object
+            required: false
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Statement, name: content, widget: text}
@@ -99,28 +101,46 @@ collections:
           - label: "Social Media"
             name: socialMedia
             widget: list
+            required: false
             fields:
               - {label: Icon, name: icon, widget: image}
               - {label: Link, name: link, widget: string}
+              - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: true}
           - label: Heading
             name: homePageHeading
             widget: object
+            required: false
             fields:
               - {label: "Top Text", name: topText, widget: string, default: 'Top text'}
               - {label: "Bottom Text", name: bottomText, widget: string, default: 'Bottom Text'}
           - label: "Ensembles"
             name: ensembles
             widget: list
+            required: false
             fields:
-              - {label: Image, name: image, widget: image, default: '/img/cu-singers.jpg'}
+              - {label: Image, name: image, widget: image, required: false}
               - {label: Heading, name: heading, widget: text, default: 'Heading'}
               - {label: "Short Description", name: description, widget: text, default: 'Short Description'}
               - label: Button
                 name: button
                 widget: object
+                required: false
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
+          - label: "Subheading"
+            name: homeSubheading
+            widget: string
+            default: "Downloadable files"
+          - label: "Downloadable files"
+            name: files
+            widget: list
+            fields:
+              - {label: Button, name: button, widget: object, fields: [
+                  {label: "Button Label", name: buttonText, widget: string},
+                  {label: "Brochure file", name: file, widget: file}
+                ]}
       - file: "src/pages/concerts/index.md"
         label: Concerts
         name: concerts
@@ -132,14 +152,21 @@ collections:
             fields:
               - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
               - {label: "Bottom Text", name: bottomText, widget: string, default: "Concerts"}
+          - label: "Preview Concerts"
+            name: previewConcerts
+            widget: list
+            fields:
+              - {label: "Title", name: header, widget: string, default: "Example Title"}
+              - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
+              - {label: "Description", name: content, widget: text, default: "Example description"}
           - label: Concerts
             name: concerts
             widget: list
             fields:
-              - {label: "Hook Photo", name: photo, widget: string}
-              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
               - {label: "Title", name: title, widget: string, default: "Example Title"}
-              - {label: "Date", name: date, widget: datetime, dateFormat: "MMM Do, YYYY", timeFormat: "hh:mm a"}
+              - {label: "Date", name: date, widget: datetime, dateFormat: "MMMM Do, YYYY", timeFormat: "hh:mm a", format: "MMMM Do, YYYY hh:mm a"}
+              - {label: "Hook Photo", name: photo, widget: image}
+              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
               - {label: "Long description", name: description, widget: text, default: "This is the long description"}
               - label: Button
                 name: button
@@ -147,7 +174,15 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
-              - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[0,0]}'}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
+              - label: Map
+                name: map
+                widget: object
+                fields:
+                  - {label: "Name of location", name: title, widget: string, default: 'Brooks Center'}
+                  - {label: "Link to location", name: link, widget: string, default: 'https://www.clemson.edu/centers-institutes/brooks/'}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: true}
+                  - {label: Location, name: location, widget: 'map', default: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'}
               - {label: "Show location on the last part of the slider", name: showLocation, widget: boolean, default: true}
               - label: "Second description (for the last part if no location)"
                 name: secondDescription
@@ -170,7 +205,8 @@ collections:
           - {label: About, name: about, widget: string}
           - {label: Button, name: button, widget: object, fields: [
               {label: "Button Label", name: buttonText, widget: string},
-              {label: "Button Link", name: buttonLink, widget: string}
+              {label: "Button Link", name: buttonLink, widget: string},
+              {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
             ]}
           - {label: "Second Subheading", name: subheadingTwo, widget: string}
           - {label: "Audition Information", name: majorAuditionInfo, widget: list, fields: [
@@ -184,10 +220,10 @@ collections:
             name: stories
             widget: list
             fields:
-              - {label: "Hook Photo", name: photo, widget: string}
-              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
               - {label: "Title", name: title, widget: string, default: "Example Title"}
-              - {label: "Date", name: date, widget: datetime, dateFormat: "MMM Do, YYYY", timeFormat: "hh:mm a"}
+              - {label: "Subtitle", name: date, widget: string, default: "Graduated Spring 2019"}
+              - {label: "Hook Photo", name: photo, widget: image}
+              - {label: "Show title on the first part of the slider", name: showTitle, widget: boolean, default: true}
               - {label: "Long description", name: description, widget: text, default: "This is the long description"}
               - label: Button
                 name: button
@@ -195,7 +231,8 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
-              - label: "Second description"
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
+              - label: "Second description (for the last part if no location)"
                 name: secondDescription
                 widget: object
                 fields:
@@ -221,7 +258,7 @@ collections:
               - {label: Title, name: title, widget: text}
               - {label: Bio, name: bio, widget: text}
               - {label: Email, name: email, widget: text}
-    - file: "src/pages/outreach-programs/index.md"
+      - file: "src/pages/outreach-programs/index.md"
         label: "Outreach Programs Landing Page"
         name: "outreach-landing"
         fields:
@@ -245,6 +282,7 @@ collections:
                 fields:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
+                  - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

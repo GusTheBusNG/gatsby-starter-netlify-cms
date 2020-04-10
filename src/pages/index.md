@@ -9,12 +9,15 @@ missionStatement:
   heading: Clemson Vocal Studies Mission Statement
 backgroundImage: /img/WorldPremiere2019.jpg
 socialMedia:
-  - icon: /img/facebook-logo.png
+  - icon: /img/facebook/fb-white.svg
     link: 'https://www.facebook.com/clemsonchoirs/'
-  - icon: /img/instagram.png
+    newTab: true
+  - icon: /img/instagram/ig-white.svg
     link: 'https://www.instagram.com/clemsonchoirs/'
-  - icon: /img/youtube-logo.png
+    newTab: true
+  - icon: /img/youtube/yt-white.svg
     link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
+    newTab: true
 homePageHeading:
   bottomText: Ensembles
   topText: Clemson Vocal Studies
@@ -22,6 +25,7 @@ ensembles:
   - button:
       buttonLink: /ensembles/cu-singers
       buttonText: Learn More
+      newTab: false
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -31,11 +35,26 @@ ensembles:
   - button:
       buttonLink: /ensembles/cu-singers
       buttonText: Learn More
+      newTab: false
     description: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation
     heading: Lorem ipsum
     image: /img/cu-singers.jpg
+homeSubheading: Downloadable files
+files:
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
 ---
 

@@ -6,6 +6,18 @@
 
   justify-content: space-evenly;
 
+  &__link {
+    transition: transform $transition-time $transition-timing;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+
   &__icon {
     height: 2.3rem;
 

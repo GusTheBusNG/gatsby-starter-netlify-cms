@@ -19,7 +19,7 @@ about: >-
   - Discover 21st century careers in the performing arts. 
 button:
   buttonText: Clemson Summer Scholars
-  buttonLink: /outreach-programs
+  file: /img/cu-singers.jpg
 subheadingTwo: Details
 auditionInformation:
   - image: /img/cu-singers.jpg
@@ -52,7 +52,8 @@ staffList:
     bio: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 buttonTwo:
-  buttonTwoText: Contact for More Information
-  buttonTwoLink: /outreach-programs
+  buttonText: Contact for More Information
+  buttonLink: /outreach-programs
+  newTab: false
 ---
 

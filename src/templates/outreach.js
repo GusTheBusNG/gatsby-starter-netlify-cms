@@ -10,35 +10,30 @@ import Subheading from '../components/Subheading';
 import Layout from '../components/Layout';
 
 import './outreach.scss';
+import { BackgroundImageDiv } from '../components/Image';
 
 export const OutreachTemplate = ({
   image,
   header: { topText, bottomText },
   subheading,
   about,
-  button: { buttonText, buttonLink },
+  button,
   subheadingTwo,
   auditionInformation,
   subheadingThree,
-  buttonTwo: { buttonTwoText, buttonTwoLink },
+  buttonTwo,
   staffList
 }) => (
   <div className="outreach">
-    <div
+    <BackgroundImageDiv
       className="top-image"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
-      }}
-    ></div>
+      image={image}
+    />
 
     <div className="outreach__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
+      <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
       {
@@ -71,9 +66,7 @@ export const OutreachTemplate = ({
             />
           ))
       }
-      <Button link={buttonTwoLink}>
-        {buttonTwoText}
-      </Button>
+      <Button data={buttonTwo} />
     </div>
     
     <br></br>
@@ -143,7 +136,9 @@ export const pageQuery = graphql`
         about
         button {
           buttonText
-          buttonLink
+          file {
+            publicURL
+          }
         }
         subheadingTwo
         auditionInformation {
@@ -173,8 +168,9 @@ export const pageQuery = graphql`
           }
         }
         buttonTwo {
-          buttonTwoText
-          buttonTwoLink
+          buttonText
+          buttonLink
+          newTab
         }
       }
     }

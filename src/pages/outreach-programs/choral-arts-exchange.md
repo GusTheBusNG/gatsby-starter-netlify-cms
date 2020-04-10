@@ -10,7 +10,7 @@ about: >-
   Each year the Clemson Choral Department in partnership with the Brooks Center for the Performing Arts selects a high school choral program for a year long artistic collaboration. This program has three goals: to build relationships with performing arts programs in the upstate area, offer instruction and performance opportunities, and provide various ways for students to engage in the rich concert season presented at the Brooks Center each year. 
 button:
   buttonText: Download Brochure
-  buttonLink: /outreach-programs
+  file: /img/cu-singers.jpg
 subheadingTwo: Details
 auditionInformation:
   - image: /img/cu-singers.jpg
@@ -43,7 +43,8 @@ staffList:
     bio: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 buttonTwo:
-  buttonTwoText: Contact for More Information
-  buttonTwoLink: /outreach-programs
+  buttonText: Contact for More Information
+  buttonLink: /outreach-programs
+  newTab: false
 ---
 

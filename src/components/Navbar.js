@@ -49,11 +49,23 @@ const Navbar = () => {
                       }
                     }
                   `}
-                  render={({ markdownRemark: { frontmatter: { ensembles }}}) => ensembles && ensembles.map(({ button: { buttonLink }, heading }) => (
-                    <Link to={buttonLink}>
-                      <h3 className={`ensemble`}>{heading}</h3>
-                    </Link>
-                  ))}
+                  render={({ markdownRemark: { frontmatter: { ensembles }}}) => ensembles && ensembles.map(({ button: { buttonLink, newTab }, heading }) => {
+                    const tag = <h3 className={`ensemble`}>{heading}</h3>
+
+                    if (newTab) {
+                      return (
+                        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
+                          {tag}
+                        </a>
+                      );
+                    } else {
+                      return (
+                        <Link to={buttonLink}>
+                          {tag}  
+                        </Link>
+                      );
+                    }
+                  })}
                 />
               </div>
             </div>

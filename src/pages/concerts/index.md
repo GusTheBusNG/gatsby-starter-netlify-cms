@@ -3,6 +3,21 @@ templateKey: concerts-page
 concertsPageHeading:
   bottomText: Choral Concerts
   topText: Clemson Vocal Arts
+subheading: Preview Concerts
+previewConcerts:
+  - header: Preview Concert
+    content: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    videoLink: https://www.youtube.com/embed/aklkDS-FZ3A
+socialMedia:
+  - icon: /img/facebook/fb-color.svg
+    link: 'https://www.facebook.com/clemsonchoirs/'
+  - icon: /img/instagram/ig-color.png
+    link: 'https://www.instagram.com/clemsonchoirs/'
+  - icon: /img/youtube/yt-color.svg
+    link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
+subheadingTwo: Upcoming Concerts
 concerts:
   - photo: /img/cu-singers.jpg
     showTitle: true
@@ -19,8 +34,13 @@ concerts:
     button:
       buttonLink: /ensembles/cu-singers
       buttonText: Get Tickets
+      newTab: false
     showLocation: false
-    location: '{"type":"Point","coordinates":[0,0]}'
+    map:
+      title: Brooks Center
+      link: https://www.clemson.edu/centers-institutes/brooks/
+      newTab: true
+      location: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'
     secondDescription:
       subtitle: Where he is now
       description: >-
@@ -46,8 +66,13 @@ concerts:
     button:
       buttonLink: /ensembles/cu-singers
       buttonText: Get Tickets
+      newTab: false
     showLocation: true
-    location: '{"type":"Point","coordinates":[0,0]}'
+    map:
+      title: Brooks Center
+      link: https://www.clemson.edu/centers-institutes/brooks/
+      newTab: true
+      location: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'
     secondDescription:
       subtitle: Where he is now
       description: >-
