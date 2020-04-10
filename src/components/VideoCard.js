@@ -13,7 +13,7 @@ const VideoCard = ({ videoLink, header, content, className }) => {
           title="Preview Concert Video"
           width="560" 
           height="315"
-          src={`${videoLink}`} 
+          src={videoLink} 
           frameborder="0" 
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
