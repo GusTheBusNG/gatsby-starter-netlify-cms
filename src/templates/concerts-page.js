@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from '../components/Header'
-import HorizontalCard from '../components/HorizontalCard';
+import Subheading from '../components/Subheading'
+import HorizontalCard from '../components/HorizontalCard'
+import VideoCard from '../components/VideoCard'
+import SocialMediaLine from '../components/SocialMediaLine'
 import Layout from '../components/Layout'
 
 import './concerts-page.scss'
@@ -13,16 +16,36 @@ export const ConcertsPageTemplate = ({
     topText,
     bottomText
   },
+  subheading,
+  previewConcerts,
+  socialMedia,
+  subheadingTwo,
   concerts
 }) => (
   <div className="concerts-page">
-    <Header
-      topText={topText}
-      bottomText={bottomText}
-    />
-    {
-      concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
-    }
+    <div className="concerts-page__content">
+      <Header
+        topText={topText}
+        bottomText={bottomText}
+      />
+      <Subheading className="concerts-page__subheading-1">{subheading}</Subheading>
+      <div className="concerts-page__preview">
+        {
+          previewConcerts && previewConcerts.map(info => (<VideoCard key={info.title} {...info}/> ))
+        }
+      </div>
+      <SocialMediaLine
+        className="concerts-page__social-media"
+        socialMedia={socialMedia}
+      />
+      <Subheading className="concerts-page__subheading-2">{subheadingTwo}</Subheading>
+      <div className="concerts-page__upcoming">
+        {
+          concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+        }
+      </div>
+    </div>
+    
   </div>
 );
 
@@ -35,6 +58,10 @@ ConcertsPageTemplate.defaultProps = {
 
 ConcertsPageTemplate.propTypes = {
   heading: PropTypes.object,
+  subheading: PropTypes.string,
+  previewConcerts: PropTypes.array,
+  socialMedia: PropTypes.array,
+  subheadingTwo: PropTypes.string,
   concerts: PropTypes.array
 }
 
@@ -45,6 +72,10 @@ const ConcertsPage = ({ data }) => {
     <Layout>
       <ConcertsPageTemplate
         heading={frontmatter.concertsPageHeading}
+        subheading={frontmatter.subheading}
+        previewConcerts={frontmatter.previewConcerts}
+        socialMedia={frontmatter.socialMedia}
+        subheadingTwo={frontmatter.subheadingTwo}
         concerts={frontmatter.concerts}
       />
     </Layout>
@@ -69,6 +100,24 @@ export const pageQuery = graphql`
           topText
           bottomText
         }
+        subheading
+        previewConcerts {
+          header
+          content
+          videoLink
+        }
+        socialMedia {
+          icon {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          link
+        }
+        subheadingTwo
         concerts {
           photo {
             childImageSharp {

@@ -9,13 +9,13 @@ missionStatement:
   heading: Clemson Vocal Studies Mission Statement
 backgroundImage: /img/WorldPremiere2019.jpg
 socialMedia:
-  - icon: /img/facebook-logo.png
+  - icon: /img/facebook/fb-white.svg
     link: 'https://www.facebook.com/clemsonchoirs/'
     newTab: true
-  - icon: /img/instagram.png
+  - icon: /img/instagram/ig-white.svg
     link: 'https://www.instagram.com/clemsonchoirs/'
     newTab: true
-  - icon: /img/youtube-logo.png
+  - icon: /img/youtube/yt-white.svg
     link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
     newTab: true
 homePageHeading:

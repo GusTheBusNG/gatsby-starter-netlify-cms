@@ -152,6 +152,13 @@ collections:
             fields:
               - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
               - {label: "Bottom Text", name: bottomText, widget: string, default: "Concerts"}
+          - label: "Preview Concerts"
+            name: previewConcerts
+            widget: list
+            fields:
+              - {label: "Title", name: header, widget: string, default: "Example Title"}
+              - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
+              - {label: "Description", name: content, widget: text, default: "Example description"}
           - label: Concerts
             name: concerts
             widget: list
