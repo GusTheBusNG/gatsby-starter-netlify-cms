@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from '../components/Header';
-import Button from '../components/Button';
-import Subheading from '../components/Subheading';
-import FloatingCard from '../components/FloatingCard';
-import HorizontalCard from '../components/HorizontalCard';
-import Layout from '../components/Layout';
+import Header from '../components/Header'
+import Button from '../components/Button'
+import Subheading from '../components/Subheading'
+import FloatingCard from '../components/FloatingCard'
+import HorizontalCard from '../components/HorizontalCard'
+import TextContent from '../components/TextContent'
+import Layout from '../components/Layout'
 
 import './major-page.scss'
 
@@ -24,8 +25,7 @@ export const MajorPageTemplate = ({
   <div className="major">
     <div className="major__content">
       <Header topText={topText} bottomText={bottomText} />
-      <Subheading>{subheading}</Subheading>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <TextContent header={subheading} content={html}></TextContent>
       <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
@@ -84,6 +84,7 @@ const MajorPage = ({ data }) => {
 MajorPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.object,
       frontmatter: PropTypes.object,
     }),
   }),
