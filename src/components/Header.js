@@ -6,7 +6,7 @@ import './Header.scss';
 export const Header = ({
   topText,
   bottomText
-}) => (
+}) => (!!topText || !!bottomText) && (
   <div className="header">
     <h2 className="header__top-text">{topText}</h2>
     <h1 className="header__bottom-text">{bottomText}</h1>

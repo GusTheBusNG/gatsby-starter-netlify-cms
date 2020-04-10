@@ -90,6 +90,7 @@ query OutreachLandingPageTemplate {
         button {
           buttonLink
           buttonText
+          newTab
         }
         description
         heading

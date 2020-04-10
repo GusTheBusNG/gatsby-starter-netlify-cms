@@ -160,6 +160,7 @@ export const pageQuery = graphql`
             }
           }
           link
+          newTab
         }
         homePageHeading {
           topText
@@ -169,6 +170,7 @@ export const pageQuery = graphql`
           button {
             buttonLink
             buttonText
+            newTab
           }
           description
           heading

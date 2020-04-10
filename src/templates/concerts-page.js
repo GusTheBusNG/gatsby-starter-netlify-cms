@@ -131,8 +131,14 @@ export const pageQuery = graphql`
           button {
             buttonText
             buttonLink
+            newTab
           }
-          location
+          map {
+            location
+            title
+            link
+            newTab
+          }
           showLocation
           secondDescription {
             subtitle

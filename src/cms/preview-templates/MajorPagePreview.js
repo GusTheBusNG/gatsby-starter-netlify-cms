@@ -11,7 +11,8 @@ const MajorPagePreview = ({ entry, getAsset }) => {
     button,
     subheadingTwo,
     majorAuditionInfo,
-    subheadingThree
+    subheadingThree,
+    stories
   } = data;
  
   if (data) {
@@ -24,6 +25,7 @@ const MajorPagePreview = ({ entry, getAsset }) => {
         subheadingTwo={subheadingTwo}
         majorAuditionInfo={majorAuditionInfo}
         subheadingThree={subheadingThree}
+        stories={stories}
       />
     )
   } else {

@@ -16,7 +16,7 @@ export const MajorPageTemplate = ({
   majorHeading: { topText, bottomText },
   subheading,
   about,
-  button: { buttonText, buttonLink },
+  button,
   subheadingTwo,
   majorAuditionInfo,
   subheadingThree,
@@ -26,9 +26,7 @@ export const MajorPageTemplate = ({
     <div className="major__content">
       <Header topText={topText} bottomText={bottomText} />
       <TextContent header={subheading} content={about} />
-      <Button link={buttonLink}>
-        {buttonText}
-      </Button>
+      <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
       <div className="major__content__auditions">
@@ -136,6 +134,7 @@ export const pageQuery = graphql`
           button {
             buttonText
             buttonLink
+            newTab
           }
           secondDescription {
             subtitle
