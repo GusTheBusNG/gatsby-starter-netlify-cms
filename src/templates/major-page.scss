@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.major {
+.major-page {
   background-color: #FDFDFD;
 
   &__content {
@@ -30,6 +30,14 @@
       
         background-position: center;
         border-radius: $border-radius;
+      }
+    }
+
+    &__social-media {
+      padding: 1rem 0;
+  
+      @include sm-mobile {
+        max-width: 39rem;
       }
     }
   }
