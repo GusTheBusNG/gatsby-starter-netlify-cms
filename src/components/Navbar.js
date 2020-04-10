@@ -54,7 +54,7 @@ const Navbar = () => {
 
                     if (newTab) {
                       return (
-                        <a href={buttonLink} target="_blank">
+                        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
                           {tag}
                         </a>
                       );

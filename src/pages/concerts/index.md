@@ -21,7 +21,11 @@ concerts:
       buttonText: Get Tickets
       newTab: false
     showLocation: false
-    location: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'
+    map:
+      title: Brooks Center
+      link: https://www.clemson.edu/centers-institutes/brooks/
+      newTab: true
+      location: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'
     secondDescription:
       subtitle: Where he is now
       description: >-
@@ -49,7 +53,11 @@ concerts:
       buttonText: Get Tickets
       newTab: false
     showLocation: true
-    location: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'
+    map:
+      title: Brooks Center
+      link: https://www.clemson.edu/centers-institutes/brooks/
+      newTab: true
+      location: '{"type":"Point","coordinates":[-82.8361525,34.6735079]}'
     secondDescription:
       subtitle: Where he is now
       description: >-

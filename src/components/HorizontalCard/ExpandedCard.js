@@ -2,6 +2,7 @@ import React from 'react';
 import CardTitle from '../CardTitle';
 import Button from '../Button';
 import Image from '../Image';
+import Map from '../Map';
 
 import './ExpandedCard.scss';
 
@@ -12,6 +13,7 @@ const ExpandedCard = ({
   description,
   button,
   showLocation,
+  map,
   secondDescription: {
     subtitle,
     description: secondDescription
@@ -41,12 +43,18 @@ const ExpandedCard = ({
           </div>
         </>
       ) : (
-        <div className="expanded-card__button">
-          <Button data={button} />
-        </div>
+        <>
+          <div className="expanded-card__button">
+            <Button data={button} />
+          </div>
+
+          <div className="expanded-card__map-wrapper">
+            <Map map={map} />
+          </div>
+        </>
       )
     }
   </div>
-)
+);
 
 export default ExpandedCard;
