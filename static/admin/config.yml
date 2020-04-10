@@ -54,7 +54,7 @@ collections:
         ]}
       - {label: Image, name: image, widget: image}
       - {label: Subheading, name: subheading, widget: string}
-      - {label: About, name: about, widget: string}
+      - {label: Body, name: body, widget: markdown}
       - {label: Button, name: button, widget: object, fields: [
           {label: "Button Label", name: buttonText, widget: string},
           {label: "Button Link", name: buttonLink, widget: string},
@@ -185,7 +185,7 @@ collections:
               - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
               - {label: "Bottom Text", name: bottomText, widget: string, default: "Major"}
           - {label: Subheading, name: subheading, widget: string}
-          - {label: About, name: about, widget: string}
+          - {label: Body, name: body, widget: markdown}
           - {label: Button, name: button, widget: object, fields: [
               {label: "Button Label", name: buttonText, widget: string},
               {label: "Button Link", name: buttonLink, widget: string},

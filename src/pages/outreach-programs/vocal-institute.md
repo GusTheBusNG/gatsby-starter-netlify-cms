@@ -6,17 +6,6 @@ header:
   topText: Clemson Vocal Arts
 image: /img/cu-singers.jpg
 subheading: About the program
-about: >-
-  ​In partnership with the Clemson Summer Scholars  Program for raising 9th - 12th grade
-  - Grow as a singer. 
-  - Explore and improve vocal talents in choral and solo 
-  settings. 
-  - Prepare for future auditions. 
-  - Engage in electives to foster the growth of a well-
-  rounded musician 
-  - Perform in a recital of choral and solo music at the 
-  Brooks Center for the Performing Arts. 
-  - Discover 21st century careers in the performing arts. 
 button:
   buttonText: Clemson Summer Scholars
   buttonLink: /outreach-programs
@@ -57,4 +46,13 @@ buttonTwo:
   buttonLink: /outreach-programs
   newTab: false
 ---
-
+​In partnership with the Clemson Summer Scholars  Program for raising 9th - 12th grade
+  - Grow as a singer. 
+  - Explore and improve vocal talents in choral and solo 
+  settings. 
+  - Prepare for future auditions. 
+  - Engage in electives to foster the growth of a well-
+  rounded musician 
+  - Perform in a recital of choral and solo music at the 
+  Brooks Center for the Performing Arts. 
+  - Discover 21st century careers in the performing arts. 
