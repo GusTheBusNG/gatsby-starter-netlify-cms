@@ -29,6 +29,14 @@
     }
   }
 
+  &__preview {
+    margin: 0 1rem;
+
+    @include desktop {
+      max-width: 40rem;
+    }
+  }
+
   &__social-media {
     margin: 2rem 0;
     padding: 1rem 0;
