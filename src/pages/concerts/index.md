@@ -11,11 +11,11 @@ previewConcerts:
       tempor incididunt ut labore et dolore magna aliqua.
     videoLink: https://www.youtube.com/embed/aklkDS-FZ3A
 socialMedia:
-  - icon: /img/facebook-logo.png
+  - icon: /img/facebook/fb-color.svg
     link: 'https://www.facebook.com/clemsonchoirs/'
-  - icon: /img/instagram.png
+  - icon: /img/instagram/ig-black.svg
     link: 'https://www.instagram.com/clemsonchoirs/'
-  - icon: /img/youtube-logo.png
+  - icon: /img/youtube/yt-color.svg
     link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
 subheadingTwo: Upcoming Concerts
 concerts:

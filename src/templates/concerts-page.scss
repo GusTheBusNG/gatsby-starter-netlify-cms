@@ -33,13 +33,19 @@
     margin: 0 1rem;
 
     @include desktop {
+      margin: 0;
+
       max-width: 40rem;
     }
   }
 
   &__social-media {
-    margin: 2rem 0;
+    margin: 1rem 0;
     padding: 1rem 0;
+
+    @include sm-mobile {
+      max-width: 39rem;
+    }
   }
 
   @include sm-mobile {
