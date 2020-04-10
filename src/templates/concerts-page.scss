@@ -18,14 +18,25 @@
     }
   } 
 
-  &__subheading {
+  &__subheading-1 {
     margin-left: 1rem;
     margin-right: 1rem;
 
     @include sm-mobile {
-      width: 37rem;
-      margin-left: 0;
-      margin-right: 0;
+      max-width: 37rem;
+    }
+  }
+
+  &__subheading-2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include sm-mobile {
+      max-width: 37rem;
+    }
+
+    @include xl-desktop {
+      max-width: 80vw;
     }
   }
 
@@ -36,6 +47,20 @@
       margin: 0;
 
       max-width: 40rem;
+    }
+  }
+
+  &__upcoming {
+    @include sm-mobile {
+      .expanded-card {
+        margin: 0.5rem;
+      }
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+  
+      width: 100%;
     }
   }
 

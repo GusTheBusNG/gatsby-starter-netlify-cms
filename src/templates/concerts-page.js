@@ -28,7 +28,7 @@ export const ConcertsPageTemplate = ({
         topText={topText}
         bottomText={bottomText}
       />
-      <Subheading className="concerts-page__subheading">{subheading}</Subheading>
+      <Subheading className="concerts-page__subheading-1">{subheading}</Subheading>
       <div className="concerts-page__preview">
         {
           previewConcerts && previewConcerts.map(info => (<VideoCard key={info.title} {...info}/> ))
@@ -38,10 +38,12 @@ export const ConcertsPageTemplate = ({
         className="concerts-page__social-media"
         socialMedia={socialMedia}
       />
-      <Subheading className="concerts-page__subheading">{subheadingTwo}</Subheading>
-      {
-        concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
-      }
+      <Subheading className="concerts-page__subheading-2">{subheadingTwo}</Subheading>
+      <div className="concerts-page__upcoming">
+        {
+          concerts && concerts.map(info => (<HorizontalCard key={info.title} info={info} /> ))
+        }
+      </div>
     </div>
     
   </div>
