@@ -5,13 +5,18 @@ import './Button.scss';
 import { Link } from 'gatsby';
 
 export const Button = ({ data }) => {
-  if (!data || !data.buttonLink) return <></>
+  if (!data || (!data.buttonLink && !data.file)) return <></>
 
   const button = (
     <button className="button">
       {data.buttonText}
     </button>
   );
+
+  if (data.file) {
+    data.newTab = true;
+    data.buttonLink = data.file
+  }
 
   if (data.newTab) {
     return (

@@ -57,9 +57,7 @@ collections:
       - {label: About, name: about, widget: string}
       - {label: Button, name: button, widget: object, fields: [
           {label: "Button Label", name: buttonText, widget: string},
-          {label: "Button Link", name: buttonLink, widget: string},
-          {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
-
+          {label: "Brochure file", name: file, widget: file}
         ]}
       - {label: "Second Subheading", name: subheadingTwo, widget: string}
       - {label: "Audition Information", name: auditionInformation, widget: list, fields: [
