@@ -10,6 +10,8 @@ import FloatingCardWithBigPicture from '../components/FloatingCardWithBigPicture
 import Layout from '../components/Layout'
 
 import './index-page.scss'
+import Subheading from '../components/Subheading'
+import Button from '../components/Button'
 
 export const IndexPageTemplate = ({
   logo,
@@ -23,7 +25,9 @@ export const IndexPageTemplate = ({
     topText,
     bottomText
   },
-  ensembles
+  ensembles,
+  subheading,
+  files
 }) => (
   <div className="home-page">
     <div 
@@ -77,6 +81,13 @@ export const IndexPageTemplate = ({
         ))
       }
     </div>
+    <div className="downloadable-files">
+      <Subheading className="downloadable-files__heading">{subheading}</Subheading>
+      {
+        files && files.map(({ button }) =>
+          <Button className="downloadable-files__button" data={button} />)
+      }
+    </div>
   </div>
 );
 
@@ -112,6 +123,8 @@ const IndexPage = ({ data }) => {
         socialMedia={frontmatter.socialMedia}
         heading={frontmatter.homePageHeading}
         ensembles={frontmatter.ensembles}
+        subheading={frontmatter.homeSubheading}
+        files={frontmatter.files}
       />
     </Layout>
   )
@@ -180,6 +193,15 @@ export const pageQuery = graphql`
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
+            }
+          }
+        }
+        homeSubheading
+        files {
+          button {
+            buttonText
+            file {
+              publicURL
             }
           }
         }
