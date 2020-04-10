@@ -76,3 +76,23 @@
   max-width: 1300px;
   margin: 0 auto;
 }
+
+.downloadable-files {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  max-width: 1300px;
+  margin: 0 auto 1rem;
+
+  &__heading {
+    padding-left: 1rem;
+  }
+
+  &__button {
+    margin: 0.5rem;
+  }
+}

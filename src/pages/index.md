@@ -42,5 +42,19 @@ ensembles:
       veniam, quis nostrud exercitation
     heading: Lorem ipsum
     image: /img/cu-singers.jpg
+homeSubheading: Downloadable files
+files:
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
+  - button:
+      buttonText: Test
+      file: /img/cu-singers.jpg
 ---
 
