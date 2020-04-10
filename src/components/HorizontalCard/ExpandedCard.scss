@@ -37,4 +37,10 @@
   &__button {
     margin: 0 auto
   }
+
+  &__map-wrapper {
+    height: 15rem;
+    margin-top: 1rem;
+    border-radius: $border-radius;
+  }
 }

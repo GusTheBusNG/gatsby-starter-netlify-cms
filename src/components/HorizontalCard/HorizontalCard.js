@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import Button from '../Button'
 import CardTitle from '../CardTitle'
 import Image from '../Image'
+import Map from '../Map'
 
 import './HorizontalCard.scss';
+
+const MAP_IDENTIFIER_CLASS_NAME = 'pigeon-click-block';
+const MAP_IDENTIFIER_OVERLAY_CLASS_NAME = 'map-overlay__link'
 
 class HorizontalCard extends Component {
   wheelTimeout;
@@ -42,20 +46,33 @@ class HorizontalCard extends Component {
     this.setState({ movementMultiplier: window.innerWidth*change });
   }
 
+  testIfMap = e => e.target.children[0] && (
+    e.target.children[0].className === MAP_IDENTIFIER_CLASS_NAME || 
+    e.target.className === MAP_IDENTIFIER_OVERLAY_CLASS_NAME
+  )
+
   handleTouchStart = e => {
+    if (this.testIfMap(e)) return ;
+    
     this.lastTouch = e.nativeEvent.touches[0].clientX;
   };
   handleTouchMove = e => {
+    if (this.testIfMap(e)) return ;
+
     const delta = this.lastTouch - e.nativeEvent.touches[0].clientX;
     this.lastTouch = e.nativeEvent.touches[0].clientX;
 
     this.handleMovement(delta);
   };
-  handleTouchEnd = () => {
+  handleTouchEnd = e => {
+    if (this.testIfMap(e)) return ;
+
     this.handleMovementEnd();
     this.lastTouch = 0;
   };
   handleWheel = e => {
+    if (this.testIfMap(e)) return ;
+
     clearTimeout(this.wheelTimeout);
     this.handleMovement(e.deltaX);
     this.wheelTimeout = setTimeout(() => this.handleMovementEnd(), 100);
@@ -126,6 +143,7 @@ class HorizontalCard extends Component {
       description,
       button,
       showLocation,
+      map,
       secondDescription: {
         subtitle,
         description: secondDescription
@@ -182,7 +200,9 @@ class HorizontalCard extends Component {
             showLocation ? (
               <div className="concert__section description">
                 <CardTitle className="concert__section__heading" subtitle={date} title={title} />
-                <p className="concert__section__description">Still need to add a location thing</p>
+                <div className="concert__section__map-wrapper">
+                  <Map map={map} />
+                </div>
               </div>
             ) : (
               <div className="concert__section description">
