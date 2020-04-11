@@ -17,19 +17,19 @@ import './major-page.scss'
 export const MajorPageTemplate = ({
   majorHeading: { topText, bottomText },
   subheading,
-  about,
   button,
   subheadingTwo,
   majorAuditionInfo,
   image,
   socialMedia,
   subheadingThree,
-  stories
+  stories,
+  html
 }) => (
   <div className="major-page">
     <div className="major-page__content">
       <Header topText={topText} bottomText={bottomText} />
-      <TextContent header={subheading} content={about} />
+      <TextContent header={subheading} content={html}></TextContent>
       <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
@@ -67,7 +67,6 @@ MajorPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   majorHeading: PropTypes.object,
   subheading: PropTypes.string,
-  about: PropTypes.string,
   button: PropTypes.object,
   subheadingTwo: PropTypes.string,
   majorAuditionInfo: PropTypes.array,
@@ -77,14 +76,13 @@ MajorPageTemplate.propTypes = {
 }
 
 const MajorPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
 
   return (
     <Layout>
       <MajorPageTemplate
         majorHeading={frontmatter.majorHeading}
         subheading={frontmatter.subheading}
-        about={frontmatter.about}
         button={frontmatter.button}
         subheadingTwo={frontmatter.subheadingTwo}
         majorAuditionInfo={frontmatter.majorAuditionInfo}
@@ -92,6 +90,7 @@ const MajorPage = ({ data }) => {
         socialMedia={frontmatter.socialMedia}
         subheadingThree={frontmatter.subheadingThree}
         stories={frontmatter.stories}
+        html={html}
       />
     </Layout>
   )
@@ -100,6 +99,7 @@ const MajorPage = ({ data }) => {
 MajorPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.object,
       frontmatter: PropTypes.object,
     }),
   }),
@@ -110,13 +110,13 @@ export default MajorPage
 export const pageQuery = graphql`
   query MajorPage {
     markdownRemark(frontmatter: { templateKey: { eq: "major-page" } }) {
+      html
       frontmatter {
         majorHeading {
           topText
           bottomText
         }
         subheading
-        about
         button {
           buttonText
           buttonLink

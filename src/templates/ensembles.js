@@ -15,10 +15,10 @@ export const EnsemblesTemplate = ({
   image,
   header: { topText, bottomText },
   subheading,
-  about,
   concertAttire,
   subheadingTwo,
-  auditionInformation
+  auditionInformation,
+  html
 }) => (
   <div className="ensembles">
     <BackgroundImageDiv
@@ -28,7 +28,7 @@ export const EnsemblesTemplate = ({
 
     <div className="ensembles__content">
       <Header topText={topText} bottomText={bottomText} />
-      <TextContent header={subheading} content={about} />
+      <TextContent header={subheading} content={html} />
       {concertAttire && <FloatingCard
         header={concertAttire.attireHeading}
         content={concertAttire.attireContent}
@@ -62,7 +62,7 @@ EnsemblesTemplate.propTypes = {
 }
 
 const Ensembles = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
 
   return (
     <Layout>
@@ -74,6 +74,7 @@ const Ensembles = ({ data }) => {
         concertAttire={frontmatter.concertAttire}
         subheadingTwo={frontmatter.subheadingTwo}
         auditionInformation={frontmatter.auditionInformation}
+        html={html}
       />
     </Layout>
   )
@@ -83,6 +84,7 @@ Ensembles.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+      html: PropTypes.object,
     }),
   }),
 }
@@ -92,6 +94,7 @@ export default Ensembles
 export const pageQuery = graphql`
   query Ensembles($id: String!) {
     markdownRemark(id: { eq: $id } ) {
+      html
       frontmatter {
         header {
           topText
@@ -106,7 +109,6 @@ export const pageQuery = graphql`
           }
         }
         subheading
-        about
         concertAttire {
           attireHeading
           attireContent

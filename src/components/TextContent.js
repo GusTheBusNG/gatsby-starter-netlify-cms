@@ -10,13 +10,13 @@ export const TextContent = ({
 }) => (
   <div className="text-content">
     <Subheading>{header}</Subheading>
-    <p className="text-content__content">{content}</p>
+    <div className="text-content__content" dangerouslySetInnerHTML={{ __html: content }}></div>
   </div>
 );
 
 TextContent.propTypes = {
   header: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.object,
 }
 
 export default TextContent;

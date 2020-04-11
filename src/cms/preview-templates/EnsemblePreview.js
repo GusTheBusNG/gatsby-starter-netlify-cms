@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { EnsemblesTemplate } from '../../templates/ensembles'
 
-const EnsemblesPreview = ({ entry, getAsset }) => {
+const EnsemblesPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS()
  
   if (data) {
@@ -11,10 +11,10 @@ const EnsemblesPreview = ({ entry, getAsset }) => {
         image={data.image}
         header={data.header}
         subheading={data.subheading}
-        about={data.about}
         concertAttire={data.concertAttire}
         subheadingTwo={data.subheadingTwo}
         auditionInformation={data.auditionInformation}
+        html={widgetFor('body')}
       />
     )
   } else {
