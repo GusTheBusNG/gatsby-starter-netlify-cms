@@ -16,13 +16,13 @@ export const OutreachTemplate = ({
   image,
   header: { topText, bottomText },
   subheading,
-  about,
   button,
   subheadingTwo,
   auditionInformation,
   subheadingThree,
   buttonTwo,
-  staffList
+  staffList,
+  html
 }) => (
   <div className="outreach">
     <BackgroundImageDiv
@@ -32,7 +32,7 @@ export const OutreachTemplate = ({
 
     <div className="outreach__content">
       <Header topText={topText} bottomText={bottomText} />
-      <TextContent header={subheading} content={about} />
+      <TextContent header={subheading} content={html} />
       <Button data={button} />
       <Subheading>{subheadingTwo}</Subheading>
 
@@ -87,7 +87,7 @@ OutreachTemplate.propTypes = {
 }
 
 const Outreach = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
 
   return (
     <Layout>
@@ -102,6 +102,7 @@ const Outreach = ({ data }) => {
         subheadingThree={frontmatter.subheadingThree}
         staffList={frontmatter.staffList}
         buttonTwo={frontmatter.buttonTwo}
+        html={html}
       />
     </Layout>
   )
@@ -111,6 +112,7 @@ Outreach.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+      html: PropTypes.object,
     }),
   }),
 }
@@ -120,6 +122,7 @@ export default Outreach
 export const pageQuery = graphql`
   query Outreach($id: String!) {
     markdownRemark(id: { eq: $id } ) {
+      html
       frontmatter {
         header {
           topText
@@ -133,7 +136,6 @@ export const pageQuery = graphql`
           }
         }
         subheading
-        about
         button {
           buttonText
           file {
