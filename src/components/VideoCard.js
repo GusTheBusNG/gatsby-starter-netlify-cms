@@ -5,7 +5,7 @@ import './VideoCard.scss'
 
 const VideoCard = ({ videoLink, header, content, className }) => {
   return (
-  <div className={`card-container ${className}`}>
+  <div className={`video-card-container ${className}`}>
     <div className="video-card">
       <div className="video-card__video-container">
         <iframe 
