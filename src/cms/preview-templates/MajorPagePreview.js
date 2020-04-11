@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MajorPageTemplate } from '../../templates/major-page'
 
-const MajorPagePreview = ({ entry, getAsset }) => {
+const MajorPagePreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
   const {
     majorHeading,
@@ -11,8 +11,7 @@ const MajorPagePreview = ({ entry, getAsset }) => {
     subheadingTwo,
     majorAuditionInfo,
     subheadingThree,
-    stories,
-    html
+    stories
   } = data;
  
   if (data) {
@@ -25,7 +24,7 @@ const MajorPagePreview = ({ entry, getAsset }) => {
         majorAuditionInfo={majorAuditionInfo}
         subheadingThree={subheadingThree}
         stories={stories}
-        html={html}
+        html={widgetFor('body')}
       />
     )
   } else {

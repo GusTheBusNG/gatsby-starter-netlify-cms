@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { OutreachTemplate } from '../../templates/outreach'
 
-const OutreachPreview = ({ entry, getAsset }) => {
+const OutreachPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS()
  
   if (data) {
@@ -17,7 +17,7 @@ const OutreachPreview = ({ entry, getAsset }) => {
         subheadingThree={data.subheadingThree}
         buttonTwo={data.buttonTwo}
         staffList={data.staffList}
-        html={data.html}
+        html={widgetFor('body')}
       />
     )
   } else {
