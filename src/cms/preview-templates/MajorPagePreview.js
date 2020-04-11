@@ -10,6 +10,8 @@ const MajorPagePreview = ({ entry, widgetFor }) => {
     button,
     subheadingTwo,
     majorAuditionInfo,
+    image,
+    socialMedia,
     subheadingThree,
     stories
   } = data;
@@ -22,6 +24,8 @@ const MajorPagePreview = ({ entry, widgetFor }) => {
         button={button}
         subheadingTwo={subheadingTwo}
         majorAuditionInfo={majorAuditionInfo}
+        image={image}
+        socialMedia={socialMedia}
         subheadingThree={subheadingThree}
         stories={stories}
         html={widgetFor('body')}
