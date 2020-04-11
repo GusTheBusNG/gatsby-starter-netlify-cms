@@ -11,6 +11,8 @@ const MajorPagePreview = ({ entry, getAsset }) => {
     button,
     subheadingTwo,
     majorAuditionInfo,
+    image,
+    socialMedia,
     subheadingThree,
     stories
   } = data;
@@ -24,6 +26,8 @@ const MajorPagePreview = ({ entry, getAsset }) => {
         button={button}
         subheadingTwo={subheadingTwo}
         majorAuditionInfo={majorAuditionInfo}
+        image={image}
+        socialMedia={socialMedia}
         subheadingThree={subheadingThree}
         stories={stories}
       />

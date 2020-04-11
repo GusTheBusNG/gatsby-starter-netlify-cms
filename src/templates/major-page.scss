@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.major {
+.major-page {
   background-color: #FDFDFD;
 
   &__content {
@@ -9,10 +9,37 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 1.25rem;
+    padding: 0 1rem;
 
     @include desktop {
-      width: 50%;
+      width: 45%;
+      width: calc(50% - 2rem);
+    }
+
+    &__image {
+      width: 100vw;
+      height: 20rem;
+      background-size: cover;
+      background-position: bottom;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      
+      @include desktop {
+        height: 55vh;
+        width: 47vw;
+      
+        background-position: center;
+        border-radius: $border-radius;
+      }
+    }
+
+    &__social-media {
+      padding: 1rem 0;
+  
+      @include sm-mobile {
+        max-width: 39rem;
+      }
     }
   }
 
