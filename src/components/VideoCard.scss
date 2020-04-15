@@ -2,14 +2,13 @@
 
 .video-card-container {
   width: 100%;
+  max-width: $screen-mobile;
   
   margin: auto;
   margin-bottom: 1rem;
 
   .video-card{
     position: relative;
-
-    max-width: $screen-mobile;
 
     align-items: center;
     

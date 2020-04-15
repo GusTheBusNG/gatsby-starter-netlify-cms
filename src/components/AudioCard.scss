@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+.audio-card-container {
+  width: 100%;
+  max-width: $screen-mobile;
+
+  margin: auto;
+  margin-bottom: 1rem;
+
+  .audio-card{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    padding: 0.75rem;
+
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    background-color: $background-white;
+
+    &__heading {
+      font-weight: 550;
+      font-size: 20px;
+      color: $subheading-text;
+
+      margin: 0 0 0.25rem 0;
+    }
+
+    &__audio {
+      padding: 1rem;
+      
+      align-self: center;
+    }
+
+    &__content {
+      width: 100%;
+
+      font-size: 14px;
+      color: $text-color;
+
+      margin: 0;
+    }
+  }
+}

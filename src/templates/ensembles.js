@@ -6,10 +6,12 @@ import Header from '../components/Header'
 import TextContent from '../components/TextContent'
 import Subheading from '../components/Subheading'
 import Layout from '../components/Layout'
+import FloatingCard from '../components/FloatingCard';
+import VideoCard from '../components/VideoCard'
+import AudioCard from '../components/AudioCard'
+import { BackgroundImageDiv } from '../components/Image';
 
 import './ensembles.scss';
-import FloatingCard from '../components/FloatingCard';
-import { BackgroundImageDiv } from '../components/Image';
 
 export const EnsemblesTemplate = ({
   image,
@@ -18,6 +20,9 @@ export const EnsemblesTemplate = ({
   concertAttire,
   subheadingTwo,
   auditionInformation,
+  subheadingThree,
+  featuredRecordingAudio,
+  featuredRecordingVideo,
   html
 }) => (
   <div className="ensembles">
@@ -36,7 +41,6 @@ export const EnsemblesTemplate = ({
         className="ensembles__concert-attire"
       />}
       <Subheading>{subheadingTwo}</Subheading>
-
       {
         auditionInformation ?
           auditionInformation.map(({ image, heading, text }) => (
@@ -46,6 +50,13 @@ export const EnsemblesTemplate = ({
               content={text}
             />
           )) : null
+      }
+      <Subheading>{subheadingThree}</Subheading>
+      {
+        featuredRecordingAudio && <AudioCard {...featuredRecordingAudio} />
+      }
+      {
+        featuredRecordingVideo && <VideoCard {...featuredRecordingVideo} />
       }
     </div>
   </div>
@@ -59,6 +70,9 @@ EnsemblesTemplate.propTypes = {
   concertAttire: PropTypes.object,
   subheadingTwo: PropTypes.string,
   auditionInformation: PropTypes.array,
+  subheadingThree: PropTypes.string,
+  featuredRecordingAudio: PropTypes.object,
+  featuredRecordingVideo: PropTypes.object,
 }
 
 const Ensembles = ({ data }) => {
@@ -74,6 +88,9 @@ const Ensembles = ({ data }) => {
         concertAttire={frontmatter.concertAttire}
         subheadingTwo={frontmatter.subheadingTwo}
         auditionInformation={frontmatter.auditionInformation}
+        subheadingThree={frontmatter.subheadingThree}
+        featuredRecordingAudio={frontmatter.featuredRecordingAudio}
+        featuredRecordingVideo={frontmatter.featuredRecordingVideo}
         html={html}
       />
     </Layout>
@@ -126,6 +143,17 @@ export const pageQuery = graphql`
           }
           text
           heading
+        }
+        subheadingThree
+        featuredRecordingAudio {
+          header
+          content
+          audioLink
+        }
+        featuredRecordingVideo {
+          header
+          content
+          videoLink
         }
       }
     }
