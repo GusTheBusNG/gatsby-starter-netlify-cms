@@ -34,6 +34,11 @@ auditionInformation:
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
+subheadingThree: Featured Recording
+featuredRecordingAudio:
+  - header: Featured Recording
+  - content: Description here...
+  - audioLink: /src/audio/my_heart_be_brave_-_final.wav
 ---
 **Lorem ipsum dolor sit amet**, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
