@@ -7,13 +7,11 @@ const AudioCard = ({ audioLink, header, content, className }) => {
   return (
   <div className={`audio-card-container ${className}`}>
     <div className="audio-card">
-      <div className="audio-card__audio-container">
-        <audio controls src={audioLink}>
-          Your browser does not support HTML5 audio.
-        </audio>
-      </div>
       <h3 className="audio-card__heading">{header}</h3>
       <p className="audio-card__content">{content}</p>
+      <audio controls src={audioLink} className="audio-card__audio">
+        Your browser does not support HTML5 audio.
+      </audio>
     </div>
   </div>
 )};
