@@ -14,9 +14,9 @@ const EnsemblesPreview = ({ entry, widgetFor }) => {
         concertAttire={data.concertAttire}
         subheadingTwo={data.subheadingTwo}
         auditionInformation={data.auditionInformation}
-        subheadingThree={frontmatter.subheadingThree}
-        featuredRecordingAudio={frontmatter.featuredRecordingAudio}
-        featuredRecordingVideo={frontmatter.featuredRecordingVideo}
+        subheadingThree={data.subheadingThree}
+        featuredRecordingAudio={data.featuredRecordingAudio}
+        featuredRecordingVideo={data.featuredRecordingVideo}
         html={widgetFor('body')}
       />
     )
