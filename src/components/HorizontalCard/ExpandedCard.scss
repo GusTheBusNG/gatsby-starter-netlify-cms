@@ -8,7 +8,7 @@
 
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  background-color: $highlight-white;
+  background-color: getColor(highlight);
 
   padding: 1rem 2%;
   margin: 0 0 1rem;
@@ -26,7 +26,7 @@
   &__description {
     margin: 0 0 1rem;
 
-    color: $text-color;
+    color: getColor(text-color);
     font-size: 14px;
   }
 

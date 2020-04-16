@@ -19,8 +19,6 @@
 }
 
 .ensembles {
-  background-color: $background-white;
-
   display: flex;
   flex-direction: column;
 
@@ -31,7 +29,7 @@
 
     align-items: center;
     
-    background-color: $background-white;
+    background-color: getColor(base);
 
     margin-top: -$border-radius;
     padding: 1.25rem 1.25rem 0;

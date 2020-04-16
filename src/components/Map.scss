@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 .map-overlay {
-  background-color: $background-white;
+  background-color: getColor(base);
   border-radius: $border-radius;
 
   padding: 0.5rem;
@@ -15,7 +15,7 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    color: $text-color;
+    color: getColor(text-color);
 
     &__chevron {
       transform: rotate(270deg);

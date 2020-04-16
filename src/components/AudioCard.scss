@@ -19,12 +19,12 @@
     border-radius: $border-radius;
     box-shadow: $box-shadow;
 
-    background-color: $background-white;
+    background-color: getColor(base);
 
     &__heading {
       font-weight: 550;
       font-size: 20px;
-      color: $subheading-text;
+      color: getColor(subheading-text);
 
       margin: 0 0 0.25rem 0;
     }
@@ -39,7 +39,7 @@
       width: 100%;
 
       font-size: 14px;
-      color: $text-color;
+      color: getColor(text-color);
 
       margin: 0;
     }
