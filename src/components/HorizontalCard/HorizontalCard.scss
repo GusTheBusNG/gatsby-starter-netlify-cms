@@ -20,7 +20,7 @@
 
   border-radius: $border-radius;
   background-color: getColor(highlight);
-  box-shadow: $box-shadow;
+  box-shadow: getColor(box-shadow);
 
   overflow-x: visible;
   transition-property: transform;

@@ -14,7 +14,7 @@
     padding: 0.75rem;
 
     border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    box-shadow: getColor(box-shadow);
 
     background-color: getColor(highlight);
 
@@ -124,11 +124,13 @@
     transition-property: padding, box-shadow;
   
     &.expanded {
-      box-shadow: $box-shadow;
+      box-shadow: getColor(box-shadow);
     }
     &__text {
       padding: 2rem 1rem 0 1rem;
       margin: 0;
+
+      color: getColor(text-color)
     }
     &__link {
       display: block;

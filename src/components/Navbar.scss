@@ -95,7 +95,7 @@
       justify-content: space-evenly;
       align-items: flex-end;
   
-      box-shadow: $box-shadow;
+      box-shadow: getColor(box-shadow);
 
       .ensembles {
         position: absolute;

@@ -12,7 +12,8 @@
   border: 0.155rem solid $clemson-orange;
   border-radius: $border-radius;
   color: $clemson-orange;
-  background-color: getColor(highlight);
+
+  background-color: transparent;
 
   transition: 0.2s;
 

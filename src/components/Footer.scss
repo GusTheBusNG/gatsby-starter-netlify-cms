@@ -10,9 +10,9 @@
   width: 100%;
   height: $footer-height;
 
-  background: getColor(base);
+  background: getColor(highlight);
   border-radius: $border-radius $border-radius 0 0;
-  box-shadow: $box-shadow;
+  box-shadow: getColor(box-shadow);
 
   padding: 1rem 0;
 
