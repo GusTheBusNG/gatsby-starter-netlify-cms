@@ -9,10 +9,21 @@
     margin: 0.5rem;
     padding: 0.6rem 0.5rem;
 
-    border: 2px solid $clemson-orange;
+    
     border-radius: 10px;
 
     cursor: pointer;
+
+    transition: none $transition-timing $transition-time;
+    transition-property: border, background-color, box-shadow;
+
+    &.scrolling {
+      border: 2px solid $clemson-orange;
+
+      background-color: white;
+
+      box-shadow: $box-shadow;
+    }
 
     @include desktop { display: none; }
   }
