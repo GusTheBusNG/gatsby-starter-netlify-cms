@@ -25,7 +25,7 @@ Image.propsType = {
   alt: PropTypes.string.isRequired
 }
 
-export const BackgroundImageDiv = ({ image, children, ...props }) => (
+export const BackgroundImageDiv = ({ image, children, ...props }) => !!image && (
   <div
     style={{
       backgroundImage: `url(${findImageSrc(image)})`

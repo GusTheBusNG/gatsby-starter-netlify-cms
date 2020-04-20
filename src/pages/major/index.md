@@ -22,11 +22,11 @@ majorAuditionInfo:
     heading: What?
 image: /img/cu-singers.jpg
 socialMedia:
-  - icon: /img/facebook/fb-color.svg
+  - icon: /img/fb-color.svg
     link: 'https://www.facebook.com/clemsonchoirs/'
-  - icon: /img/instagram/ig-color.png
+  - icon: /img/ig-color.png
     link: 'https://www.instagram.com/clemsonchoirs/'
-  - icon: /img/youtube/yt-color.svg
+  - icon: /img/yt-color.svg
     link: 'https://www.youtube.com/channel/UCbVZmtrzNcRztYdLOYPEC2A'
 subheadingThree: Stories
 stories:

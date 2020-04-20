@@ -40,6 +40,21 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
+      - {label: "Third Subheading", name: subheadingThree, widget: string}
+      - label: "Featured Recording Audio"
+        name: featuredRecordingAudio
+        widget: object
+        fields:
+          - {label: "Title", name: header, widget: string, default: "Example Title"}
+          - {label: "Audio Link", name: audioLink, widget: file, default: "/src/audio/my_heart_be_brave_-_final.wav"}
+          - {label: "Description", name: content, widget: text, default: "Example description"}
+      - label: "Featured Recording Video"
+        name: featuredRecordingVideo
+        widget: object
+        fields:
+          - {label: "Title", name: header, widget: string, default: "Example Title"}
+          - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
+          - {label: "Description", name: content, widget: text, default: "Example description"}
   - name: "outreach"
     label: "Outreach Programs"
     folder: "src/pages/outreach-programs"
@@ -65,7 +80,6 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
-      - {label: "Third Subheading", name: subheadingThree, widget: string}
       - label: Staff
         name: staffList
         widget: list
@@ -80,20 +94,6 @@ collections:
           {label: "Button Link", name: buttonLink, widget: string},
           {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
         ]}
-      - label: "Featured Recording Audio"
-        name: featuredRecordingAudio
-        widget: object
-        fields:
-          - {label: "Title", name: header, widget: string, default: "Example Title"}
-          - {label: "Audio Link", name: audioLink, widget: string, default: "/src/audio/my_heart_be_brave_-_final.wav"}
-          - {label: "Description", name: content, widget: text, default: "Example description"}
-      - label: "Featured Recording Video"
-        name: featuredRecordingVideo
-        widget: object
-        fields:
-          - {label: "Title", name: header, widget: string, default: "Example Title"}
-          - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
-          - {label: "Description", name: content, widget: text, default: "Example description"}
   - name: "pages"
     label: "Pages"
     files:
