@@ -20,9 +20,9 @@
     &.scrolling {
       border: 2px solid $clemson-orange;
 
-      background-color: $highlight-white;
+      background-color: getColor(highlight);
 
-      box-shadow: $box-shadow;
+      box-shadow: getColor(box-shadow);
     }
 
     @include desktop { display: none; }
