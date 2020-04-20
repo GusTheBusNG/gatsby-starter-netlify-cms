@@ -3,6 +3,8 @@
 .the-whole-dang-thing {
   position: relative;
   min-height: 100vh;
+
+  background-color: getColor(base);
 }
 
 .page-content {

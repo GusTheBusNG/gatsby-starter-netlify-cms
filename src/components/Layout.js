@@ -11,32 +11,34 @@ import './Layout.scss'
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div className="the-whole-dang-thing">
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+    <div className="theme-wrapper theme-light color-scheme-default">
+      <div className="the-whole-dang-thing">
+        <Helmet>
+          <html lang="en" />
+          <title>{title}</title>
+          <meta name="description" content={description} />
 
-        <link
-          rel="icon"
-          type="image/svg"
-          href={logo}
-        />
+          <link
+            rel="icon"
+            type="image/svg"
+            href={logo}
+          />
 
-        <meta name="theme-color" content="#fff" />
+          <meta name="theme-color" content="#fff" />
 
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta
-          property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
-        />
-      </Helmet>
+          <meta property="og:type" content="business.business" />
+          <meta property="og:title" content={title} />
+          <meta property="og:url" content="/" />
+          <meta
+            property="og:image"
+            content={`${withPrefix('/')}img/og-image.jpg`}
+          />
+        </Helmet>
 
-      <Navbar />
-      <div className="page-content">{children}</div>
-      <Footer />
+        <Navbar />
+        <div className="page-content">{children}</div>
+        <Footer />
+      </div>
     </div>
   )
 }

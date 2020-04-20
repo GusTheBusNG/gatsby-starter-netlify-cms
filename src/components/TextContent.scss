@@ -7,6 +7,6 @@
 
   &__content {
     font-size: 14px;
-    color: $text-color;
+    color: getColor(text-color);
   }
 }

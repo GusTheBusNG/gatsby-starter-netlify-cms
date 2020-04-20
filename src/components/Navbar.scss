@@ -9,10 +9,21 @@
     margin: 0.5rem;
     padding: 0.6rem 0.5rem;
 
-    border: 2px solid $clemson-orange;
+    
     border-radius: 10px;
 
     cursor: pointer;
+
+    transition: none $transition-timing $transition-time;
+    transition-property: border, background-color, box-shadow;
+
+    &.scrolling {
+      border: 2px solid $clemson-orange;
+
+      background-color: getColor(highlight);
+
+      box-shadow: getColor(box-shadow);
+    }
 
     @include desktop { display: none; }
   }
@@ -24,7 +35,7 @@
 
     z-index: -1;
 
-    background-color: $background-white;
+    background-color: getColor(highlight);
     border-radius: 0 $border-radius;
 
     transition: left $transition-time;
@@ -43,13 +54,13 @@
       margin: 1rem 1rem 0;
       padding: 0 0.5rem;
       font-weight: normal;
-      color: $subheading-text;
+      color: getColor(subheading-text);
 
       border-radius: $border-radius;
 
       &.active {
         background-color: $clemson-orange;
-        color: $highlight-white;
+        color: #f5f5f5;
       }
     }
 
@@ -64,7 +75,7 @@
 
     .ensembles {
       display: none;
-      background-color: $background-white;
+      background-color: getColor(highlight);
 
       margin-left: 2.5rem;
 
@@ -73,12 +84,12 @@
       }
 
       .ensemble {
-        background-color: $background-white;
+        background-color: getColor(highlight);
 
         margin: 0.25rem 0;
 
         font-weight: normal;
-        color: $subheading-text;
+        color: getColor(subheading-text);
       }
     }
 
@@ -90,24 +101,24 @@
       width: 100vw;
       border-radius: 0;
   
-      background-color: $background-white;
+      background-color: getColor(highlight);
       
       justify-content: space-evenly;
       align-items: flex-end;
   
-      box-shadow: $box-shadow;
+      box-shadow: getColor(box-shadow);
 
       .ensembles {
         position: absolute;
         margin: 0 auto;
         padding: 0.25rem 1rem;
         border-radius: 0 0 $border-radius $border-radius;
-        box-shadow: 0 3px 3px rgba(55, 55, 55, 0.5);;
+        box-shadow: getColor(box-shadow);
       }
 
       button {
         padding: 0;
-        background-color: $background-white;
+        background-color: getColor(highlight);
         border: none;
       }
   
@@ -122,14 +133,13 @@
 
         font-size: 18px;
         font-weight: normal;
-        color: $subheading-text;
+        color: getColor(subheading-text);
         border-radius: $border-radius $border-radius 0 0;
 
         cursor: pointer;
   
         &.active {
           background-color: $clemson-orange;
-          color: $highlight-white;
         }
       }
     }
