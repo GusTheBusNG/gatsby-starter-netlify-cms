@@ -19,8 +19,8 @@
   flex-wrap: nowrap;
 
   border-radius: $border-radius;
-  background-color: $highlight-white;
-  box-shadow: $box-shadow;
+  background-color: getColor(highlight);
+  box-shadow: getColor(box-shadow);
 
   overflow-x: visible;
   transition-property: transform;
@@ -51,7 +51,7 @@
     }
 
     &__description {
-      color: $subheading-text;
+      color: getColor(subheading-text);
       opacity: 80%;
       margin: 0;
       padding: 0.25rem;

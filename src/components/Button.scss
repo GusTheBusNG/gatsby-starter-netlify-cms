@@ -12,20 +12,21 @@
   border: 0.155rem solid $clemson-orange;
   border-radius: $border-radius;
   color: $clemson-orange;
-  background-color: #fff;
+
+  background-color: transparent;
 
   transition: 0.2s;
 
   &:hover {
     background-color: $clemson-orange;
-    color: $background-white;
+    color: getColor(highlight);
     border-color: $clemson-orange;
     cursor: pointer;
   }
 
   &:focus {
     background-color: $clemson-orange;
-    color: $background-white;
+    color: getColor(highlight);
     border-color: $clemson-orange;
     box-shadow: 0 0 3px 1px $clemson-orange;
   }

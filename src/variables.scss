@@ -1,16 +1,48 @@
+//defining scss variable 
+//light theme
+$colors: (
+	base: #fafafa,
+	highlight: #fff,
+	off-white: #f4f4f4,
+	text-color: #4a4a4a,
+	subheading-text: #4e4e4e,
+	box-shadow: 0 3px 6px rgba(55, 55, 55, 0.5)
+);
+//dark theme
+$colors-dark: (
+	base: #121212,
+	highlight: #222,
+	off-white: #181818,
+	text-color: #e9e9e9,
+	subheading-text: #f5f5f5,
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5)
+);
+//converting scss variable into css variable
+:root {
+    @each $name, $color in $colors{
+        --color-#{$name} : #{$color};
+    }
+  --theme: 'light';
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        @each $name, $color in $colors-dark{
+            --color-#{$name} : #{$color};
+        }
+    --theme : 'dark';
+    }
+}
+//creating a function to get color instead of using css varible
+@function getColor($color-name){
+    @return var(--color-#{$color-name});
+}
+
 $clemson-orange: #F66733;
 $clemson-purple: #522D80;
 $light-purple: #733EB3;
 
-$background-white: #FAFAFA;
-$highlight-white: #FFFFFF;
-$off-white: #F4F4F4;
-
 $border-radius: 10px;
-$box-shadow: 0 3px 6px rgba(55, 55, 55, 0.5);
-
-$subheading-text: #4E4E4E;
-$text-color: #4A4A4A;
 
 $font-family: 'Roboto';
 
@@ -30,7 +62,6 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: $background-white;
   font-family: $font-family;
 }
 

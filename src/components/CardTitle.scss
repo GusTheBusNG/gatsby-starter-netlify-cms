@@ -5,7 +5,7 @@
     font-size: 12pt;
     font-weight: 400;
     margin: 0;
-    color: $subheading-text;
+    color: getColor(subheading-text);
     opacity: 70%;
   }
 
@@ -13,7 +13,7 @@
     font-size: 20pt;
     font-weight: 700;
     margin: 0;
-    color: $subheading-text;
+    color: getColor(subheading-text);
     line-height: 1em;
   }
 }
