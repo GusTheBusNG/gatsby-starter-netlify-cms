@@ -27,7 +27,7 @@ export const EnsemblesTemplate = ({
 }) => (
   <div className="ensembles">
     <BackgroundImageDiv
-      className="top-image"
+      className="ensembles__top-image"
       image={image}
     />
 

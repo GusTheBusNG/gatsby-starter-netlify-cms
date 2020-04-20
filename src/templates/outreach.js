@@ -26,7 +26,7 @@ export const OutreachTemplate = ({
 }) => (
   <div className="outreach">
     <BackgroundImageDiv
-      className="top-image"
+      className="outreach__top-image"
       image={image}
     />
 
