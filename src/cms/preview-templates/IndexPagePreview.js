@@ -10,7 +10,9 @@ const IndexPagePreview = ({ entry, getAsset }) => {
     backgroundImage,
     socialMedia,
     homePageHeading,
-    ensembles
+    ensembles,
+    homeSubheading,
+    files
   } = data;
  
   if (data) {
@@ -22,6 +24,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         socialMedia={socialMedia}
         heading={homePageHeading}
         ensembles={ensembles}
+        subheading={homeSubheading}
+        files={files}
       />
     )
   } else {

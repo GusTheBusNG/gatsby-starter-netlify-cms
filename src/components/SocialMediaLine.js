@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './SocialMediaLine.scss';
 import Image from './Image';
 
-export const SocialMediaLine = ({ socialMedia, className }) => (
+export const SocialMediaLine = ({ socialMedia, className }) => socialMedia && (
   <div className={`social-media-line ${className}`}>
     {
       socialMedia.map(({ icon, link, newTab }) => (

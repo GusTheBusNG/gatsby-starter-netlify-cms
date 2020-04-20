@@ -38,7 +38,7 @@ subheadingThree: Featured Recording
 featuredRecordingAudio:
   header: Featured Recording
   content: Description here...
-  audioLink: ../../audio/my_heart_be_brave_-_final.wav
+  audioLink: /img/flight.mp3
 ---
 **Lorem ipsum dolor sit amet**, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

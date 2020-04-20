@@ -9,10 +9,23 @@ const ConcertPagePreview = ({ entry }) => {
 
   const {
     concertsPageHeading: heading,
-    concerts
+    previewConcerts,
+    subheading,
+    concerts,
+    socialMedia,
+    subheadingTwo
   } = data;
 
-  return <ConcertsPageTemplate heading={heading} concerts={concerts} />;
+  return (
+    <ConcertsPageTemplate 
+      heading={heading}
+      subheading={subheading}
+      previewConcerts={previewConcerts}
+      concerts={concerts}
+      subheadingTwo={subheadingTwo}
+      socialMedia={socialMedia} 
+    />
+  );
 }
 
 ConcertPagePreview.propTypes = {

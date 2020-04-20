@@ -29,11 +29,13 @@ export const ConcertsPageTemplate = ({
         bottomText={bottomText}
       />
       <Subheading className="concerts-page__subheading-1">{subheading}</Subheading>
-      <div className="concerts-page__preview">
-        {
-          previewConcerts && previewConcerts.map(info => (<VideoCard key={info.title} {...info}/> ))
-        }
-      </div>
+      { previewConcerts && (
+        <div className="concerts-page__preview">
+          {
+            previewConcerts.map(info => (<VideoCard key={info.title} {...info}/> ))
+          }
+        </div>
+      ) }
       <SocialMediaLine
         className="concerts-page__social-media"
         socialMedia={socialMedia}

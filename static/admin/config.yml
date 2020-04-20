@@ -40,6 +40,21 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
+      - {label: "Third Subheading", name: subheadingThree, widget: string}
+      - label: "Featured Recording Audio"
+        name: featuredRecordingAudio
+        widget: object
+        fields:
+          - {label: "Title", name: header, widget: string, default: "Example Title"}
+          - {label: "Audio Link", name: audioLink, widget: file, default: "/src/audio/my_heart_be_brave_-_final.wav"}
+          - {label: "Description", name: content, widget: text, default: "Example description"}
+      - label: "Featured Recording Video"
+        name: featuredRecordingVideo
+        widget: object
+        fields:
+          - {label: "Title", name: header, widget: string, default: "Example Title"}
+          - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
+          - {label: "Description", name: content, widget: text, default: "Example description"}
   - name: "outreach"
     label: "Outreach Programs"
     folder: "src/pages/outreach-programs"
@@ -65,7 +80,6 @@ collections:
           {label: Heading, name: heading, widget: text},
           {label: Text, name: text, widget: text}
         ]}
-      - {label: "Third Subheading", name: subheadingThree, widget: string}
       - label: Staff
         name: staffList
         widget: list
@@ -80,20 +94,6 @@ collections:
           {label: "Button Link", name: buttonLink, widget: string},
           {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
         ]}
-      - label: "Featured Recording Audio"
-        name: featuredRecordingAudio
-        widget: object
-        fields:
-          - {label: "Title", name: header, widget: string, default: "Example Title"}
-          - {label: "Audio Link", name: audioLink, widget: string, default: "/src/audio/my_heart_be_brave_-_final.wav"}
-          - {label: "Description", name: content, widget: text, default: "Example description"}
-      - label: "Featured Recording Video"
-        name: featuredRecordingVideo
-        widget: object
-        fields:
-          - {label: "Title", name: header, widget: string, default: "Example Title"}
-          - {label: "Video Link", name: videoLink, widget: string, default: "https://www.youtube.com/watch?v=aklkDS-FZ3A"}
-          - {label: "Description", name: content, widget: text, default: "Example description"}
   - name: "pages"
     label: "Pages"
     files:
@@ -165,6 +165,7 @@ collections:
             fields:
               - {label: "Top Text", name: topText, widget: string, default: "Clemson Vocal Arts"}
               - {label: "Bottom Text", name: bottomText, widget: string, default: "Concerts"}
+          - {label: "Subheading", name: subheading, widget: string}
           - label: "Preview Concerts"
             name: previewConcerts
             widget: list
@@ -180,6 +181,7 @@ collections:
               - {label: Icon, name: icon, widget: image}
               - {label: Link, name: link, widget: string}
               - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: true}
+          - {label: "Subheading", name: subheadingTwo, widget: string}
           - label: Concerts
             name: concerts
             widget: list
@@ -312,24 +314,3 @@ collections:
                   - {label: "Button Label", name: buttonText, widget: string}
                   - {label: "Button Link", name: buttonLink, widget: string}
                   - {label: "Open a new tab when clicked", name: newTab, widget: boolean, default: false}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [
-              {label: Heading, name: heading, widget: string},
-              {label: Description, name: description, widget: text},
-              {label: Blurbs, name: blurbs, widget: list, fields: [
-                {label: Image, name: image, widget: image},
-                {label: Text, name: text, widget: text}
-              ]}
-            ]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
-          - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
