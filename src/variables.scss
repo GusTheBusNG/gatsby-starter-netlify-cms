@@ -70,6 +70,10 @@ a {
   transition-property: background-color, background-image, color;
 }
 
+button:active {
+  transform: scale(0.95);
+}
+
 // Even smaller screens (mainly used for the horizontal card)
 $screen-mobile-portrait: 530px;
 
